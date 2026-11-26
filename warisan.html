@@ -378,6 +378,47 @@
             </section>
         </div>
 
+        <!-- ========================================== -->
+        <!-- VIEW: SHOP ALL (Grouped by Club Type)      -->
+        <!-- ========================================== -->
+        <div id="view-shop-all" class="hidden">
+            <!-- Sticky Breadcrumb & Quick Filter Bar -->
+            <div class="bg-gray-50/95 backdrop-blur-md pt-6 pb-3 border-b border-gray-200/60 sticky top-[72px] md:top-[90px] z-30 shadow-sm">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap items-center justify-between gap-3">
+                    <a href="#home" class="inline-flex items-center text-gray-500 hover:text-[#4c111f] font-bold text-xs uppercase tracking-wider transition-colors">
+                        <i class="fas fa-arrow-left mr-2"></i> Back to Home
+                    </a>
+
+                    <!-- Quick Jump Pills & In-Stock Filter -->
+                    <div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1">
+                        <a href="#shop-all-putter" class="px-3 py-1.5 rounded-full bg-white border border-gray-200 text-xs font-bold text-[#4c111f] hover:bg-[#4c111f] hover:text-white transition-colors whitespace-nowrap shadow-sm">Putter</a>
+                        <a href="#shop-all-hybrid" class="px-3 py-1.5 rounded-full bg-white border border-gray-200 text-xs font-bold text-[#4c111f] hover:bg-[#4c111f] hover:text-white transition-colors whitespace-nowrap shadow-sm">Hybrid</a>
+                        <a href="#shop-all-wood" class="px-3 py-1.5 rounded-full bg-white border border-gray-200 text-xs font-bold text-[#4c111f] hover:bg-[#4c111f] hover:text-white transition-colors whitespace-nowrap shadow-sm">Wood</a>
+                        <a href="#shop-all-driver" class="px-3 py-1.5 rounded-full bg-white border border-gray-200 text-xs font-bold text-[#4c111f] hover:bg-[#4c111f] hover:text-white transition-colors whitespace-nowrap shadow-sm">Driver</a>
+                        <button id="inStockToggleBtn" onclick="toggleShopAllInStock()" class="px-3.5 py-1.5 rounded-full bg-white border border-[#4c111f]/30 text-xs font-bold text-[#4c111f] hover:bg-[#4c111f]/5 transition-all whitespace-nowrap flex items-center gap-1.5 shadow-sm">
+                            <i id="inStockToggleIcon" class="far fa-square text-xs"></i>
+                            <span>In-Stock Only</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <section class="relative pt-10 pb-24 bg-gray-50">
+                <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 relative z-10">
+                    <div class="text-center mb-10 md:mb-14">
+                        <span class="bg-[#4c111f] text-white text-[10px] md:text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-4 inline-block shadow-sm">All Collections</span>
+                        <h2 class="font-serif text-4xl md:text-5xl font-bold text-[#4c111f] mb-4">SHOP ALL</h2>
+                        <p class="text-gray-600 md:text-lg max-w-2xl mx-auto font-medium">Browse every colorway across our collections by club type and see live stock availability at a glance.</p>
+                    </div>
+
+                    <!-- Dynamic Sections Container (Putter, Hybrid, Wood, Driver) -->
+                    <div id="shopAllContainer" class="space-y-14 md:space-y-20">
+                        <!-- Injected via JS -->
+                    </div>
+                </div>
+            </section>
+        </div>
+
     </main>
 
     <footer class="bg-[#2f0a13] text-white">
@@ -431,6 +472,21 @@
         <div class="flex-1 px-6 pt-6 space-y-2 overflow-y-auto no-scrollbar">
             <a href="#home" class="menu-link block py-3 text-lg font-medium text-[#4c111f] hover:opacity-80 border-b border-gray-100 transition-all">Home</a>
             
+            <!-- NEW: Shop All Dropdown -->
+            <div class="border-b border-gray-100">
+                <button id="shopAllMenuBtn" class="w-full flex justify-between items-center py-3 text-lg font-medium text-[#4c111f] hover:opacity-80 transition-all focus:outline-none">
+                    <span>Shop All</span>
+                    <i class="fas fa-chevron-down text-sm transition-transform duration-300" id="shopAllMenuIcon"></i>
+                </button>
+                <div id="shopAllSubMenu" class="hidden flex-col pl-4 pb-2 space-y-2 mt-1">
+                    <a href="#shop-all" class="menu-link block py-2 text-base font-bold text-[#4c111f] hover:text-accent transition-all">View All Products</a>
+                    <a href="#shop-all-putter" class="menu-link block py-1.5 text-sm font-medium text-gray-600 hover:text-[#4c111f] transition-all">Putter</a>
+                    <a href="#shop-all-hybrid" class="menu-link block py-1.5 text-sm font-medium text-gray-600 hover:text-[#4c111f] transition-all">Hybrid</a>
+                    <a href="#shop-all-wood" class="menu-link block py-1.5 text-sm font-medium text-gray-600 hover:text-[#4c111f] transition-all">Wood</a>
+                    <a href="#shop-all-driver" class="menu-link block py-1.5 text-sm font-medium text-gray-600 hover:text-[#4c111f] transition-all">Driver</a>
+                </div>
+            </div>
+
             <div class="border-b border-gray-100">
                 <button id="collectionsMenuBtn" class="w-full flex justify-between items-center py-3 text-lg font-medium text-[#4c111f] hover:opacity-80 transition-all focus:outline-none">
                     <span>Collections</span>
@@ -928,7 +984,7 @@
             },
             SGD: { 
                 symbol: 'S$ ', 
-                cadence: { blade: 38, mallet: 42 },
+                cadence: { blade: 51, mallet: 51  },
                 atelier: { wood: 35, driver: 42, hybrid: 0 },
                 heritage: { wood: 38, driver: 44, hybrid: 35 },
                 bundleDiscount: 5, 
@@ -966,6 +1022,7 @@
         let selectedColorIndex = 0;
         let calculatedFinalTotal = 0; 
         let hoverIntervals = {};
+        let shopAllInStockOnly = false;
         
         let discountApplied = false;
         let discountType = '';
@@ -973,10 +1030,11 @@
 
         document.addEventListener('DOMContentLoaded', async () => {
             applySaleUI();
+            setupEventListeners();
+            renderProductGrids();
             setupRouter(); 
             await detectUserLocation();
             setupMobileAutoplay(); 
-            setupEventListeners();
             checkPaymentStatus();
         });
 
@@ -1054,30 +1112,45 @@
         }
 
         // ----------------------------------------------------
-        // SPA Router Logic (Updated with #cadence route)
+        // SPA Router Logic (Updated with #cadence & #shop-all routes)
         // ----------------------------------------------------
         function setupRouter() {
-            window.addEventListener('hashchange', handleRoute);
-            handleRoute();
+            window.addEventListener('hashchange', () => handleRoute(window.location.hash));
+            handleRoute(window.location.hash);
         }
 
-        function handleRoute() {
-            const hash = window.location.hash;
+        function handleRoute(explicitHash) {
+            const hash = typeof explicitHash === 'string' ? explicitHash : window.location.hash;
             const viewHome = document.getElementById('view-home');
             const viewCadence = document.getElementById('view-cadence');
             const viewHeritage = document.getElementById('view-heritage');
             const viewAtelier = document.getElementById('view-atelier');
+            const viewShopAll = document.getElementById('view-shop-all');
             
-            if (!viewHome || !viewCadence || !viewHeritage || !viewAtelier) return;
+            if (!viewHome || !viewCadence || !viewHeritage || !viewAtelier || !viewShopAll) return;
 
             // Hide all views first
             viewHome.classList.add('hidden');
             viewCadence.classList.add('hidden');
             viewHeritage.classList.add('hidden');
             viewAtelier.classList.add('hidden');
+            viewShopAll.classList.add('hidden');
 
             // Show the requested view
-            if (hash === '#cadence') {
+            if (hash === '#shop-all' || hash.startsWith('#shop-all-')) {
+                viewShopAll.classList.remove('hidden');
+                renderShopAllGrid();
+                if (hash.startsWith('#shop-all-')) {
+                    setTimeout(() => {
+                        const targetEl = document.getElementById(hash.substring(1));
+                        if (targetEl) {
+                            targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    }, 100);
+                } else {
+                    window.scrollTo(0, 0);
+                }
+            } else if (hash === '#cadence') {
                 viewCadence.classList.remove('hidden');
                 window.scrollTo(0, 0);
             } else if (hash === '#heritage') {
@@ -1089,7 +1162,10 @@
             } else {
                 viewHome.classList.remove('hidden');
                 if (hash === '#about') {
-                    setTimeout(() => document.getElementById('about').scrollIntoView({behavior: 'smooth'}), 100);
+                    setTimeout(() => {
+                        const aboutEl = document.getElementById('about');
+                        if (aboutEl) aboutEl.scrollIntoView({ behavior: 'smooth' });
+                    }, 100);
                 } else {
                     window.scrollTo(0, 0);
                 }
@@ -1258,6 +1334,139 @@
             if (cadenceGridEl) cadenceGridEl.innerHTML = cadenceProducts.map(generateCard).join('');
             document.getElementById('heritageGrid').innerHTML = heritageProducts.map(generateCard).join('');
             document.getElementById('atelierGrid').innerHTML = atelierProducts.map(generateCard).join('');
+            renderShopAllGrid();
+        }
+
+        // Toggle "In-Stock Only" filter on Shop All page
+        window.toggleShopAllInStock = function() {
+            shopAllInStockOnly = !shopAllInStockOnly;
+            const btn = document.getElementById('inStockToggleBtn');
+            const icon = document.getElementById('inStockToggleIcon');
+            if (btn && icon) {
+                if (shopAllInStockOnly) {
+                    btn.classList.remove('bg-white', 'text-[#4c111f]');
+                    btn.classList.add('bg-[#4c111f]', 'text-white');
+                    icon.className = 'fas fa-check-square text-xs';
+                } else {
+                    btn.classList.add('bg-white', 'text-[#4c111f]');
+                    btn.classList.remove('bg-[#4c111f]', 'text-white');
+                    icon.className = 'far fa-square text-xs';
+                }
+            }
+            renderShopAllGrid();
+        }
+
+        // Render the Shop All view grouped by Putter, Hybrid, Wood, Driver
+        function renderShopAllGrid() {
+            const container = document.getElementById('shopAllContainer');
+            if (!container) return;
+
+            const sym = PRICING[currentCurrency].symbol;
+            const sections = [
+                { id: 'shop-all-putter', title: 'Putter', subtitle: 'Blade & Mallet covers from The Cadence Collection', types: ['blade', 'mallet'] },
+                { id: 'shop-all-hybrid', title: 'Hybrid', subtitle: 'Hybrid covers across our collections', types: ['hybrid'] },
+                { id: 'shop-all-wood', title: 'Wood', subtitle: 'Fairway wood covers across our collections', types: ['wood'] },
+                { id: 'shop-all-driver', title: 'Driver', subtitle: 'Driver covers across our collections', types: ['driver'] }
+            ];
+
+            const sectionHtml = sections.map(section => {
+                let items = [];
+
+                allProducts.forEach(product => {
+                    const collectionKey = getCollectionKey(product.id);
+                    const collectionPrices = PRICING[currentCurrency][collectionKey];
+
+                    section.types.forEach(clubType => {
+                        const basePrice = collectionPrices[clubType];
+                        if (!basePrice || basePrice <= 0) return;
+
+                        product.colors.forEach((color, colorIndex) => {
+                            const totalStock = color.stock[clubType] || 0;
+                            const inCartCount = cart.filter(c =>
+                                c.series === product.series &&
+                                c.color === color.name &&
+                                c.type === clubType
+                            ).length;
+                            const remaining = Math.max(0, totalStock - inCartCount);
+
+                            items.push({
+                                productId: product.id,
+                                series: product.series,
+                                collectionKey,
+                                colorIndex,
+                                colorName: color.name,
+                                clubType,
+                                img: getSelectedItemImage(color, clubType),
+                                price: basePrice,
+                                remaining
+                            });
+                        });
+                    });
+                });
+
+                // Sort so in-stock items always appear first
+                items.sort((a, b) => (b.remaining > 0 ? 1 : 0) - (a.remaining > 0 ? 1 : 0));
+
+                const inStockCount = items.filter(i => i.remaining > 0).length;
+                const displayItems = shopAllInStockOnly ? items.filter(i => i.remaining > 0) : items;
+
+                const cardsHtml = displayItems.length > 0
+                    ? `<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-5 md:gap-7">
+                        ${displayItems.map(item => {
+                            const isSoldOut = item.remaining <= 0;
+                            const placeholderBg = item.collectionKey === 'cadence' ? '1E3F20' : '4c111f';
+                            const badgeHtml = isSoldOut
+                                ? `<span class="absolute top-2 left-2 bg-gray-900/80 backdrop-blur-sm text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">Sold Out</span>`
+                                : `<span class="absolute top-2 left-2 bg-green-600/90 backdrop-blur-sm text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider shadow-sm">${item.remaining} in stock</span>`;
+
+                            const priceHtml = isSaleActive
+                                ? `<span class="text-gray-400 line-through text-xs mr-1">${sym}${item.price}</span><span class="text-red-600 font-bold">${sym}${Math.ceil(item.price * (1 - SALE_DISCOUNT))}</span>`
+                                : `<span class="text-[#4c111f] font-bold">${sym}${item.price}</span>`;
+
+                            return `
+                                <div onclick="openModal('${item.productId}', ${item.colorIndex}, '${item.clubType}')" class="group cursor-pointer bg-white rounded-xl md:rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-200/70 flex flex-col ${isSoldOut ? 'opacity-65' : ''}">
+                                    <div class="relative bg-gray-100 aspect-[4/5] overflow-hidden">
+                                        <img src="${item.img}" alt="${item.colorName} ${item.clubType}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 ${isSoldOut ? 'grayscale-[40%]' : ''}" onerror="this.onerror=null; this.src='https://placehold.co/600x750/${placeholderBg}/ffffff?text=${encodeURIComponent(item.colorName)}'">
+                                        ${badgeHtml}
+                                        <span class="absolute top-2 right-2 bg-white/90 backdrop-blur-sm text-[#4c111f] text-[9px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider shadow-sm">${item.clubType}</span>
+                                    </div>
+                                    <div class="p-3 md:p-4 flex flex-col flex-grow justify-between">
+                                        <div>
+                                            <p class="text-[10px] uppercase tracking-wider font-bold text-accent mb-0.5">${item.series}</p>
+                                            <h4 class="font-serif text-sm sm:text-base md:text-lg font-bold text-[#4c111f] leading-snug mb-1">${item.colorName}</h4>
+                                        </div>
+                                        <div class="flex items-center justify-between pt-2 border-t border-gray-100 mt-2">
+                                            <span class="text-sm md:text-base">${priceHtml}</span>
+                                            <span class="text-[10px] sm:text-xs font-bold uppercase tracking-wider ${isSoldOut ? 'text-gray-400' : 'text-[#4c111f] group-hover:text-accent'} transition-colors">
+                                                ${isSoldOut ? 'Sold Out' : 'Select <i class="fas fa-arrow-right ml-0.5 text-[9px]"></i>'}
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            `;
+                        }).join('')}
+                    </div>`
+                    : `<div class="bg-white rounded-2xl border border-dashed border-gray-300 p-8 text-center">
+                        <p class="text-gray-500 text-sm font-medium">No ${section.title.toLowerCase()} headcovers currently in stock. Turn off "In-Stock Only" to view sold-out designs.</p>
+                    </div>`;
+
+                return `
+                    <div id="${section.id}" class="scroll-mt-40">
+                        <div class="flex flex-wrap items-end justify-between gap-2 mb-5 pb-3 border-b border-[#4c111f]/15">
+                            <div>
+                                <h3 class="font-serif text-2xl sm:text-3xl font-bold text-[#4c111f]">${section.title}</h3>
+                                <p class="text-xs sm:text-sm text-gray-500 font-medium mt-0.5">${section.subtitle}</p>
+                            </div>
+                            <span class="text-xs font-bold px-3 py-1 rounded-full ${inStockCount > 0 ? 'bg-green-100 text-green-800' : 'bg-gray-200 text-gray-600'}">
+                                ${inStockCount} Available
+                            </span>
+                        </div>
+                        ${cardsHtml}
+                    </div>
+                `;
+            }).join('');
+
+            container.innerHTML = sectionHtml;
         }
 
         window.togglePatchOptions = function() {
@@ -1331,15 +1540,15 @@
             }
         }
 
-        window.openModal = function(productId) {
+        window.openModal = function(productId, presetColorIndex = 0, presetClubType = null) {
             currentModalProduct = allProducts.find(p => p.id === productId);
-            selectedColorIndex = 0;
+            selectedColorIndex = (presetColorIndex >= 0 && presetColorIndex < currentModalProduct.colors.length) ? presetColorIndex : 0;
             
             document.getElementById('modalSeries').textContent = currentModalProduct.series;
             document.getElementById('modalDesc').textContent = currentModalProduct.desc;
-            document.getElementById('modalTitle').textContent = currentModalProduct.colors[0].name;
+            document.getElementById('modalTitle').textContent = currentModalProduct.colors[selectedColorIndex].name;
 
-            injectModalClubs();
+            injectModalClubs(presetClubType);
             updateModalImage();
 
             const patchCheckbox = document.getElementById('addPatchCheckbox');
@@ -1371,7 +1580,7 @@
             setTimeout(() => updatePatchPreview(), 50);
         }
 
-        function injectModalClubs() {
+        function injectModalClubs(presetClubType = null) {
             const sym = PRICING[currentCurrency].symbol;
             const collectionKey = getCollectionKey(currentModalProduct.id);
             const isCadence = collectionKey === 'cadence';
@@ -1393,9 +1602,10 @@
 
             if (isCadence) {
                 clubTypesContainer.className = "grid grid-cols-2 gap-2 sm:gap-4";
+                const defaultType = (presetClubType === 'mallet') ? 'mallet' : 'blade';
                 html = `
                     <label class="cursor-pointer group">
-                        <input type="radio" name="clubType" value="blade" class="peer sr-only" checked onchange="selectClubType()">
+                        <input type="radio" name="clubType" value="blade" class="peer sr-only" ${defaultType === 'blade' ? 'checked' : ''} onchange="selectClubType()">
                         <div class="rounded-xl border-2 border-[#4c111f]/20 p-2 sm:p-4 text-center peer-checked:border-[#4c111f] peer-checked:bg-[#4c111f]/5 group-hover:border-[#4c111f]/30 transition-all h-full flex flex-col justify-center">
                             <span class="block font-bold text-[#4c111f] text-sm sm:text-base">Blade</span>
                             <span class="block text-xs sm:text-sm mt-1">
@@ -1404,7 +1614,7 @@
                         </div>
                     </label>
                     <label class="cursor-pointer group">
-                        <input type="radio" name="clubType" value="mallet" class="peer sr-only" onchange="selectClubType()">
+                        <input type="radio" name="clubType" value="mallet" class="peer sr-only" ${defaultType === 'mallet' ? 'checked' : ''} onchange="selectClubType()">
                         <div class="rounded-xl border-2 border-[#4c111f]/20 p-2 sm:p-4 text-center peer-checked:border-[#4c111f] peer-checked:bg-[#4c111f]/5 group-hover:border-[#4c111f]/30 transition-all h-full flex flex-col justify-center">
                             <span class="block font-bold text-[#4c111f] text-sm sm:text-base">Mallet</span>
                             <span class="block text-xs sm:text-sm mt-1">
@@ -1415,9 +1625,10 @@
                 `;
             } else {
                 clubTypesContainer.className = isHeritage ? "grid grid-cols-3 gap-2 sm:gap-4" : "grid grid-cols-2 gap-2 sm:gap-4";
+                const defaultType = (presetClubType === 'driver' || (isHeritage && presetClubType === 'hybrid')) ? presetClubType : 'wood';
                 html = `
                     <label class="cursor-pointer group">
-                        <input type="radio" name="clubType" value="wood" class="peer sr-only" checked onchange="selectClubType()">
+                        <input type="radio" name="clubType" value="wood" class="peer sr-only" ${defaultType === 'wood' ? 'checked' : ''} onchange="selectClubType()">
                         <div class="rounded-xl border-2 border-[#4c111f]/20 p-2 sm:p-4 text-center peer-checked:border-[#4c111f] peer-checked:bg-[#4c111f]/5 group-hover:border-[#4c111f]/30 transition-all h-full flex flex-col justify-center">
                             <span class="block font-bold text-[#4c111f] text-sm sm:text-base">Wood</span>
                             <span class="block text-xs sm:text-sm mt-1">
@@ -1426,7 +1637,7 @@
                         </div>
                     </label>
                     <label class="cursor-pointer group">
-                        <input type="radio" name="clubType" value="driver" class="peer sr-only" onchange="selectClubType()">
+                        <input type="radio" name="clubType" value="driver" class="peer sr-only" ${defaultType === 'driver' ? 'checked' : ''} onchange="selectClubType()">
                         <div class="rounded-xl border-2 border-[#4c111f]/20 p-2 sm:p-4 text-center peer-checked:border-[#4c111f] peer-checked:bg-[#4c111f]/5 group-hover:border-[#4c111f]/30 transition-all h-full flex flex-col justify-center">
                             <span class="block font-bold text-[#4c111f] text-sm sm:text-base">Driver</span>
                             <span class="block text-xs sm:text-sm mt-1">
@@ -1439,7 +1650,7 @@
                 if (isHeritage) {
                     html += `
                         <label class="cursor-pointer group">
-                            <input type="radio" name="clubType" value="hybrid" class="peer sr-only" onchange="selectClubType()">
+                            <input type="radio" name="clubType" value="hybrid" class="peer sr-only" ${defaultType === 'hybrid' ? 'checked' : ''} onchange="selectClubType()">
                             <div class="rounded-xl border-2 border-[#4c111f]/20 p-2 sm:p-4 text-center peer-checked:border-[#4c111f] peer-checked:bg-[#4c111f]/5 group-hover:border-[#4c111f]/30 transition-all h-full flex flex-col justify-center">
                                 <span class="block font-bold text-[#4c111f] text-sm sm:text-base">Hybrid</span>
                                 <span class="block text-xs sm:text-sm mt-1">
@@ -1748,6 +1959,9 @@
             } else {
                 bundleNotice.classList.add('hidden');
             }
+
+            // Keep Shop All live stock badges in sync with cart
+            renderShopAllGrid();
         }
         
         window.applyPromoCode = function() {
@@ -1948,6 +2162,17 @@
                 if (menuOptions && !menuOptions.classList.contains('hidden') && !menuSelectBtn.contains(e.target) && !menuOptions.contains(e.target)) toggleMenuDropdown();
             });
 
+            const shopAllMenuBtn = document.getElementById('shopAllMenuBtn');
+            const shopAllSubMenu = document.getElementById('shopAllSubMenu');
+            const shopAllMenuIcon = document.getElementById('shopAllMenuIcon');
+            if (shopAllMenuBtn) {
+                shopAllMenuBtn.addEventListener('click', () => {
+                    shopAllSubMenu.classList.toggle('hidden');
+                    shopAllSubMenu.classList.toggle('flex');
+                    shopAllMenuIcon.classList.toggle('rotate-180');
+                });
+            }
+
             const collectionsMenuBtn = document.getElementById('collectionsMenuBtn');
             const collectionsSubMenu = document.getElementById('collectionsSubMenu');
             const collectionsMenuIcon = document.getElementById('collectionsMenuIcon');
@@ -1972,6 +2197,27 @@
 
             document.querySelectorAll('.menu-link').forEach(link => {
                 link.addEventListener('click', closeMenu);
+            });
+
+            // Direct internal hash routing so menu & quick-jump links always work (in Preview and on live GitHub)
+            document.addEventListener('click', (e) => {
+                const link = e.target.closest('a[href^="#"]');
+                if (!link) return;
+                const targetHash = link.getAttribute('href');
+                if (!targetHash || targetHash === '#') return;
+
+                e.preventDefault();
+                if (link.classList.contains('menu-link')) {
+                    closeMenu();
+                }
+                try {
+                    if (window.location.hash !== targetHash) {
+                        window.location.hash = targetHash;
+                    }
+                } catch (err) {
+                    // Ignore hash update errors in restricted iframe sandboxes
+                }
+                handleRoute(targetHash);
             });
             
             document.getElementById('checkoutBtn').addEventListener('click', async () => {
