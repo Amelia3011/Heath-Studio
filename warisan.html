@@ -72,6 +72,19 @@
         .marquee-container:hover .animate-marquee {
             animation-play-state: paused;
         }
+        @keyframes communityLoop {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-community-loop {
+            display: flex;
+            width: max-content;
+            animation: communityLoop 28s linear infinite;
+        }
+        .community-slideshow-wrap:hover .animate-community-loop,
+        .community-slideshow-wrap:active .animate-community-loop {
+            animation-play-state: paused;
+        }
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
         
@@ -276,7 +289,7 @@
                 <img src="Untitled design.png" alt="Golf course green" class="absolute inset-0 w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/1200x500/228b22/ffffff?text=GOLF+GREEN'">
             </section>
 
-            <!-- NEW: Spotted on the Fairways — Community Gallery & Customer Reviews -->
+            <!-- Spotted on the Fairways — Looping 5-Photo Community Slideshow & Customer Reviews -->
             <section id="community" class="py-16 md:py-24 bg-white border-t border-[#4c111f]/10 scroll-mt-24">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
@@ -294,35 +307,12 @@
                         </div>
                     </div>
 
-                    <!-- Horizontal Scrollable "In The Bag" Photo Strip -->
-                    <div class="flex gap-4 overflow-x-auto no-scrollbar pb-4 mb-10 snap-x">
-                        <div class="flex-shrink-0 w-52 sm:w-64 aspect-[4/5] rounded-2xl overflow-hidden relative group shadow-sm border border-gray-200/70 snap-start">
-                            <img src="argyle 2.jpg" alt="In the bag - Argyle" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='https://placehold.co/400x500/4c111f/ffffff?text=In+The+Bag'">
-                            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 to-transparent p-3.5">
-                                <span class="text-white text-xs font-bold block">@danial.golf</span>
-                                <span class="text-gray-200 text-[10px]">Argyle Heritage Set &bull; KL</span>
-                            </div>
-                        </div>
-                        <div class="flex-shrink-0 w-52 sm:w-64 aspect-[4/5] rounded-2xl overflow-hidden relative group shadow-sm border border-gray-200/70 snap-start">
-                            <img src="houndstooth 1.jpg" alt="In the bag - Houndstooth" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='https://placehold.co/400x500/2B1B17/ffffff?text=In+The+Bag'">
-                            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 to-transparent p-3.5">
-                                <span class="text-white text-xs font-bold block">@marcus.t</span>
-                                <span class="text-gray-200 text-[10px]">Crimson Houndstooth &bull; SG</span>
-                            </div>
-                        </div>
-                        <div class="flex-shrink-0 w-52 sm:w-64 aspect-[4/5] rounded-2xl overflow-hidden relative group shadow-sm border border-gray-200/70 snap-start">
-                            <img src="tartan 9.jpg" alt="In the bag - Tartan" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='https://placehold.co/400x500/800000/ffffff?text=In+The+Bag'">
-                            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 to-transparent p-3.5">
-                                <span class="text-white text-xs font-bold block">@farah.fairways</span>
-                                <span class="text-gray-200 text-[10px]">Haymarket Tartan &bull; Selangor</span>
-                            </div>
-                        </div>
-                        <div class="flex-shrink-0 w-52 sm:w-64 aspect-[4/5] rounded-2xl overflow-hidden relative group shadow-sm border border-gray-200/70 snap-start">
-                            <img src="ET3.png" alt="In the bag - Atelier" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='https://placehold.co/400x500/1E3F20/ffffff?text=In+The+Bag'">
-                            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 to-transparent p-3.5">
-                                <span class="text-white text-xs font-bold block">@kenji_swings</span>
-                                <span class="text-gray-200 text-[10px]">Atelier Collection &bull; SG</span>
-                            </div>
+                    <!-- Seamless Infinite-Looping 5-Photo "In The Bag" Slideshow (Pauses on Hover, Tap to Zoom) -->
+                    <div class="community-slideshow-wrap relative overflow-hidden mb-10 py-2">
+                        <div class="pointer-events-none absolute inset-y-0 left-0 w-8 sm:w-16 bg-gradient-to-r from-white to-transparent z-10"></div>
+                        <div class="pointer-events-none absolute inset-y-0 right-0 w-8 sm:w-16 bg-gradient-to-l from-white to-transparent z-10"></div>
+                        <div id="communitySlideshowTrack" class="animate-community-loop flex items-stretch">
+                            <!-- 5 customer bag photos injected & looped seamlessly via JS -->
                         </div>
                     </div>
 
@@ -595,7 +585,6 @@
     </footer>
 
     <!-- Floating WhatsApp Button for Custom Orders -->
-    <!-- IMPORTANT: Replace '60123456789' below with your actual WhatsApp number (with country code, no '+' or spaces) -->
     <a href="https://wa.me/60182757370?text=Hi%20Heath%20Studio!%20I%27d%20like%20to%20enquire%20about%20a%20custom-made%20order."
        target="_blank"
        rel="noopener noreferrer"
@@ -623,7 +612,7 @@
         <div class="flex-1 px-6 pt-6 space-y-2 overflow-y-auto no-scrollbar">
             <a href="#home" class="menu-link block py-3 text-lg font-medium text-[#4c111f] hover:opacity-80 border-b border-gray-100 transition-all">Home</a>
             
-            <!-- NEW: Shop All Dropdown -->
+            <!-- Shop All Dropdown -->
             <div class="border-b border-gray-100">
                 <button id="shopAllMenuBtn" class="w-full flex justify-between items-center py-3 text-lg font-medium text-[#4c111f] hover:opacity-80 transition-all focus:outline-none">
                     <span>Shop All</span>
@@ -644,7 +633,6 @@
                     <i class="fas fa-chevron-down text-sm transition-transform duration-300" id="collectionsMenuIcon"></i>
                 </button>
                 <div id="collectionsSubMenu" class="hidden flex-col pl-4 pb-2 space-y-2 mt-1">
-                    <!-- NEW Collection Link -->
                     <a href="#cadence" class="menu-link block py-2 text-base font-bold text-accent hover:text-[#4c111f] transition-all leading-snug">
                         The Putter Series | Cadence Collection
                         <span class="text-[10px] ml-1 bg-red-100 text-red-700 px-1.5 py-0.5 rounded uppercase align-middle">NEW</span>
@@ -658,7 +646,6 @@
 
             <a href="#about" class="menu-link block py-3 text-lg font-medium text-[#4c111f] hover:opacity-80 border-b border-gray-100 transition-all">About Us</a>
 
-            <!-- NEW: Track Your Order Link -->
             <a href="#track-order" class="menu-link flex items-center justify-between py-3 text-lg font-medium text-[#4c111f] hover:opacity-80 border-b border-gray-100 transition-all">
                 <span>Track Your Order</span>
                 <i class="fas fa-truck-fast text-sm text-accent"></i>
@@ -966,7 +953,7 @@
                             </div>
                         </div>
 
-                        <!-- NEW: Fit Guide, Materials & Care Accordion -->
+                        <!-- Fit Guide, Materials & Care Accordion -->
                         <div class="mt-4 border border-gray-200 rounded-xl overflow-hidden shadow-sm">
                             <button type="button" onclick="toggleFitGuide()" class="w-full flex items-center justify-between p-4 bg-white hover:bg-gray-50 transition-colors text-left focus:outline-none">
                                 <span class="font-bold text-sm text-[#4c111f] flex items-center gap-2">
@@ -1071,7 +1058,7 @@
                     </div>
                     <div>
                         <label for="reviewRegion" class="block text-xs font-bold text-[#4c111f] uppercase tracking-wider mb-1.5">Region</label>
-                        <select id="reviewRegion" class="w-full border border-gray-300 rounded-xl px-3 py-2.5 text-sm bg-white focus:border-[#4c111f] focus:ring-[#4c111f] outline-none">
+                        <select id="reviewRegion" class="w-full border border-gray-300 rounded-xl px-3.5 py-2.5 text-sm bg-white focus:border-[#4c111f] focus:ring-[#4c111f] outline-none">
                             <option value="MY">MY</option>
                             <option value="SG">SG</option>
                         </select>
@@ -1193,89 +1180,98 @@
 
     <script>
         // ============================================================
-        // NEW: Data for The Putter Series | Cadence Collection (3rd Drop)
-        // Update image filenames, names, hex colors, and stock counts below
+        // NEW: 5 Customer Bag Photos for Looping Community Slideshow
+        // Replace 'customer1.jpg'..'customer5.jpg' with your 5 photo filenames!
+        // ============================================================
+        const communityPhotos = [
+            { img: 'Clubhouse1.JPG', handle: '@amrrhkmi', caption: 'Tartan Crimson Set • KL' },
+            { img: 'Clubhouse2.JPG', handle: '@aishagffrey', caption: 'Argyle Blush • Selangor' },
+            { img: 'Clubhouse3.JPG', handle: '@adzharkahar', caption: 'Terracotta Moss • Selangor' },
+            { img: 'Clubhouse4.JPG', handle: '@_bilboa', caption: 'Azure Moss • KL' },
+            { img: 'Clubhouse5.JPG', handle: '@_nrmnhkm_', caption: 'Custom Order • Singapore' },
+            { img: 'Clubhouse6.JPG', handle: '@amirulasyraafcz', caption: 'BlackBone • KL' }
+        ];
+
+        // ============================================================
+        // Data for The Putter Series | Cadence Collection (3rd Drop)
         // ============================================================
         const cadenceProducts = [
             { 
-                // GRID 1 — 2 Colorways (Yellow-Brown Tone: Waffle & Stripe)
                 id: 'cadence-ochre', 
                 series: 'Cadence Ochre', 
                 desc: 'Warm golden-brown tones in tactile waffle and classic stripe weaves with magnetic closure.', 
-                slideshowImages: ['PineB.jpg', 'Bunker4.jpg', 'WaffleB.jpg'], 
+                slideshowImages: ['PineB.JPG', 'Bunker4.JPG', 'WaffleB.JPG', 'Pine3.JPG'], 
                 colors: [
                     { 
                         name: 'Waffle', 
                         hex: '#F7BE14', 
-                        bladeImg: 'WaffleB.jpg', 
-                        malletImg: 'Waffle4.jpg', 
-                        galleryImages: ['Waffle1.jpg', 'WaffleB.jpg', 'Waffle2.jpg', 'Waffle4.jpg', 'Waffle3.jpg'],
+                        bladeImg: 'WaffleB.JPG', 
+                        malletImg: 'Waffle4.JPG', 
+                        galleryImages: ['Waffle1.JPG', 'WaffleB.JPG', 'Waffle2.JPG', 'Waffle4.JPG', 'WaffleB2.JPG', 'Waffle3.JPG'],
                         stock: { blade: 3, mallet: 3 } 
                     },
                      { 
                         name: 'Pine', 
                         hex: '#05472A', 
-                        bladeImg: 'PineB.jpg', 
-                        malletImg: 'Pine4.jpg', 
-                        galleryImages: ['Pine1.jpg', 'PineB.jpg', 'Pine2.jpg', 'Pine3.jpg', 'Pine4.jpg'],
+                        bladeImg: 'PineB.JPG', 
+                        malletImg: 'Pine4.JPG', 
+                        galleryImages: ['Pine1.JPG', 'PineB.JPG', 'Pine2.JPG', 'PineB2.JPG', 'Pine4.JPG'],
                         stock: { blade: 3, mallet: 3 } 
                     },
                     { 
                         name: 'Bunker', 
                         hex: '#654321', 
-                        bladeImg: 'BunkerB.jpg', 
-                        malletImg: 'Bunker4.jpg', 
-                        galleryImages: ['Bunker1.jpg', 'BunkerB.jpg', 'Bunker2.jpg', 'Bunker4.jpg', 'Bunker3.jpg'],
+                        bladeImg: 'BunkerB.JPG', 
+                        malletImg: 'Bunker4.JPG', 
+                        galleryImages: ['Bunker1.JPG', 'BunkerB.JPG', 'Bunker2.JPG', 'BunkerB2.JPG', 'Bunker4.jpg'],
                         stock: { blade: 3, mallet: 3 } 
                     }
                 ] 
             },
             { 
-                // GRID 2 — 2 Colorways (Blue Tone: Waffle & Houndstooth)
                 id: 'cadence-coastal', 
                 series: 'Cadence Coastal', 
                 desc: 'Refined coastal blues in textured waffle and tailored houndstooth patterns with plush velvet lining.', 
-                slideshowImages: ['Porcelain4.JPEG', 'BreezeB.JPEG'], 
+                slideshowImages: ['ChimeB.JPG', 'Breeze1.JPGG', 'Porcelain1.JPG', 'Breeze3.JPG'], 
                 colors: [
                     { 
                         name: 'Breeze', 
                         hex: '#aec9ea', 
-                        bladeImg: 'BreezeB.jpg', 
-                        malletImg: 'Breeze2.jpg', 
-                        galleryImages: ['Breeze1.jpg', 'BreezeB.jpg', 'Breeze2.jpg', 'Breeze3.jpg'],
+                        bladeImg: 'BreezeB.JPG', 
+                        malletImg: 'Breeze2.JPG', 
+                        galleryImages: ['Breeze1.JPG', 'BreezeB.JPG', 'Breeze2.JPG', 'Breeze3.jpg'],
                         stock: { blade: 3, mallet: 3 } 
                     },
                     { 
                         name: 'Porcelain', 
                         hex: '#151667', 
-                        bladeImg: 'ChimeB.jpg', 
-                        malletImg: 'Porcelain4.jpg', 
-                        galleryImages: ['Porcelain.jpg', 'ChimeB.jpg', 'Porcelain2.jpg', 'Porcelain4.JPEG'],
+                        bladeImg: 'ChimeB.JPG', 
+                        malletImg: 'Porcelain4.JPG', 
+                        galleryImages: ['Porcelain.JPG', 'ChimeB.JPG', 'Porcelain2.JPG', 'ChimeB2.JPG', 'Porcelain4.JPG'],
                         stock: { blade: 3, mallet: 3 } 
                     }
                 ] 
             },
             { 
-                // GRID 3 — 3 Colorways (Green Herringbone, Plain Green & Plain Black)
                 id: 'cadence-classic', 
                 series: 'Cadence Classic', 
                 desc: 'Timeless fairway greens in herringbone and plain finishes alongside our sleek plain Midnight black.', 
-                slideshowImages: ['MidnightB.jpg', 'Forest4.JPEG'], 
+                slideshowImages: ['MidnightB.JPG', 'Forest1.JPG', 'Midnight1.JPG', 'Forest3.JPG'], 
                 colors: [
                     { 
                         name: 'Forest', 
                         hex: '#304529', 
-                        bladeImg: 'ForestB.jpg', 
-                        malletImg: 'Forest4.JPEG', 
-                        galleryImages: ['Forest1.jpg', 'ForestB.jpg', 'Forest2.jpg', 'Forest4.JPEG', 'Forest3.jpg'],
+                        bladeImg: 'ForestB.JPG', 
+                        malletImg: 'Forest4.JPG', 
+                        galleryImages: ['Forest1.JPG', 'ForestB.JPG', 'Forest2.JPG', 'ForestB2.JPG', 'Forest3.JPG'],
                         stock: { blade: 3, mallet: 3 } 
                     },
                     { 
-                        name: 'Midnight (Plain Black)', 
+                        name: 'Midnight', 
                         hex: '#000000', 
-                        bladeImg: 'MidnightB.jpg', 
-                        malletImg: 'Midnight4.JPEG', 
-                        galleryImages: ['Midnight1.jpg', 'MidnightB.jpg', 'Midnight2.jpg', 'Midnight4.JPEG', 'Midnight3.jpg'],
+                        bladeImg: 'MidnightB.JPG', 
+                        malletImg: 'Midnight4.JPG', 
+                        galleryImages: ['Midnight1.JPG', 'MidnightB.JPG', 'Midnight2.JPG', 'MidnightB2.JPG', 'Midnight4.JPG'],
                         stock: { blade: 3, mallet: 3 } 
                     }
                 ] 
@@ -1333,7 +1329,7 @@
         
         const allProducts = [...cadenceProducts, ...heritageProducts, ...atelierProducts];
 
-        // Split Pricing Structure (Includes Cadence Putter Series pricing - edit as needed)
+        // Split Pricing Structure
         const PRICING = {
             MYR: { 
                 symbol: 'RM ', 
@@ -1424,6 +1420,28 @@
         let discountAmount = 0;
 
         // ----------------------------------------------------
+        // LOOPING COMMUNITY SLIDESHOW (5 Customer Photos)
+        // ----------------------------------------------------
+        function renderCommunitySlideshow() {
+            const track = document.getElementById('communitySlideshowTrack');
+            if (!track || !communityPhotos.length) return;
+
+            const buildSlideCard = (photo, idx) => `
+                <div onclick="openZoom('${photo.img}')" class="flex-shrink-0 w-52 sm:w-64 aspect-[4/5] mr-4 rounded-2xl overflow-hidden relative group shadow-sm hover:shadow-xl border border-gray-200/70 cursor-zoom-in transition-shadow duration-300">
+                    <img src="${photo.img}" alt="In the bag - ${escapeHtml(photo.handle)}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='https://placehold.co/400x500/4c111f/ffffff?text=Customer+Bag+${(idx % communityPhotos.length) + 1}'">
+                    <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent p-3.5">
+                        <span class="text-white text-xs font-bold block">${escapeHtml(photo.handle)}</span>
+                        <span class="text-gray-200 text-[10px]">${escapeHtml(photo.caption)}</span>
+                    </div>
+                </div>
+            `;
+
+            // Duplicate the 5 photos once so CSS translateX(-50%) loops seamlessly with zero jump
+            const loopedSlides = [...communityPhotos, ...communityPhotos];
+            track.innerHTML = loopedSlides.map(buildSlideCard).join('');
+        }
+
+        // ----------------------------------------------------
         // CART PERSISTENCE (localStorage) & META PIXEL HELPER
         // ----------------------------------------------------
         function loadCartFromStorage() {
@@ -1502,6 +1520,7 @@
             startDropCountdown();
             setupEventListeners();
             renderProductGrids();
+            renderCommunitySlideshow();
             loadAndRenderReviews();
             setupRouter(); 
             await detectUserLocation();
@@ -1758,7 +1777,7 @@
         }
 
         // ----------------------------------------------------
-        // SPA Router Logic (Updated with #cadence & #shop-all routes)
+        // SPA Router Logic
         // ----------------------------------------------------
         function setupRouter() {
             window.addEventListener('hashchange', () => handleRoute(window.location.hash));
@@ -1776,7 +1795,6 @@
             
             if (!viewHome || !viewCadence || !viewHeritage || !viewAtelier || !viewShopAll || !viewTrackOrder) return;
 
-            // Hide all views first
             viewHome.classList.add('hidden');
             viewCadence.classList.add('hidden');
             viewHeritage.classList.add('hidden');
@@ -1784,10 +1802,8 @@
             viewShopAll.classList.add('hidden');
             viewTrackOrder.classList.add('hidden');
 
-            // Show the requested view
             if (hash === '#track-order') {
                 viewTrackOrder.classList.remove('hidden');
-                // Match default courier region to current currency (MY = J&T Express, SG = Teleport)
                 const regionRadio = document.querySelector(`input[name="jtRegion"][value="${currentCurrency === 'SGD' ? 'SG' : 'MY'}"]`);
                 if (regionRadio) regionRadio.checked = true;
                 updateTrackPlaceholder();
@@ -1902,7 +1918,7 @@
                         <input type="radio" name="shippingZone" value="singapore" class="peer sr-only" checked onchange="updateCartUI()">
                         <div class="rounded-xl border-2 border-[#4c111f]/20 p-3 text-center peer-checked:border-[#4c111f] peer-checked:bg-[#4c111f]/5 group-hover:border-[#4c111f]/30 transition-all">
                             <span class="block font-semibold text-[#4c111f] text-sm">International (Singapore)</span>
-                            <span class="block text-xs text-[#4c111f]/70 mt-1">S$ 12</span>
+                            <span class="block text-xs text-[#4c111f]/70 mt-1">S$ ${PRICING.SGD.shipping}</span>
                         </div>
                     </label>
                     <label class="cursor-pointer group col-span-2">
@@ -1930,14 +1946,14 @@
                         <input type="radio" name="shippingZone" value="west" class="peer sr-only" checked onchange="updateCartUI()">
                         <div class="rounded-xl border-2 border-[#4c111f]/20 p-3 text-center peer-checked:border-[#4c111f] peer-checked:bg-[#4c111f]/5 group-hover:border-[#4c111f]/30 transition-all">
                             <span class="block font-semibold text-[#4c111f] text-sm">West Malaysia</span>
-                            <span class="block text-xs text-[#4c111f]/70 mt-1">RM 10</span>
+                            <span class="block text-xs text-[#4c111f]/70 mt-1">RM ${PRICING.MYR.shippingWest}</span>
                         </div>
                     </label>
                     <label class="cursor-pointer group">
                         <input type="radio" name="shippingZone" value="east" class="peer sr-only" onchange="updateCartUI()">
                         <div class="rounded-xl border-2 border-[#4c111f]/20 p-3 text-center peer-checked:border-[#4c111f] peer-checked:bg-[#4c111f]/5 group-hover:border-[#4c111f]/30 transition-all">
                             <span class="block font-semibold text-[#4c111f] text-sm">East Malaysia</span>
-                            <span class="block text-xs text-[#4c111f]/70 mt-1">RM 15</span>
+                            <span class="block text-xs text-[#4c111f]/70 mt-1">RM ${PRICING.MYR.shippingEast}</span>
                         </div>
                     </label>
                     <label class="cursor-pointer group col-span-2">
@@ -1972,7 +1988,6 @@
                 const collectionKey = getCollectionKey(product.id);
                 const prices = PRICING[currentCurrency][collectionKey];
                 
-                // Dynamically find the lowest non-zero price for the "From" tag
                 const validPrices = Object.values(prices).filter(v => v > 0);
                 const startingPrice = Math.min(...validPrices);
                 const placeholderBg = collectionKey === 'cadence' ? '1E3F20' : '4c111f';
@@ -2078,7 +2093,6 @@
                     });
                 });
 
-                // Sort so in-stock items always appear first
                 items.sort((a, b) => (b.remaining > 0 ? 1 : 0) - (a.remaining > 0 ? 1 : 0));
 
                 const inStockCount = items.filter(i => i.remaining > 0).length;
@@ -2226,13 +2240,11 @@
             updateModalImage();
             populateFitGuide();
 
-            // Reset Fit Guide accordion to collapsed
             const fitBody = document.getElementById('fitGuideBody');
             const fitChev = document.getElementById('fitGuideChevron');
             if (fitBody) fitBody.classList.add('hidden');
             if (fitChev) fitChev.classList.remove('rotate-180');
 
-            // Fire Meta Pixel ViewContent event
             const activeTypeEl = document.querySelector('input[name="clubType"]:checked');
             const viewCollectionKey = getCollectionKey(currentModalProduct.id);
             const viewPrice = activeTypeEl ? PRICING[currentCurrency][viewCollectionKey][activeTypeEl.value] : 0;
@@ -2257,7 +2269,7 @@
             }
 
             document.getElementById('modalColors').innerHTML = currentModalProduct.colors.map((color, index) => `
-                <button onclick="selectColor(${index})" class="w-12 h-12 rounded-full transition-all ${index === selectedColorIndex ? 'border-4 border-white ring-2 ring-primary scale-110 shadow-md' : 'border-2 border-gray-200'}" style="${color.bgStyle ? color.bgStyle : `background-color: ${color.hex}`}" id="colorBtn-${index}"></button>
+                <button onclick="selectColor(${index})" title="${color.name}" aria-label="${color.name}" class="w-12 h-12 rounded-full transition-all ${index === selectedColorIndex ? 'border-4 border-white ring-2 ring-primary scale-110 shadow-md' : 'border-2 border-gray-200'}" style="${color.bgStyle ? color.bgStyle : `background-color: ${color.hex}`}" id="colorBtn-${index}"></button>
             `).join('');
 
             document.getElementById('productModal').classList.remove('hidden');
@@ -2428,8 +2440,9 @@
             const colorData = currentModalProduct.colors[selectedColorIndex];
             const primaryImg = getSelectedItemImage(colorData, type);
 
-            // Build deduplicated multi-angle gallery (selected club image first + slideshow angles)
-            const gallerySet = [primaryImg, ...(currentModalProduct.slideshowImages || [])].filter(Boolean);
+            // Use per-colorway galleryImages when available so switching swatches shows that colorway's angles
+            const extraAngles = colorData.galleryImages || currentModalProduct.slideshowImages || [];
+            const gallerySet = [primaryImg, ...extraAngles].filter(Boolean);
             modalGalleryImages = [...new Set(gallerySet)];
             currentGalleryIndex = 0;
             renderModalGallery();
@@ -2525,7 +2538,6 @@
             const stockStatus = document.getElementById('modalStockStatus');
             const restockBtn = document.getElementById('whatsappRestockBtn');
             
-            // Cadence Saturday Launch Lock (Auto-unlocks when countdown reaches 0)
             const isCadence = getCollectionKey(currentModalProduct.id) === 'cadence';
             if (isCadence && !isCadenceLaunched()) {
                 btn.disabled = true;
@@ -2544,7 +2556,6 @@
                 btn.classList.remove('hover:opacity-90', 'active:scale-95', 'bg-[#4c111f]', 'bg-gray-800');
                 stockStatus.innerHTML = `<span class="text-red-500 font-bold"><i class="fas fa-times-circle mr-1"></i>Out of stock</span>`;
 
-                // Show pre-filled WhatsApp Restock / Custom Order Lead Button
                 if (restockBtn) {
                     const clubLabel = type.charAt(0).toUpperCase() + type.slice(1);
                     const waMsg = encodeURIComponent(`Hi Heath Studio! Is the ${colorData.name} (${clubLabel}) restocking soon, or can I request a custom order?`);
@@ -2601,7 +2612,6 @@
             });
             saveCartToStorage();
 
-            // Fire Meta Pixel AddToCart event
             const addedPrice = Math.ceil(PRICING[currentCurrency][collectionKey][type] * (1 - SALE_DISCOUNT)) + (patchData ? patchData.price : 0);
             trackMetaEvent('AddToCart', {
                 content_name: `${currentModalProduct.series} - ${color.name} (${type})`,
@@ -2719,7 +2729,6 @@
                 }
             }
 
-            // Toggle Pickup Notice & Address Fields visibility
             const pickupNoticeEl = document.getElementById('pickupNotice');
             const addressFieldsEl = document.getElementById('deliveryAddressFields');
             if (pickupNoticeEl) {
@@ -2731,7 +2740,6 @@
                 else addressFieldsEl.classList.remove('hidden');
             }
 
-            // Free Shipping threshold check
             const freeShipThreshold = currentCurrency === 'MYR' ? FREE_SHIPPING_MYR : FREE_SHIPPING_SGD;
             let isFreeShipping = false;
             
@@ -2759,7 +2767,6 @@
                 totalEl.textContent = `${sym}${calculatedFinalTotal.toFixed(0)}`;
             }
 
-            // Update Itemized Order Breakdown (Mini-Receipt)
             const breakdownEl = document.getElementById('cartBreakdown');
             if (breakdownEl) {
                 if (cart.length > 0) {
@@ -2807,7 +2814,6 @@
                 }
             }
 
-            // Smart Bundle Upsell Prompt (When shopper has an unmatched Driver or Wood)
             const upsellBox = document.getElementById('bundleUpsellNotice');
             const upsellText = document.getElementById('bundleUpsellText');
             const upsellLink = document.getElementById('bundleUpsellLink');
@@ -2836,7 +2842,6 @@
                 bundleNotice.classList.add('hidden');
             }
 
-            // Keep Shop All live stock badges in sync with cart
             renderShopAllGrid();
         }
         
@@ -2909,7 +2914,7 @@
             const courierName = isTeleport ? 'Teleport' : 'J&T Express';
             const courierSlug = isTeleport ? 'teleport' : 'jt';
             const waText = encodeURIComponent(`Hi Heath Studio! I'd like to check on my order with ${courierName} tracking number: ${trackingNum}`);
-            const waUrl = `https://wa.me/60123456789?text=${waText}`;
+            const waUrl = `https://wa.me/60182757370?text=${waText}`;
 
             const badgeEl = document.getElementById('jtResultCourierBadge');
             const directLinkEl = document.getElementById('jtDirectLink');
@@ -2928,7 +2933,6 @@
             resultBox.classList.remove('hidden');
             embedContainer.innerHTML = '';
 
-            // Helper to render the embedded live tracker directly on your page
             const renderEmbeddedTracker = () => {
                 if (window.TrackButton && typeof window.TrackButton.embed === 'function') {
                     window.TrackButton.embed({
@@ -3252,7 +3256,6 @@
                 }
                 err.classList.add('hidden');
 
-                // Fire Meta Pixel InitiateCheckout event
                 trackMetaEvent('InitiateCheckout', {
                     value: calculatedFinalTotal,
                     currency: currentCurrency,
