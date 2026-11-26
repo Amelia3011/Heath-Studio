@@ -284,9 +284,14 @@
                             <span class="text-xs font-bold uppercase tracking-widest text-accent mb-2 block">Community &amp; Reviews</span>
                             <h2 class="font-serif text-3xl md:text-4xl font-bold text-[#4c111f]">Spotted on the Fairways</h2>
                         </div>
-                        <a href="https://instagram.com/heath.golf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-bold text-[#4c111f] hover:text-accent transition-colors">
-                            <i class="fab fa-instagram text-lg"></i> Tag @heath.golf to be featured
-                        </a>
+                        <div class="flex flex-wrap items-center gap-3">
+                            <button type="button" onclick="openReviewModal()" class="inline-flex items-center gap-2 bg-[#4c111f] text-white px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold shadow-md hover:opacity-90 active:scale-95 transition-all focus:outline-none">
+                                <i class="fas fa-pen-nib text-xs"></i> Leave a Review
+                            </button>
+                            <a href="https://instagram.com/heath.golf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-[#4c111f] hover:text-accent border border-[#4c111f]/20 px-4 py-2.5 rounded-full transition-colors">
+                                <i class="fab fa-instagram text-base"></i> Tag @heath.golf
+                            </a>
+                        </div>
                     </div>
 
                     <!-- Horizontal Scrollable "In The Bag" Photo Strip -->
@@ -321,38 +326,9 @@
                         </div>
                     </div>
 
-                    <!-- Customer Reviews Grid -->
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div class="bg-gray-50 rounded-2xl p-6 border border-gray-200/70 shadow-sm">
-                            <div class="flex items-center gap-1 text-amber-500 text-xs mb-3">
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                            </div>
-                            <p class="text-gray-700 text-sm leading-relaxed mb-4">"The velvet lining feels super plush on my driver and the custom embroidered patch came out way cleaner than I expected. Easily the best-looking covers in my flight."</p>
-                            <div class="flex items-center justify-between text-xs">
-                                <span class="font-bold text-[#4c111f]">Amirul H.</span>
-                                <span class="text-green-700 font-semibold"><i class="fas fa-check-circle mr-1"></i>Verified Buyer &bull; MY</span>
-                            </div>
-                        </div>
-                        <div class="bg-gray-50 rounded-2xl p-6 border border-gray-200/70 shadow-sm">
-                            <div class="flex items-center gap-1 text-amber-500 text-xs mb-3">
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                            </div>
-                            <p class="text-gray-700 text-sm leading-relaxed mb-4">"Ordered on Tuesday night and received it in Singapore by Thursday via Teleport. Quality rivals luxury golf brands at twice the price."</p>
-                            <div class="flex items-center justify-between text-xs">
-                                <span class="font-bold text-[#4c111f]">Marcus T.</span>
-                                <span class="text-green-700 font-semibold"><i class="fas fa-check-circle mr-1"></i>Verified Buyer &bull; SG</span>
-                            </div>
-                        </div>
-                        <div class="bg-gray-50 rounded-2xl p-6 border border-gray-200/70 shadow-sm">
-                            <div class="flex items-center gap-1 text-amber-500 text-xs mb-3">
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                            </div>
-                            <p class="text-gray-700 text-sm leading-relaxed mb-4">"Picked up the Heritage bundle in Glenmarie before my weekend round. Snug fit, zero slipping in the cart, and the tartan texture looks unreal in person."</p>
-                            <div class="flex items-center justify-between text-xs">
-                                <span class="font-bold text-[#4c111f]">Rachel L.</span>
-                                <span class="text-green-700 font-semibold"><i class="fas fa-check-circle mr-1"></i>Verified Buyer &bull; MY</span>
-                            </div>
-                        </div>
+                    <!-- Dynamic Customer Reviews Grid -->
+                    <div id="reviewsGrid" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- Reviews injected via JS -->
                     </div>
                 </div>
             </section>
@@ -620,7 +596,7 @@
 
     <!-- Floating WhatsApp Button for Custom Orders -->
     <!-- IMPORTANT: Replace '60123456789' below with your actual WhatsApp number (with country code, no '+' or spaces) -->
-    <a href="https://wa.me/60123456789?text=Hi%20Heath%20Studio!%20I%27d%20like%20to%20enquire%20about%20a%20custom-made%20order."
+    <a href="https://wa.me/60182757370?text=Hi%20Heath%20Studio!%20I%27d%20like%20to%20enquire%20about%20a%20custom-made%20order."
        target="_blank"
        rel="noopener noreferrer"
        aria-label="Chat on WhatsApp for Custom Orders"
@@ -812,7 +788,7 @@
                     <div id="pickupNotice" class="hidden mt-3 bg-amber-50 border border-amber-200 rounded-xl p-3.5 text-xs text-amber-900 leading-relaxed animate-fade-in-down">
                         <p class="font-bold text-[#4c111f] mb-1"><i class="fas fa-map-marker-alt mr-1.5 text-accent"></i>Self-Pickup — Glenmarie, Shah Alam</p>
                         <p class="mb-2">Skip the shipping fee and wait! We are based in <strong>Glenmarie</strong>. Once your order is placed, please reach out to us on WhatsApp to arrange your pickup time.</p>
-                        <a href="https://wa.me/60123456789?text=Hi%20Heath%20Studio!%20I%20would%20like%20to%20arrange%20a%20self-pickup%20in%20Glenmarie%20for%20my%20order." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 font-bold text-green-700 hover:text-green-800 underline">
+                        <a href="https://wa.me/60182757370?text=Hi%20Heath%20Studio!%20I%20would%20like%20to%20arrange%20a%20self-pickup%20in%20Glenmarie%20for%20my%20order." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 font-bold text-green-700 hover:text-green-800 underline">
                             <i class="fab fa-whatsapp text-sm"></i> Contact us on WhatsApp to arrange pickup
                         </a>
                     </div>
@@ -1059,6 +1035,76 @@
         </div>
     </div>
 
+    <!-- Leave a Review Modal -->
+    <div id="reviewModal" class="fixed inset-0 z-[95] hidden items-center justify-center">
+        <div class="absolute inset-0 bg-black bg-opacity-60 backdrop-blur-sm transition-opacity duration-300 opacity-0" id="reviewModalBackdrop" onclick="closeReviewModal()"></div>
+        <div class="bg-white rounded-2xl w-full max-w-md m-4 relative z-10 shadow-2xl transform scale-95 opacity-0 transition-all duration-300 p-6 sm:p-8 max-h-[90vh] overflow-y-auto no-scrollbar" id="reviewModalContent">
+            <button type="button" onclick="closeReviewModal()" class="absolute top-4 right-4 text-gray-400 hover:text-[#4c111f] w-9 h-9 rounded-full flex items-center justify-center focus:outline-none transition-colors" aria-label="Close review modal">
+                <i class="fas fa-times text-lg"></i>
+            </button>
+
+            <div class="mb-6">
+                <span class="text-[11px] font-bold uppercase tracking-widest text-accent block mb-1">Share Your Experience</span>
+                <h2 class="font-serif text-2xl sm:text-3xl font-bold text-[#4c111f]">Leave a Review</h2>
+                <p class="text-xs text-gray-500 mt-1">Tell fellow golfers what you think about your Heath headcovers.</p>
+            </div>
+
+            <form id="reviewForm" onsubmit="submitReview(event)" class="space-y-4">
+                <!-- Interactive 5-Star Rating -->
+                <div>
+                    <label class="block text-xs font-bold text-[#4c111f] uppercase tracking-wider mb-2">Your Rating</label>
+                    <div class="flex items-center gap-2" id="reviewStarPicker">
+                        <button type="button" onclick="setReviewRating(1)" class="review-star-btn text-2xl text-amber-400 hover:scale-110 transition-transform focus:outline-none" data-star="1" aria-label="1 star"><i class="fas fa-star"></i></button>
+                        <button type="button" onclick="setReviewRating(2)" class="review-star-btn text-2xl text-amber-400 hover:scale-110 transition-transform focus:outline-none" data-star="2" aria-label="2 stars"><i class="fas fa-star"></i></button>
+                        <button type="button" onclick="setReviewRating(3)" class="review-star-btn text-2xl text-amber-400 hover:scale-110 transition-transform focus:outline-none" data-star="3" aria-label="3 stars"><i class="fas fa-star"></i></button>
+                        <button type="button" onclick="setReviewRating(4)" class="review-star-btn text-2xl text-amber-400 hover:scale-110 transition-transform focus:outline-none" data-star="4" aria-label="4 stars"><i class="fas fa-star"></i></button>
+                        <button type="button" onclick="setReviewRating(5)" class="review-star-btn text-2xl text-amber-400 hover:scale-110 transition-transform focus:outline-none" data-star="5" aria-label="5 stars"><i class="fas fa-star"></i></button>
+                        <span id="reviewRatingLabel" class="text-xs font-bold text-gray-500 ml-2">5 / 5</span>
+                    </div>
+                </div>
+
+                <!-- Name & Region -->
+                <div class="grid grid-cols-3 gap-3">
+                    <div class="col-span-2">
+                        <label for="reviewName" class="block text-xs font-bold text-[#4c111f] uppercase tracking-wider mb-1.5">Your Name</label>
+                        <input type="text" id="reviewName" maxlength="40" placeholder="e.g. Amirul H." class="w-full border border-gray-300 rounded-xl px-3.5 py-2.5 text-sm focus:border-[#4c111f] focus:ring-[#4c111f] outline-none" required>
+                    </div>
+                    <div>
+                        <label for="reviewRegion" class="block text-xs font-bold text-[#4c111f] uppercase tracking-wider mb-1.5">Region</label>
+                        <select id="reviewRegion" class="w-full border border-gray-300 rounded-xl px-3 py-2.5 text-sm bg-white focus:border-[#4c111f] focus:ring-[#4c111f] outline-none">
+                            <option value="MY">MY</option>
+                            <option value="SG">SG</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Collection / Item Purchased -->
+                <div>
+                    <label for="reviewCollection" class="block text-xs font-bold text-[#4c111f] uppercase tracking-wider mb-1.5">Collection Purchased</label>
+                    <select id="reviewCollection" class="w-full border border-gray-300 rounded-xl px-3.5 py-2.5 text-sm bg-white focus:border-[#4c111f] focus:ring-[#4c111f] outline-none">
+                        <option value="Cadence Collection">The Putter Series | Cadence Collection</option>
+                        <option value="Heritage Collection">The Heritage Collection</option>
+                        <option value="Atelier Collection">The Atelier Collection</option>
+                        <option value="Custom Order">Custom-Made / Embroidery Order</option>
+                    </select>
+                </div>
+
+                <!-- Review Comment -->
+                <div>
+                    <label for="reviewComment" class="block text-xs font-bold text-[#4c111f] uppercase tracking-wider mb-1.5">Your Review</label>
+                    <textarea id="reviewComment" rows="3" maxlength="320" placeholder="How's the fit, material, or delivery?" class="w-full border border-gray-300 rounded-xl px-3.5 py-2.5 text-sm focus:border-[#4c111f] focus:ring-[#4c111f] outline-none resize-none" required></textarea>
+                </div>
+
+                <p id="reviewFormError" class="hidden text-xs text-red-500 font-semibold"></p>
+                <p id="reviewFormSuccess" class="hidden text-xs text-green-700 bg-green-50 border border-green-200 rounded-xl px-3 py-2 font-semibold"></p>
+
+                <button type="submit" id="submitReviewBtn" class="w-full bg-[#4c111f] text-white py-3.5 rounded-xl font-bold hover:opacity-90 active:scale-95 transition-all shadow-md">
+                    Post Review
+                </button>
+            </form>
+        </div>
+    </div>
+
     <!-- Fullscreen Zoom Modal -->
     <div id="zoomModal" class="fixed inset-0 z-[100] hidden bg-black/95 backdrop-blur-sm items-center justify-center overflow-hidden transition-opacity duration-300 opacity-0">
         <button id="closeZoomBtn" class="absolute top-4 right-4 text-white/70 hover:text-white z-[110] bg-black/50 hover:bg-black/80 rounded-full w-12 h-12 flex items-center justify-center focus:outline-none transition-all" aria-label="Close Zoom">
@@ -1075,7 +1121,7 @@
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
         import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-        import { getFirestore, doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+        import { getFirestore, doc, getDoc, setDoc, collection, addDoc, getDocs, query, orderBy, limit } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
         const appId = typeof __app_id !== 'undefined' ? __app_id : 'heath-studio-dev';
         const firebaseConfigStr = typeof __firebase_config !== 'undefined' ? __firebase_config : '{}';
@@ -1109,6 +1155,33 @@
                 return `HTHG-${(currentCount + 1).toString().padStart(4, '0')}`;
             } catch (error) {
                 return generateLocalFallbackID();
+            }
+        };
+
+        window.fetchCloudReviews = async function() {
+            if (!db || !auth) return [];
+            if (!auth.currentUser) await new Promise(r => setTimeout(r, 600));
+            if (!auth.currentUser) return [];
+            try {
+                const reviewsCol = collection(db, 'artifacts', appId, 'public', 'data', 'reviews');
+                const q = query(reviewsCol, orderBy('createdAt', 'desc'), limit(12));
+                const snap = await getDocs(q);
+                return snap.docs.map(d => d.data());
+            } catch (error) {
+                return [];
+            }
+        };
+
+        window.saveCloudReview = async function(reviewObj) {
+            if (!db || !auth) return false;
+            if (!auth.currentUser) await new Promise(r => setTimeout(r, 600));
+            if (!auth.currentUser) return false;
+            try {
+                const reviewsCol = collection(db, 'artifacts', appId, 'public', 'data', 'reviews');
+                await addDoc(reviewsCol, reviewObj);
+                return true;
+            } catch (error) {
+                return false;
             }
         };
 
@@ -1226,17 +1299,17 @@
         const PRICING = {
             MYR: { 
                 symbol: 'RM ', 
-                cadence: { blade: 119, mallet: 129 },
+                cadence: { blade: 159, mallet: 159 },
                 atelier: { wood: 109, driver: 129, hybrid: 0 },
                 heritage: { wood: 119, driver: 139, hybrid: 109 },
-                bundleDiscount: 10, 
+                bundleDiscount: 15, 
                 patch: 30, 
-                shippingWest: 10, 
-                shippingEast: 15 
+                shippingWest: 7, 
+                shippingEast: 14 
             },
             SGD: { 
                 symbol: 'S$ ', 
-                cadence: { blade: 38, mallet: 42 },
+                cadence: { blade: 51, mallet: 51 },
                 atelier: { wood: 35, driver: 42, hybrid: 0 },
                 heritage: { wood: 38, driver: 44, hybrid: 35 },
                 bundleDiscount: 5, 
@@ -1271,9 +1344,35 @@
         // Saturday Cadence Drop Launch Timer (Sat Nov 28, 2026 @ 8:00 PM MYT)
         const CADENCE_LAUNCH_DATE = new Date('2026-11-28T20:00:00+08:00');
         const CART_STORAGE_KEY = 'heath_golf_cart_v1';
+        const REVIEWS_STORAGE_KEY = 'heath_golf_reviews_v1';
+
+        const DEFAULT_REVIEWS = [
+            {
+                name: 'Amirul H.',
+                region: 'MY',
+                collection: 'Heritage Collection',
+                rating: 5,
+                comment: 'The velvet lining feels super plush on my driver and the custom embroidered patch came out way cleaner than I expected. Easily the best-looking covers in my flight.'
+            },
+            {
+                name: 'Marcus T.',
+                region: 'SG',
+                collection: 'Heritage Collection',
+                rating: 5,
+                comment: 'Ordered on Tuesday night and received it in Singapore by Thursday via Teleport. Quality rivals luxury golf brands at twice the price.'
+            },
+            {
+                name: 'Rachel L.',
+                region: 'MY',
+                collection: 'Heritage Collection',
+                rating: 5,
+                comment: 'Picked up the Heritage bundle in Glenmarie before my weekend round. Snug fit, zero slipping in the cart, and the tartan texture looks unreal in person.'
+            }
+        ];
 
         let currentCurrency = 'MYR';
         let cart = loadCartFromStorage();
+        let selectedReviewRating = 5;
         let currentModalProduct = null;
         let selectedColorIndex = 0;
         let calculatedFinalTotal = 0; 
@@ -1365,11 +1464,186 @@
             startDropCountdown();
             setupEventListeners();
             renderProductGrids();
+            loadAndRenderReviews();
             setupRouter(); 
             await detectUserLocation();
             setupMobileAutoplay(); 
             checkPaymentStatus();
         });
+
+        // ----------------------------------------------------
+        // COMMUNITY REVIEWS (Display + Leave a Review Modal)
+        // ----------------------------------------------------
+        function escapeHtml(str) {
+            return String(str || '')
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;');
+        }
+
+        function loadLocalReviews() {
+            try {
+                const raw = localStorage.getItem(REVIEWS_STORAGE_KEY);
+                const parsed = raw ? JSON.parse(raw) : [];
+                return Array.isArray(parsed) ? parsed : [];
+            } catch (e) {
+                return [];
+            }
+        }
+
+        function saveLocalReview(reviewObj) {
+            try {
+                const existing = loadLocalReviews();
+                existing.unshift(reviewObj);
+                localStorage.setItem(REVIEWS_STORAGE_KEY, JSON.stringify(existing.slice(0, 15)));
+            } catch (e) {
+                // Ignore storage quota errors
+            }
+        }
+
+        function renderReviews(reviewsList) {
+            const grid = document.getElementById('reviewsGrid');
+            if (!grid) return;
+
+            grid.innerHTML = reviewsList.map(r => {
+                const stars = Math.min(5, Math.max(1, parseInt(r.rating, 10) || 5));
+                const starsHtml = Array.from({ length: 5 }, (_, idx) =>
+                    `<i class="${idx < stars ? 'fas text-amber-500' : 'far text-gray-300'} fa-star"></i>`
+                ).join('');
+                const colTag = r.collection ? `<span class="text-[10px] font-bold uppercase tracking-wider text-accent bg-amber-50 px-2 py-0.5 rounded-full">${escapeHtml(r.collection)}</span>` : '';
+
+                return `
+                    <div class="bg-gray-50 rounded-2xl p-6 border border-gray-200/70 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between gap-2 mb-3">
+                                <div class="flex items-center gap-1 text-xs">${starsHtml}</div>
+                                ${colTag}
+                            </div>
+                            <p class="text-gray-700 text-sm leading-relaxed mb-4">"${escapeHtml(r.comment)}"</p>
+                        </div>
+                        <div class="flex items-center justify-between text-xs pt-2 border-t border-gray-200/60">
+                            <span class="font-bold text-[#4c111f]">${escapeHtml(r.name)}</span>
+                            <span class="text-green-700 font-semibold"><i class="fas fa-check-circle mr-1"></i>Verified Buyer &bull; ${escapeHtml(r.region || 'MY')}</span>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        async function loadAndRenderReviews() {
+            const localReviews = loadLocalReviews();
+            renderReviews([...localReviews, ...DEFAULT_REVIEWS]);
+
+            if (typeof window.fetchCloudReviews === 'function') {
+                const cloudReviews = await window.fetchCloudReviews();
+                if (cloudReviews && cloudReviews.length > 0) {
+                    renderReviews([...cloudReviews, ...DEFAULT_REVIEWS]);
+                }
+            }
+        }
+
+        window.setReviewRating = function(stars) {
+            selectedReviewRating = stars;
+            const label = document.getElementById('reviewRatingLabel');
+            if (label) label.textContent = `${stars} / 5`;
+
+            document.querySelectorAll('.review-star-btn').forEach(btn => {
+                const val = parseInt(btn.getAttribute('data-star'), 10);
+                if (val <= stars) {
+                    btn.classList.add('text-amber-400');
+                    btn.classList.remove('text-gray-300');
+                } else {
+                    btn.classList.remove('text-amber-400');
+                    btn.classList.add('text-gray-300');
+                }
+            });
+        }
+
+        window.openReviewModal = function() {
+            const modal = document.getElementById('reviewModal');
+            const backdrop = document.getElementById('reviewModalBackdrop');
+            const content = document.getElementById('reviewModalContent');
+            if (!modal) return;
+
+            document.getElementById('reviewForm').reset();
+            const regionSel = document.getElementById('reviewRegion');
+            if (regionSel) regionSel.value = currentCurrency === 'SGD' ? 'SG' : 'MY';
+            setReviewRating(5);
+            document.getElementById('reviewFormError').classList.add('hidden');
+            document.getElementById('reviewFormSuccess').classList.add('hidden');
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            setTimeout(() => {
+                backdrop.classList.remove('opacity-0');
+                content.classList.remove('scale-95', 'opacity-0');
+            }, 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        window.closeReviewModal = function() {
+            const modal = document.getElementById('reviewModal');
+            const backdrop = document.getElementById('reviewModalBackdrop');
+            const content = document.getElementById('reviewModalContent');
+            if (!modal) return;
+
+            backdrop.classList.add('opacity-0');
+            content.classList.add('scale-95', 'opacity-0');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.body.style.overflow = '';
+            }, 300);
+        }
+
+        window.submitReview = async function(event) {
+            event.preventDefault();
+            const name = document.getElementById('reviewName').value.trim();
+            const region = document.getElementById('reviewRegion').value;
+            const colName = document.getElementById('reviewCollection').value;
+            const comment = document.getElementById('reviewComment').value.trim();
+            const errEl = document.getElementById('reviewFormError');
+            const okEl = document.getElementById('reviewFormSuccess');
+            const btn = document.getElementById('submitReviewBtn');
+
+            if (!name || comment.length < 5) {
+                errEl.textContent = 'Please enter your name and a short review (at least 5 characters).';
+                errEl.classList.remove('hidden');
+                return;
+            }
+            errEl.classList.add('hidden');
+
+            const originalBtnText = btn.innerHTML;
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-1.5"></i> Posting...';
+
+            const newReview = {
+                name,
+                region,
+                collection: colName,
+                rating: selectedReviewRating,
+                comment,
+                createdAt: Date.now()
+            };
+
+            saveLocalReview(newReview);
+            if (typeof window.saveCloudReview === 'function') {
+                await window.saveCloudReview(newReview);
+            }
+
+            await loadAndRenderReviews();
+
+            okEl.innerHTML = '<i class="fas fa-check-circle mr-1.5"></i>Thank you! Your review is now live on our page.';
+            okEl.classList.remove('hidden');
+            btn.disabled = false;
+            btn.innerHTML = originalBtnText;
+
+            setTimeout(() => {
+                closeReviewModal();
+            }, 1300);
+        }
 
         // ----------------------------------------------------
         // SALE TIME UI TOGGLE
