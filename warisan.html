@@ -220,7 +220,7 @@
                     <div class="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-6 md:gap-8">
                         <!-- NEW: Cadence Putter Series Banner Card (Full width on mobile, 1 col on desktop) -->
                         <a href="#cadence" class="col-span-2 md:col-span-1 group relative h-64 sm:h-80 md:h-[500px] rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 block border border-gray-200/50">
-                            <img src="IMG_9168.jpeg" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="this.onerror=null; this.src='https://placehold.co/800x1000/1E3F20/ffffff?text=Cadence+Putter+Series'">
+                            <img src="IMG_1968.jpeg" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="this.onerror=null; this.src='https://placehold.co/800x1000/1E3F20/ffffff?text=Cadence+Putter+Series'">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
                             
                             <div id="cadenceCardBadge" class="absolute top-3 left-3 md:top-6 md:left-6 bg-white text-[#1E3F20] text-[8px] md:text-xs font-bold px-2 py-1 md:px-3 md:py-1.5 rounded-full uppercase tracking-widest shadow-lg flex items-center gap-1 md:gap-1.5 z-10">
@@ -1198,47 +1198,85 @@
         // ============================================================
         const cadenceProducts = [
             { 
-                id: 'cadence-emerald', 
-                series: 'Cadence Emerald', 
-                desc: 'Refined deep green finish with magnetic closure and plush velvet interior.', 
-                slideshowImages: ['cadence_emerald_1.jpg', 'cadence_emerald_2.jpg'], 
+                // GRID 1 — 2 Colorways (Yellow-Brown Tone: Waffle & Stripe)
+                id: 'cadence-ochre', 
+                series: 'Cadence Ochre', 
+                desc: 'Warm golden-brown tones in tactile waffle and classic stripe weaves with magnetic closure.', 
+                slideshowImages: ['Waffle4.jpg', 'BunkerB.jpg', 'WaffleB.jpg', 'Bunker4.jpg'], 
                 colors: [
                     { 
-                        name: 'Augusta Green', 
+                        name: 'Waffle', 
+                        hex: '#F7BE14', 
+                        bladeImg: 'WaffleB.jpg', 
+                        malletImg: 'Waffle4.jpg', 
+                        galleryImages: ['Waffle1.jpg', 'WaffleB.jpg', 'Waffle2.jpg', 'Waffle4.jpg', 'Waffle3.jpg'],
+                        stock: { blade: 3, mallet: 3 } 
+                    },
+                    { 
+                        name: 'Bunker', 
+                        hex: '#A67B5B', 
+                        bladeImg: 'BunkerB.jpg', 
+                        malletImg: 'Bunker4.jpg', 
+                        galleryImages: ['Bunker1.jpg', 'BunkerB.jpg', 'Bunker2.jpg', 'Bunker4.jpg', 'Bunker3.jpg'],
+                        stock: { blade: 3, mallet: 3 } 
+                    }
+                ] 
+            },
+            { 
+                // GRID 2 — 2 Colorways (Blue Tone: Waffle & Houndstooth)
+                id: 'cadence-coastal', 
+                series: 'Cadence Coastal', 
+                desc: 'Refined coastal blues in textured waffle and tailored houndstooth patterns with plush velvet lining.', 
+                slideshowImages: ['ChimeB.jpg', 'BreezeB.jpg','Chime4.jpg', 'Breeze4.jpg'], 
+                colors: [
+                    { 
+                        name: 'Breeze', 
+                        hex: '#2C4C6B', 
+                        bladeImg: 'BreezeB.jpg', 
+                        malletImg: 'Breeze2.jpg', 
+                        galleryImages: ['Breeze1.jpg', 'BreezeB.jpg', 'Breeze2.jpg', 'Breeze3.jpg'],
+                        stock: { blade: 3, mallet: 3 } 
+                    },
+                    { 
+                        name: 'Porcelain', 
+                        hex: '#5D7B93', 
+                        bladeImg: 'ChimeB.jpg', 
+                        malletImg: 'Chime4.jpg', 
+                        galleryImages: ['Porcelain.jpg', 'ChimeB.jpg', 'Porcelain2.jpg', 'Chime4.jpg'],
+                        stock: { blade: 3, mallet: 3 } 
+                    }
+                ] 
+            },
+            { 
+                // GRID 3 — 3 Colorways (Green Herringbone, Plain Green & Plain Black)
+                id: 'cadence-classic', 
+                series: 'Cadence Classic', 
+                desc: 'Timeless fairway greens in herringbone and plain finishes alongside our sleek plain Midnight black.', 
+                slideshowImages: ['Pine1.jpg', 'Forest1.jpg', 'Midnight1.jpg', 'PineB.jpg', 'MidnightB.jpg'], 
+                colors: [
+                    { 
+                        name: 'Pine', 
                         hex: '#1E3F20', 
-                        bladeImg: 'cadence_emerald_blade.jpg', 
-                        malletImg: 'cadence_emerald_mallet.jpg', 
-                        stock: { blade: 5, mallet: 5 } 
-                    }
-                ] 
-            },
-            { 
-                id: 'cadence-oxblood', 
-                series: 'Cadence Oxblood', 
-                desc: 'Signature Heath burgundy crafted for timeless poise on the putting green.', 
-                slideshowImages: ['cadence_oxblood_1.jpg', 'cadence_oxblood_2.jpg'], 
-                colors: [
+                        bladeImg: 'PineB.jpg', 
+                        malletImg: 'Pine4.jpg', 
+                        galleryImages: ['Pine1.jpg', 'PineB.jpg', 'Pine2.jpg', 'Pine3.jpg', 'Pine4.jpg'],
+                        stock: { blade: 3, mallet: 3 } 
+                    },
                     { 
-                        name: 'Heath Burgundy', 
-                        hex: '#4c111f', 
-                        bladeImg: 'cadence_oxblood_blade.jpg', 
-                        malletImg: 'cadence_oxblood_mallet.jpg', 
-                        stock: { blade: 5, mallet: 5 } 
-                    }
-                ] 
-            },
-            { 
-                id: 'cadence-ivory', 
-                series: 'Cadence Ivory', 
-                desc: 'Clean, structured cream exterior paired with contrast heritage stitching.', 
-                slideshowImages: ['cadence_ivory_1.jpg', 'cadence_ivory_2.jpg'], 
-                colors: [
+                        name: 'Forest', 
+                        hex: '#2E5A36', 
+                        bladeImg: 'ForestB.jpg', 
+                        malletImg: 'Forest4.jpg', 
+                        galleryImages: ['Forest1.jpg', 'ForestB.jpg', 'Forest2.jpg', 'Forest4.jpg', 'Forest3.jpg'],
+                        stock: { blade: 3, mallet: 3 } 
+                    },
                     { 
-                        name: 'Warm Ivory', 
-                        hex: '#EAE0D5', 
-                        bladeImg: 'cadence_ivory_blade.jpg', 
-                        malletImg: 'cadence_ivory_mallet.jpg', 
-                        stock: { blade: 5, mallet: 5 } 
+                        name: 'Midnight (Plain Black)', 
+                        hex: '#000000', 
+                        bladeImg: 'MidnightB.jpg', 
+                        malletImg: 'Midnight4.jpg', 
+                        galleryImages: ['Midnight1.jpg', 'MidnightB.jpg', 'Midnight2.jpg', 'Midnight4.jpg', 'Midnight3.jpg'],
+                        stock: { blade: 3, mallet: 3 } 
                     }
                 ] 
             }
