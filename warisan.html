@@ -107,11 +107,11 @@
 
     <header class="bg-[#4c111f] shadow-md sticky top-0 z-50">
         <div class="marquee-container w-full overflow-hidden bg-white/10 backdrop-blur-md py-3 border-b border-white/20 mb-4">
-          <div class="animate-marquee flex items-center whitespace-nowrap text-white font-bold tracking-widest text-sm uppercase">
-            <span class="mx-6">WELCOME TO HEATH.STUDIO ⛳️ THE HERITAGE COLLECTION OFFICIALLY LIVE ⛳️ SHIPPING IN 24 HOURS ⛳️</span>
-            <span class="mx-6">WELCOME TO HEATH.STUDIO ⛳️ THE HERITAGE COLLECTION OFFICIALLY LIVE ⛳️ SHIPPING IN 24 HOURS ⛳️</span>
-            <span class="mx-6">WELCOME TO HEATH.STUDIO ⛳️ THE HERITAGE COLLECTION OFFICIALLY LIVE ⛳️ SHIPPING IN 24 HOURS ⛳️</span>
-            <span class="mx-6">WELCOME TO HEATH.STUDIO ⛳️ THE HERITAGE COLLECTION OFFICIALLY LIVE ⛳️ SHIPPING IN 24 HOURS ⛳️</span>
+          <div id="mainMarquee" class="animate-marquee flex items-center whitespace-nowrap text-white font-bold tracking-widest text-sm uppercase">
+            <span class="mx-6">WELCOME TO HEATH.STUDIO ⛳️ THE PUTTER SERIES | CADENCE COLLECTION DROPPING THIS SATURDAY ⛳️ SHIPPING IN 24 HOURS ⛳️</span>
+            <span class="mx-6">WELCOME TO HEATH.STUDIO ⛳️ THE PUTTER SERIES | CADENCE COLLECTION DROPPING THIS SATURDAY ⛳️ SHIPPING IN 24 HOURS ⛳️</span>
+            <span class="mx-6">WELCOME TO HEATH.STUDIO ⛳️ THE PUTTER SERIES | CADENCE COLLECTION DROPPING THIS SATURDAY ⛳️ SHIPPING IN 24 HOURS ⛳️</span>
+            <span class="mx-6">WELCOME TO HEATH.STUDIO ⛳️ THE PUTTER SERIES | CADENCE COLLECTION DROPPING THIS SATURDAY ⛳️ SHIPPING IN 24 HOURS ⛳️</span>
           </div>
         </div>
         
@@ -123,7 +123,7 @@
                     </button>
                 </div>
                 <div class="flex-shrink-0 flex items-center justify-center -my-6 md:-my-8">
-                    <!-- Logo now routes back to home -->
+                    <!-- Logo routes back to home -->
                     <a href="#home" class="block">
                         <img src="Heath logo 2.png" alt="Heath Logo" class="h-36 sm:h-20 md:h-24 lg:h-42 w-auto max-w-[200px] md:max-w-none object-contain" onerror="this.onerror=null; this.src='https://placehold.co/200x100/4c111f/ffffff?text=HEATH+LOGO'">
                     </a>
@@ -180,10 +180,10 @@
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                     <div class="text-center max-w-3xl mx-auto flex flex-col items-center bg-white/3 backdrop-blur-sm p-8 rounded-2xl shadow-sm">
                         <h1 class="font-serif text-5xl md:text-7xl font-bold text-[#4c111f] mb-6 leading-tight drop-shadow-sm">Golf, Considered Differently.</h1>
-                        <p class="text-xl text-gray-800 mb-6 font-medium">Handcrafted headcovers designed with character, precision, and a considered approach to the game.</p>
-                        <p class="text-xl text-[#4c111f] mb-10 font-bold">The Heritage Collection. Where heritage meet the fairways.</p>
+                        <p class="text-xl text-white-800 mb-6 font-medium">Handcrafted headcovers designed with character, precision, and a considered approach to the game.</p>
+                        <p id="heroBadgeText" class="text-xl text-[#4c111f] mb-10 font-bold">The Putter Series | Cadence Collection. Dropping This Saturday.</p>
                         <div class="flex justify-center gap-4">
-                            <a href="#heritage" class="bg-[#4c111f] text-white px-8 py-4 rounded-full font-medium hover:opacity-80 transition-opacity shadow-lg">Shop The Drop</a>
+                            <a id="heroShopBtn" href="#cadence" class="bg-[#f02a0c] text-white px-8 py-4 rounded-full font-bold shadow-[0_10px_25px_rgba(0,0,0,0.25),_0_0_20px_rgba(57,255,20,0.5)] animate-pulse hover:animate-none hover:scale-105 hover:shadow-[0_15px_35px_rgba(0,0,0,0.3),_0_0_30px_rgba(57,255,20,0.7)] transition-all duration-300">Shop The Drop</a>
                         </div>
                     </div>
                 </div>
@@ -195,7 +195,7 @@
                 <div class="absolute inset-0 bg-black/20 mix-blend-multiply pointer-events-none"></div>
             </section>
 
-            <!-- SIDE-BY-SIDE COLLECTION CARDS -->
+            <!-- COLLECTION CARDS GRID (Featured Full-Width on Mobile, 3-Column on Desktop) -->
             <section class="py-16 md:py-24 bg-gray-50 relative z-10 border-t border-[#4c111f]/10">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="text-center mb-10 md:mb-16">
@@ -203,19 +203,38 @@
                         <p class="text-gray-600 max-w-2xl mx-auto font-medium">Explore our distinct series of handcrafted headcovers, designed to elevate your game and protect your clubs with unparalleled style.</p>
                     </div>
                     
-                    <!-- Forced grid-cols-2 for Side-by-Side mobile -->
-                    <div class="grid grid-cols-2 gap-3 sm:gap-6 md:gap-10">
+                    <!-- Responsive Grid: New Drop spans 2 cols on mobile for prominence, 3 equal cols on desktop -->
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-6 md:gap-8">
+                        
+                        <!-- NEW: Putter Series | Cadence Collection Banner Card -->
+                        <a href="#cadence" class="col-span-2 md:col-span-1 group relative h-72 sm:h-80 md:h-[500px] rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 block border border-gray-200/50">
+                            <!-- Background Image (Replace 'cadence card.jpg' with your actual cover image) -->
+                            <img src="cadence card.jpg" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="this.src='https://placehold.co/800x1000/1E3F20/ffffff?text=Cadence+Putter+Series'">
+                            <!-- Gradient Overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
+                            
+                            <!-- New Arrival Badge -->
+                            <div id="cadenceCardBadge" class="absolute top-3 left-3 md:top-6 md:left-6 bg-white text-[#4c111f] text-[9px] md:text-xs font-bold px-2.5 py-1 md:px-3 md:py-1.5 rounded-full uppercase tracking-widest shadow-lg flex items-center gap-1 md:gap-1.5 z-10">
+                                <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></span> <span>New Drop</span>
+                            </div>
+                            
+                            <!-- Text Content -->
+                            <div class="absolute bottom-0 left-0 p-5 md:p-8 w-full z-10">
+                                <span class="block text-[10px] md:text-xs uppercase tracking-widest text-amber-300 font-bold mb-1">The Putter Series</span>
+                                <h3 class="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 md:mb-2 shadow-sm leading-tight">Cadence Collection</h3>
+                                <p class="text-gray-200 text-xs md:text-base font-medium mb-4 md:mb-6 transition-all duration-500 transform translate-y-1 opacity-90 group-hover:translate-y-0 group-hover:opacity-100 line-clamp-2 md:line-clamp-none">Precision-crafted blade &amp; mallet putter covers designed for rhythm on the greens.</p>
+                                <span class="inline-flex items-center gap-1.5 md:gap-2 text-white font-bold tracking-wide uppercase text-[10px] md:text-sm border-b md:border-b-2 border-white/30 pb-0.5 md:pb-1 group-hover:border-white transition-colors duration-300">
+                                    Shop Now <span class="hidden sm:inline">Collection</span> <i class="fas fa-arrow-right text-[8px] md:text-xs transition-transform group-hover:translate-x-1"></i>
+                                </span>
+                            </div>
+                        </a>
+
                         <!-- Heritage Banner Card -->
                         <a href="#heritage" class="group relative h-64 sm:h-80 md:h-[500px] rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 block border border-gray-200/50">
                             <!-- Background Image -->
                             <img src="heritage card.JPEG" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="this.src='https://placehold.co/800x1000/4c111f/ffffff?text=Heritage'">
                             <!-- Gradient Overlay -->
                             <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
-                            
-                            <!-- New Arrival Badge -->
-                            <div class="absolute top-3 left-3 md:top-6 md:left-6 bg-white text-[#4c111f] text-[8px] md:text-xs font-bold px-2 py-1 md:px-3 md:py-1.5 rounded-full uppercase tracking-widest shadow-lg flex items-center gap-1 md:gap-1.5 z-10">
-                                <span class="w-1 h-1 md:w-1.5 md:h-1.5 rounded-full bg-red-500 animate-pulse"></span> <span class="hidden sm:inline">New Release</span><span class="sm:hidden">New Release</span>
-                            </div>
                             
                             <!-- Text Content -->
                             <div class="absolute bottom-0 left-0 p-4 md:p-8 w-full z-10">
@@ -273,6 +292,35 @@
 
 
         <!-- ========================================== -->
+        <!-- VIEW: THE PUTTER SERIES | CADENCE          -->
+        <!-- ========================================== -->
+        <div id="view-cadence" class="hidden">
+            <!-- Breadcrumb Navigation -->
+            <div class="bg-gray-50 pt-6 pb-2 border-b border-gray-200/50 sticky top-[72px] md:top-[90px] z-30">
+                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                     <a href="#home" class="inline-flex items-center text-gray-500 hover:text-[#4c111f] font-bold text-xs uppercase tracking-wider transition-colors">
+                        <i class="fas fa-arrow-left mr-2"></i> Back to Home
+                     </a>
+                 </div>
+            </div>
+            
+            <section class="relative pt-12 pb-24 bg-gray-50">
+                <div class="max-w-7xl mx-auto px-2 md:px-12 relative z-10">
+                    <div class="text-center mb-10 md:mb-16 px-2 flex flex-col items-center">
+                        <span id="cadenceViewBadge" class="bg-[#4c111f] text-white text-[10px] md:text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-5 inline-block shadow-sm">3rd Drop &bull; New Release</span>
+                        <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-[#4c111f] mb-4">THE PUTTER SERIES | CADENCE COLLECTION</h2>
+                        <p class="text-gray-600 md:text-lg max-w-2xl mx-auto font-medium">Find your rhythm on the greens. Handcrafted blade and mallet putter covers built with magnetic closures and ultra-plush protective lining.</p>
+                    </div>
+                    <!-- Cadence Grid (3 Columns on Mobile & Desktop) -->
+                    <div class="grid grid-cols-3 gap-1.5 md:gap-10" id="cadenceGrid">
+                        <!-- Products injected via JS -->
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+        <!-- ========================================== -->
         <!-- VIEW: HERITAGE COLLECTION                  -->
         <!-- ========================================== -->
         <div id="view-heritage" class="hidden">
@@ -288,7 +336,7 @@
             <section class="relative pt-12 pb-24 bg-gray-50">
                 <div class="max-w-7xl mx-auto px-2 md:px-12 relative z-10">
                     <div class="text-center mb-10 md:mb-16 px-2 flex flex-col items-center">
-                        <span class="bg-[#4c111f] text-white text-[10px] md:text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-5 inline-block shadow-sm">New Release</span>
+                        <span id="heritageViewBadge" class="bg-[#4c111f] text-white text-[10px] md:text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-5 inline-block shadow-sm">Heritage Series</span>
                         <h2 class="font-serif text-4xl md:text-5xl font-bold text-[#4c111f] mb-6">THE HERITAGE COLLECTION</h2>
                         <p class="text-gray-600 md:text-lg max-w-2xl mx-auto font-medium">Where heritage meets the fairways. Handcrafted with premium houndstooth, argyle, and tartan fabrics paired with plush velvet lining.</p>
                     </div>
@@ -317,7 +365,8 @@
             <section class="relative pt-16 pb-36 hero-bg">
                 <div class="absolute inset-0 bg-white/20 backdrop-blur-[2px]"></div>
                 <div class="max-w-7xl mx-auto px-2 md:px-12 relative z-10">
-                    <div class="text-center mb-10 md:mb-16 px-2">
+                    <div class="text-center mb-10 md:mb-16 px-2 flex flex-col items-center">
+                        <span id="atelierViewBadge" class="hidden"></span>
                         <h2 class="font-serif text-4xl md:text-5xl font-bold text-[#4c111f] mb-6 drop-shadow-sm">THE ATELIER COLLECTION</h2>
                         <p class="text-gray-800 md:text-lg font-semibold max-w-2xl mx-auto drop-shadow-sm">Our inaugural collection. Three distinct series, meticulously crafted for style and protection. Limited remaining stock available.</p>
                     </div>
@@ -353,10 +402,28 @@
         </div>
     </footer>
 
+    <!-- Floating WhatsApp Button for Custom Orders -->
+    <!-- IMPORTANT: Replace '60123456789' below with your actual WhatsApp number (with country code, no '+' or spaces) -->
+    <a href="https://wa.me/601112985037?text=Hi%20Heath%20Studio!%20I%27d%20like%20to%20enquire%20about%20a%20custom-made%20order."
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Chat on WhatsApp for Custom Orders"
+       class="fixed bottom-5 right-5 z-40 group flex items-center gap-2.5 focus:outline-none">
+        <!-- Subtle Label Pill -->
+        <span class="bg-white text-[#4c111f] text-xs sm:text-sm font-bold px-3.5 py-2 rounded-full shadow-lg border border-gray-200/80 transition-all duration-300 group-hover:scale-105">
+            Custom Order?
+        </span>
+        <!-- WhatsApp Circular Icon -->
+        <span class="w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-xl group-hover:bg-[#1ebe5d] group-hover:scale-110 active:scale-95 transition-all duration-300 relative">
+            <span class="absolute inset-0 rounded-full bg-[#25D366] opacity-30 animate-ping pointer-events-none"></span>
+            <i class="fab fa-whatsapp text-3xl relative z-10"></i>
+        </span>
+    </a>
+
     <!-- Mobile Navigation Overlay & Menu -->
     <div id="menuOverlay" class="fixed inset-0 bg-black bg-opacity-50 z-[60] hidden transition-opacity duration-300 opacity-0"></div>
 
-    <div id="sideMenu" class="fixed top-0 left-0 h-[100dvh] w-[250px] sm:w-[300px] bg-white shadow-2xl z-[70] transform -translate-x-full transition-transform duration-300 ease-in-out flex flex-col">
+    <div id="sideMenu" class="fixed top-0 left-0 h-[100dvh] w-[260px] sm:w-[300px] bg-white shadow-2xl z-[70] transform -translate-x-full transition-transform duration-300 ease-in-out flex flex-col">
         <div class="p-6 border-b flex justify-between items-center bg-gray-50 flex-shrink-0">
             <h2 class="font-serif text-2xl font-bold text-[#4c111f]">Menu</h2>
             <button id="closeMenuBtn" class="text-gray-500 hover:text-[#4c111f] p-2 focus:outline-none" aria-label="Close menu"><i class="fas fa-times text-xl"></i></button>
@@ -370,7 +437,12 @@
                     <i class="fas fa-chevron-down text-sm transition-transform duration-300" id="collectionsMenuIcon"></i>
                 </button>
                 <div id="collectionsSubMenu" class="hidden flex-col pl-4 pb-2 space-y-2 mt-1">
-                    <a href="#heritage" class="menu-link block py-2 text-base font-bold text-accent hover:text-[#4c111f] transition-all">The Heritage Collection <span class="text-xs ml-1 bg-red-100 text-red-700 px-1.5 rounded">NEW</span></a>
+                    <!-- NEW Collection Link -->
+                    <a href="#cadence" class="menu-link block py-2 text-base font-bold text-accent hover:text-[#4c111f] transition-all leading-snug">
+                        The Putter Series | Cadence Collection
+                        <span class="text-[10px] ml-1 bg-red-100 text-red-700 px-1.5 py-0.5 rounded uppercase align-middle">NEW</span>
+                    </a>
+                    <a href="#heritage" class="menu-link block py-2 text-base font-medium text-gray-600 hover:text-[#4c111f] transition-all">The Heritage Collection</a>
                     <a href="#atelier" class="menu-link block py-2 text-base font-medium text-gray-600 hover:text-[#4c111f] transition-all">The Atelier Collection</a>
                 </div>
             </div>
@@ -435,7 +507,7 @@
                     <span class="font-bold text-2xl text-primary flex items-center gap-2" id="cartTotal">RM 0</span>
                 </div>
                 <div class="text-sm font-medium text-green-600 bg-green-50 px-3 py-2 rounded-md mb-4 hidden border border-green-100" id="bundleNotice">
-                    <i class="fas fa-check-circle mr-1"></i> Bundle discount applied!
+                    <!-- Dynamic notice injected via JS -->
                 </div>
                 
                 <div class="mb-4 space-y-3">
@@ -508,15 +580,13 @@
         <div class="absolute inset-0 bg-black bg-opacity-60 backdrop-blur-sm transition-opacity duration-300 opacity-0" id="modalBackdrop"></div>
         <div class="bg-white rounded-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto m-4 relative z-10 shadow-2xl transform scale-95 opacity-0 transition-all duration-300 no-scrollbar flex flex-col md:block" id="modalContent">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
-                <!-- UPDATED Modal Image Container for Zoom functionality -->
+                <!-- Modal Image Container for Zoom functionality -->
                 <div class="bg-gray-100 flex items-center justify-center p-6 relative h-[280px] sm:h-[350px] md:h-auto md:min-h-[400px] shrink-0 group cursor-zoom-in sticky top-0 z-30 border-b border-gray-200/60 md:border-none shadow-sm md:shadow-none" onclick="openZoom(document.getElementById('modalImg').src)">
-                    <!-- Close button moved inside sticky container so it stays visible -->
                     <button id="closeModal" class="absolute top-4 right-4 text-[#4c111f]/60 hover:text-[#4c111f] z-40 bg-white/90 backdrop-blur rounded-full w-10 h-10 flex items-center justify-center shadow-sm focus:outline-none border border-white" onclick="event.stopPropagation();">
                         <i class="fas fa-times text-lg"></i>
                     </button>
                     
-                    <img id="modalImg" src="" alt="Product" class="max-w-full h-full object-contain drop-shadow-xl rounded-lg transition-transform duration-300 group-hover:scale-105">
-                    <!-- Icon is now permanently visible on mobile (opacity-100), and shows on hover for desktop -->
+                    <img id="modalImg" src="" alt="Product" class="max-w-full h-full object-contain drop-shadow-xl rounded-lg transition-transform duration-300 group-hover:scale-105" onerror="this.onerror=null; this.src='https://placehold.co/600x600/f3f4f6/4c111f?text=Product+Image'">
                     <div class="absolute bottom-4 right-4 bg-white/80 backdrop-blur text-[#4c111f] w-10 h-10 flex items-center justify-center rounded-full shadow-md opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity z-10 pointer-events-none">
                         <i class="fas fa-search-plus"></i>
                     </div>
@@ -530,7 +600,7 @@
                         <div class="flex gap-4" id="modalColors"></div>
                     </div>
                     <div class="mb-4">
-                        <h4 class="text-sm font-medium text-[#4c111f] mb-3 uppercase tracking-wide">Select Club Type</h4>
+                        <h4 class="text-sm font-medium text-[#4c111f] mb-3 uppercase tracking-wide" id="modalClubTypeHeading">Select Club Type</h4>
                         <div class="grid grid-cols-2 gap-4" id="modalClubTypes">
                             <!-- Injected dynamically based on collection/currency -->
                         </div>
@@ -558,7 +628,6 @@
                                     
                                     <!-- DYNAMIC LIVE PREVIEW -->
                                     <div class="w-full h-40 bg-[#f3f4f6] rounded-lg mb-6 border border-gray-200 shadow-inner flex items-center justify-center relative overflow-hidden">
-                                        <!-- Subtle background texture -->
                                         <div class="absolute inset-0 opacity-[0.03]" style="background-image: repeating-linear-gradient(45deg, #000 0, #000 1px, transparent 0, transparent 50%); background-size: 10px 10px;"></div>
                                         <p class="absolute top-2 left-3 text-[10px] font-bold text-gray-400 uppercase tracking-widest z-10 flex items-center gap-1">
                                             <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></span> Live Preview
@@ -566,9 +635,7 @@
                                         
                                         <!-- The Virtual Patch -->
                                         <div id="livePatchElement" class="bg-white rounded-md shadow-xl flex items-center justify-center relative transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] z-20 border-[3px] border-[#4c111f]" style="width: 180px; height: 60px;">
-                                            <!-- Faux stitching inner border -->
                                             <div id="patchInnerBorder" class="absolute inset-[3px] border-[1px] border-dashed rounded-[2px] pointer-events-none opacity-60 border-[#4c111f]"></div>
-                                            <!-- Embroidered Text -->
                                             <span id="livePatchText" class="text-xl font-serif font-bold tracking-[0.1em] transition-all duration-200 text-center px-2 w-full truncate text-[#4c111f]">HEATH</span>
                                         </div>
                                     </div>
@@ -641,7 +708,7 @@
                             </div>
                             <ul class="space-y-1.5 text-xs text-green-700 font-medium">
                                 <li class="flex items-center gap-2">
-                                    <i class="fas fa-box text-[10px] opacity-70"></i> Pack & ship within 24 hours for non custom items. (Custom items: ETA 7-14 Days)
+                                    <i class="fas fa-box text-[10px] opacity-70"></i> Pack &amp; ship within 24 hours for non custom items. (Custom items: ETA 7-14 Days)
                                 </li>
                                 <li class="flex items-center gap-2">
                                     <img src="https://flagcdn.com/w20/my.png" class="w-4 shadow-sm rounded-sm" alt="MY"> Arrives in 1-2 days (MY/non-custom items)
@@ -744,13 +811,65 @@
     </script>
 
     <script>
+        // ============================================================
+        // NEW: Data for The Putter Series | Cadence Collection (3rd Drop)
+        // Update image filenames, names, hex colors, and stock counts below
+        // ============================================================
+        const cadenceProducts = [
+            { 
+                id: 'cadence-emerald', 
+                series: 'Cadence Emerald', 
+                desc: 'Refined deep green finish with magnetic closure and plush velvet interior.', 
+                slideshowImages: ['cadence_emerald_1.jpg', 'cadence_emerald_2.jpg'], 
+                colors: [
+                    { 
+                        name: 'Augusta Green', 
+                        hex: '#1E3F20', 
+                        bladeImg: 'cadence_emerald_blade.jpg', 
+                        malletImg: 'cadence_emerald_mallet.jpg', 
+                        stock: { blade: 5, mallet: 5 } 
+                    }
+                ] 
+            },
+            { 
+                id: 'cadence-oxblood', 
+                series: 'Cadence Oxblood', 
+                desc: 'Signature Heath burgundy crafted for timeless poise on the putting green.', 
+                slideshowImages: ['cadence_oxblood_1.jpg', 'cadence_oxblood_2.jpg'], 
+                colors: [
+                    { 
+                        name: 'Heath Burgundy', 
+                        hex: '#4c111f', 
+                        bladeImg: 'cadence_oxblood_blade.jpg', 
+                        malletImg: 'cadence_oxblood_mallet.jpg', 
+                        stock: { blade: 5, mallet: 5 } 
+                    }
+                ] 
+            },
+            { 
+                id: 'cadence-ivory', 
+                series: 'Cadence Ivory', 
+                desc: 'Clean, structured cream exterior paired with contrast heritage stitching.', 
+                slideshowImages: ['cadence_ivory_1.jpg', 'cadence_ivory_2.jpg'], 
+                colors: [
+                    { 
+                        name: 'Warm Ivory', 
+                        hex: '#EAE0D5', 
+                        bladeImg: 'cadence_ivory_blade.jpg', 
+                        malletImg: 'cadence_ivory_mallet.jpg', 
+                        stock: { blade: 5, mallet: 5 } 
+                    }
+                ] 
+            }
+        ];
+
         // Data for Atelier Collection
         const atelierProducts = [
             { 
                 id: 'earthy', series: 'Earthy Tweed', desc: 'Classic tweed texture bringing a touch of tradition to your bag.', slideshowImages: ['ET3.png', 'ET4.png', 'Untitled design - 7.png', 'Untitled design - 8.png', 'IMG_8051.jpeg'], 
                 colors: [
                     { name: 'Terracotta', hex: '#894E35', woodImg: 'Untitled design - 10.png', driverImg: 'Untitled design - 9.png', hybridImg: 'Untitled design - 10.png', stock: { wood: 0, driver: 0, hybrid: 0 } }, 
-                    { name: 'Moss', hex: '#5E564C', woodImg: 'Untitled design - 12.png', driverImg: 'Untitled design - 11.png', hybridImg: 'Untitled design - 12.png', stock: { wood: 0, driver: 1, hybrid: 0 } }
+                    { name: 'Moss', hex: '#5E564C', woodImg: 'Untitled design - 12.png', driverImg: 'Untitled design - 11.png', hybridImg: 'Untitled design - 12.png', stock: { wood: 0, driver: 0, hybrid: 0 } }
                 ] 
             },
             { 
@@ -773,41 +892,43 @@
             { 
                 id: 'argyle', series: 'Argyle', desc: 'Premium argyle fabric paired with plush velvet lining.', slideshowImages: ['argyle 2.jpg' , 'argyle 4.jpg'], 
                 colors: [
-                    { name: 'Chestnut Argyle', hex: '#8B5A2B', woodImg: 'Chestnut Wood.jpg', driverImg: 'Chestnut Driver.jpg', hybridImg: 'Chestnut Hybrid.jpg', stock: { wood: 2, driver: 2, hybrid: 1 } }, 
-                    { name: 'Blush Argyle', hex: '#D19C97', woodImg: 'Blush Wood.jpg', driverImg: 'Blush Driver.jpg', hybridImg: 'Blush Hybrid.jpg', stock: { wood: 2, driver: 2, hybrid: 0 } }
+                    { name: 'Chestnut Argyle', hex: '#8B5A2B', woodImg: 'Chestnut Wood.jpg', driverImg: 'Chestnut Driver.jpg', hybridImg: 'Chestnut Hybrid.jpg', stock: { wood: 0, driver: 1, hybrid: 0 } }, 
+                    { name: 'Blush Argyle', hex: '#D19C97', woodImg: 'Blush Wood.jpg', driverImg: 'Blush Driver.jpg', hybridImg: 'Blush Hybrid.jpg', stock: { wood: 1, driver: 2, hybrid: 0 } }
                 ] 
             },
             { 
                 id: 'houndstooth', series: 'Houndstooth', desc: 'Classic houndstooth precision. A timeless look on the fairways.', slideshowImages: ['houndstooth 1.jpg', 'houndstooth 5.jpg'], 
                 colors: [
-                    { name: 'Espresso Houndstooth', hex: '#2B1B17', woodImg: 'Espresso Wood.jpg', driverImg: 'Espresso Driver.jpg', hybridImg: 'Espresso Hybrid.jpg', stock: { wood: 1, driver: 4, hybrid: 0 } }, 
-                    { name: 'Crimson Houndstooth', hex: '#800000', woodImg: 'Crimson Wood.jpg', driverImg: 'Crimson Driver.jpg', hybridImg: 'Crimson Hybrid.jpg', stock: { wood: 3, driver: 3, hybrid: 2 } }
+                    { name: 'Espresso Houndstooth', hex: '#2B1B17', woodImg: 'Espresso Wood.jpg', driverImg: 'Espresso Driver.jpg', hybridImg: 'Espresso Hybrid.jpg', stock: { wood: 0, driver: 1, hybrid: 0 } }, 
+                    { name: 'Crimson Houndstooth', hex: '#800000', woodImg: 'Crimson Wood.jpg', driverImg: 'Crimson Driver.jpg', hybridImg: 'Crimson Hybrid.jpg', stock: { wood: 0, driver: 2, hybrid: 0 } }
                 ] 
             },
             { 
                 id: 'tartan', series: 'Tartan', desc: 'Heritage tartan plaid bringing bold tradition to your bag.', slideshowImages: ['tartan 9.jpg' , 'tartan 10.jpg'], 
                 colors: [
-                    { name: 'Haymarket Tartan', hex: '#C19A6B', woodImg: 'Haymarket Wood.jpg', driverImg: 'Haymarket Driver.jpg', hybridImg: 'Haymarket Hybrid.jpg', stock: { wood: 3, driver: 4, hybrid: 2 } },
-                    { name: 'Royal Stewart Tartan', hex: '#B22222', woodImg: 'Stewart Wood.jpg', driverImg: 'Stewart Driver.jpg', hybridImg: 'Stewart Hybrid.jpg', stock: { wood: 3, driver: 2, hybrid: 0 } }
+                    { name: 'Haymarket Tartan', hex: '#C19A6B', woodImg: 'Haymarket Wood.jpg', driverImg: 'Haymarket Driver.jpg', hybridImg: 'Haymarket Hybrid.jpg', stock: { wood: 1, driver: 2, hybrid: 0 } },
+                    { name: 'Royal Stewart Tartan', hex: '#B22222', woodImg: 'Stewart Wood.jpg', driverImg: 'Stewart Driver.jpg', hybridImg: 'Stewart Hybrid.jpg', stock: { wood: 1, driver: 2, hybrid: 0 } }
                 ] 
             }
         ];
         
-        const allProducts = [...heritageProducts, ...atelierProducts];
+        const allProducts = [...cadenceProducts, ...heritageProducts, ...atelierProducts];
 
-        // NEW Split Pricing Structure
+        // Split Pricing Structure (Includes Cadence Putter Series pricing - edit as needed)
         const PRICING = {
             MYR: { 
                 symbol: 'RM ', 
+                cadence: { blade: 159, mallet: 159 },
                 atelier: { wood: 109, driver: 129, hybrid: 0 },
                 heritage: { wood: 119, driver: 139, hybrid: 109 },
-                bundleDiscount: 10, 
+                bundleDiscount: 15, 
                 patch: 30, 
                 shippingWest: 10, 
                 shippingEast: 15 
             },
             SGD: { 
                 symbol: 'S$ ', 
+                cadence: { blade: 38, mallet: 42 },
                 atelier: { wood: 35, driver: 42, hybrid: 0 },
                 heritage: { wood: 38, driver: 44, hybrid: 35 },
                 bundleDiscount: 5, 
@@ -815,8 +936,29 @@
                 shipping: 12 
             } 
         };
+
+        // Helper to determine which collection a product belongs to
+        function getCollectionKey(productId) {
+            if (cadenceProducts.some(p => p.id === productId)) return 'cadence';
+            if (heritageProducts.some(p => p.id === productId)) return 'heritage';
+            return 'atelier';
+        }
         
         const SGD_TO_MYR_RATE = 3.25; 
+        
+        // Sale Time Control (Expired after 11.11; update dates for future sales)
+        const SALE_START = new Date('2026-11-11T00:00:00+08:00');
+        const SALE_END = new Date('2026-11-11T23:59:59+08:00');
+        
+        function checkSaleActive() {
+            const now = new Date();
+            return now >= SALE_START && now <= SALE_END;
+        }
+        
+        const isSaleActive = checkSaleActive();
+        const SALE_DISCOUNT = isSaleActive ? 0.11 : 0;
+        const FREE_SHIPPING_MYR = 250;
+        const FREE_SHIPPING_SGD = Math.ceil(250 / SGD_TO_MYR_RATE); 
 
         let currentCurrency = 'MYR';
         let cart = [];
@@ -830,21 +972,55 @@
         let discountAmount = 0;
 
         document.addEventListener('DOMContentLoaded', async () => {
+            applySaleUI();
             setupRouter(); 
             await detectUserLocation();
             setupMobileAutoplay(); 
             setupEventListeners();
-            checkPaymentStatus(); // <-- ADDED: Checks for return from payment gateway
+            checkPaymentStatus();
         });
+
+        // ----------------------------------------------------
+        // SALE TIME UI TOGGLE
+        // ----------------------------------------------------
+        function applySaleUI() {
+            if (!isSaleActive) return;
+
+            const marquee = document.getElementById('mainMarquee');
+            if (marquee) {
+                const saleText = "WELCOME TO HEATH.STUDIO ⛳️ 11.11 SALE IS LIVE! 11% OFF STOREWIDE ⛳️ FREE SHIPPING OVER RM250 ⛳️";
+                marquee.innerHTML = Array(4).fill(`<span class="mx-6">${saleText}</span>`).join('');
+            }
+            
+            const heroBadge = document.getElementById('heroBadgeText');
+            if (heroBadge) {
+                heroBadge.className = "text-xl text-red-600 mb-10 font-bold bg-white/80 px-4 py-2 rounded-full inline-block";
+                heroBadge.textContent = "11.11 Sale: 11% Off Storewide";
+            }
+            
+            const heroBtn = document.getElementById('heroShopBtn');
+            if (heroBtn) heroBtn.textContent = "Shop The Sale";
+
+            const hViewBadge = document.getElementById('heritageViewBadge');
+            if (hViewBadge) {
+                hViewBadge.className = "bg-red-600 text-white text-[10px] md:text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-5 inline-block shadow-sm";
+                hViewBadge.textContent = "11.11 Sale Live";
+            }
+
+            const aViewBadge = document.getElementById('atelierViewBadge');
+            if (aViewBadge) {
+                aViewBadge.className = "bg-red-600 text-white text-[10px] md:text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-5 inline-block shadow-sm";
+                aViewBadge.textContent = "11.11 Sale Live";
+                aViewBadge.classList.remove('hidden');
+            }
+        }
 
         // ----------------------------------------------------
         // PAYMENT STATUS CHECK
         // ----------------------------------------------------
         function checkPaymentStatus() {
             const urlParams = new URLSearchParams(window.location.search);
-            // Most gateways use status=success, status=completed, or append a reference parameter
             if (urlParams.get('status') === 'success' || urlParams.get('status') === 'completed' || urlParams.has('reference')) {
-                // Show modal
                 const successModal = document.getElementById('successModal');
                 const backdrop = document.getElementById('successModalBackdrop');
                 const content = document.getElementById('successModalContent');
@@ -858,10 +1034,7 @@
                     }, 10);
                 }
                 
-                // Clean the URL to prevent the popup showing again if the user refreshes
                 window.history.replaceState({}, document.title, window.location.pathname);
-                
-                // Clear the cart
                 cart = [];
                 updateCartUI();
             }
@@ -881,28 +1054,33 @@
         }
 
         // ----------------------------------------------------
-        // SPA Router Logic
+        // SPA Router Logic (Updated with #cadence route)
         // ----------------------------------------------------
         function setupRouter() {
             window.addEventListener('hashchange', handleRoute);
-            handleRoute(); // Run immediately on load
+            handleRoute();
         }
 
         function handleRoute() {
             const hash = window.location.hash;
             const viewHome = document.getElementById('view-home');
+            const viewCadence = document.getElementById('view-cadence');
             const viewHeritage = document.getElementById('view-heritage');
             const viewAtelier = document.getElementById('view-atelier');
             
-            if(!viewHome || !viewHeritage || !viewAtelier) return;
+            if (!viewHome || !viewCadence || !viewHeritage || !viewAtelier) return;
 
-            // Hide everything first
+            // Hide all views first
             viewHome.classList.add('hidden');
+            viewCadence.classList.add('hidden');
             viewHeritage.classList.add('hidden');
             viewAtelier.classList.add('hidden');
 
-            // Show the requested page and scroll to top seamlessly
-            if (hash === '#heritage') {
+            // Show the requested view
+            if (hash === '#cadence') {
+                viewCadence.classList.remove('hidden');
+                window.scrollTo(0, 0);
+            } else if (hash === '#heritage') {
                 viewHeritage.classList.remove('hidden');
                 window.scrollTo(0, 0);
             } else if (hash === '#atelier') {
@@ -1043,19 +1221,18 @@
             const sym = PRICING[currentCurrency].symbol;
             
             const generateCard = (product) => {
-                const collectionKey = heritageProducts.some(p => p.id === product.id) ? 'heritage' : 'atelier';
+                const collectionKey = getCollectionKey(product.id);
                 const prices = PRICING[currentCurrency][collectionKey];
                 
-                // Dynamically find the lowest price to display on the "From" tag
-                let startingPrice = prices.wood;
-                if (prices.hybrid > 0 && prices.hybrid < startingPrice) {
-                    startingPrice = prices.hybrid;
-                }
+                // Dynamically find the lowest non-zero price for the "From" tag
+                const validPrices = Object.values(prices).filter(v => v > 0);
+                const startingPrice = Math.min(...validPrices);
+                const placeholderBg = collectionKey === 'cadence' ? '1E3F20' : '4c111f';
                 
                 return `
                 <div class="product-card group cursor-pointer" data-product-id="${product.id}" onclick="openModal('${product.id}')" onmouseenter="startHoverSlideshow('${product.id}', this)" onmouseleave="stopHoverSlideshow('${product.id}', this)">
                     <div class="relative bg-gray-100 rounded-lg md:rounded-2xl overflow-hidden aspect-[4/5] mb-2 md:mb-6 shadow-sm group-hover:shadow-xl transition-shadow duration-300 border border-gray-200/50">
-                        <img src="${product.slideshowImages[0]}" alt="${product.series}" class="product-img w-full h-full object-cover transition-opacity duration-300">
+                        <img src="${product.slideshowImages[0]}" alt="${product.series}" class="product-img w-full h-full object-cover transition-opacity duration-300" onerror="this.onerror=null; this.src='https://placehold.co/600x750/${placeholderBg}/ffffff?text=${encodeURIComponent(product.series)}'">
                         <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center p-1 md:p-2">
                             <span class="bg-white text-primary px-2 py-1 md:px-8 md:py-3 rounded-full font-bold text-[10px] sm:text-xs md:text-base opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 shadow-xl text-center leading-tight">
                                 <span class="hidden md:inline">Select Options</span>
@@ -1066,12 +1243,19 @@
                     <div class="px-0.5 md:px-2">
                         <h3 class="font-serif text-[15px] sm:text-base md:text-2xl font-bold text-primary mb-0.5 md:mb-2 leading-tight">${product.series}</h3>
                         <p class="text-gray-600 text-[9px] sm:text-sm mb-1 md:mb-3 leading-snug line-clamp-2 md:line-clamp-none">${product.desc}</p>
-                        <p class="font-semibold text-primary text-[14px] md:text-xl md:text-base">From ${sym}${startingPrice}</p>
+                        <p class="font-semibold text-[14px] md:text-xl md:text-base flex items-center flex-wrap gap-1">
+                            ${isSaleActive 
+                                ? `<span class="text-gray-400 line-through text-xs md:text-sm">${sym}${startingPrice}</span><span class="text-red-600">From ${sym}${Math.ceil(startingPrice * (1 - SALE_DISCOUNT))}</span>`
+                                : `<span class="text-[#4c111f]">From ${sym}${startingPrice}</span>`
+                            }
+                        </p>
                     </div>
                 </div>
                 `;
             };
 
+            const cadenceGridEl = document.getElementById('cadenceGrid');
+            if (cadenceGridEl) cadenceGridEl.innerHTML = cadenceProducts.map(generateCard).join('');
             document.getElementById('heritageGrid').innerHTML = heritageProducts.map(generateCard).join('');
             document.getElementById('atelierGrid').innerHTML = atelierProducts.map(generateCard).join('');
         }
@@ -1136,7 +1320,6 @@
                 liveText.classList.add('font-sans', 'text-xl', 'font-bold', 'tracking-[0.1em]');
             }
             
-            // Rotating clockwise (90deg)
             if (posVertical) {
                 liveElement.style.transform = 'rotate(90deg) scale(0.9)';
             } else {
@@ -1153,8 +1336,6 @@
             selectedColorIndex = 0;
             
             document.getElementById('modalSeries').textContent = currentModalProduct.series;
-            
-            // CLEAN DESCRIPTION FIX
             document.getElementById('modalDesc').textContent = currentModalProduct.desc;
             document.getElementById('modalTitle').textContent = currentModalProduct.colors[0].name;
 
@@ -1192,41 +1373,82 @@
 
         function injectModalClubs() {
             const sym = PRICING[currentCurrency].symbol;
-            const isHeritage = heritageProducts.some(p => p.id === currentModalProduct.id);
-            const collectionKey = isHeritage ? 'heritage' : 'atelier';
+            const collectionKey = getCollectionKey(currentModalProduct.id);
+            const isCadence = collectionKey === 'cadence';
+            const isHeritage = collectionKey === 'heritage';
             const prices = PRICING[currentCurrency][collectionKey];
             
             const clubTypesContainer = document.getElementById('modalClubTypes');
+            const clubHeading = document.getElementById('modalClubTypeHeading');
+            if (clubHeading) {
+                clubHeading.textContent = isCadence ? 'Select Putter Type' : 'Select Club Type';
+            }
             
-            clubTypesContainer.className = isHeritage ? "grid grid-cols-3 gap-2 sm:gap-4" : "grid grid-cols-2 gap-2 sm:gap-4";
-            
-            let html = `
-                <label class="cursor-pointer group">
-                    <input type="radio" name="clubType" value="wood" class="peer sr-only" checked onchange="selectClubType()">
-                    <div class="rounded-xl border-2 border-[#4c111f]/20 p-2 sm:p-4 text-center peer-checked:border-[#4c111f] peer-checked:bg-[#4c111f]/5 group-hover:border-[#4c111f]/30 transition-all h-full flex flex-col justify-center">
-                        <span class="block font-bold text-[#4c111f] text-sm sm:text-base">Wood</span>
-                        <span class="block text-xs sm:text-sm text-[#4c111f]/70 mt-1">${sym}${prices.wood}</span>
-                    </div>
-                </label>
-                <label class="cursor-pointer group">
-                    <input type="radio" name="clubType" value="driver" class="peer sr-only" onchange="selectClubType()">
-                    <div class="rounded-xl border-2 border-[#4c111f]/20 p-2 sm:p-4 text-center peer-checked:border-[#4c111f] peer-checked:bg-[#4c111f]/5 group-hover:border-[#4c111f]/30 transition-all h-full flex flex-col justify-center">
-                        <span class="block font-bold text-[#4c111f] text-sm sm:text-base">Driver</span>
-                        <span class="block text-xs sm:text-sm text-[#4c111f]/70 mt-1">${sym}${prices.driver}</span>
-                    </div>
-                </label>
-            `;
+            const formatClubPrice = (price) => {
+                if (!isSaleActive) return `<span class="text-[#4c111f]/70">${sym}${price}</span>`;
+                return `<span class="text-gray-400 line-through mr-1">${sym}${price}</span><span class="text-red-600 font-bold">${sym}${Math.ceil(price * (1 - SALE_DISCOUNT))}</span>`;
+            };
 
-            if (isHeritage) {
-                html += `
+            let html = '';
+
+            if (isCadence) {
+                clubTypesContainer.className = "grid grid-cols-2 gap-2 sm:gap-4";
+                html = `
                     <label class="cursor-pointer group">
-                        <input type="radio" name="clubType" value="hybrid" class="peer sr-only" onchange="selectClubType()">
+                        <input type="radio" name="clubType" value="blade" class="peer sr-only" checked onchange="selectClubType()">
                         <div class="rounded-xl border-2 border-[#4c111f]/20 p-2 sm:p-4 text-center peer-checked:border-[#4c111f] peer-checked:bg-[#4c111f]/5 group-hover:border-[#4c111f]/30 transition-all h-full flex flex-col justify-center">
-                            <span class="block font-bold text-[#4c111f] text-sm sm:text-base">Hybrid</span>
-                            <span class="block text-xs sm:text-sm text-[#4c111f]/70 mt-1">${sym}${prices.hybrid}</span>
+                            <span class="block font-bold text-[#4c111f] text-sm sm:text-base">Blade</span>
+                            <span class="block text-xs sm:text-sm mt-1">
+                                ${formatClubPrice(prices.blade)}
+                            </span>
+                        </div>
+                    </label>
+                    <label class="cursor-pointer group">
+                        <input type="radio" name="clubType" value="mallet" class="peer sr-only" onchange="selectClubType()">
+                        <div class="rounded-xl border-2 border-[#4c111f]/20 p-2 sm:p-4 text-center peer-checked:border-[#4c111f] peer-checked:bg-[#4c111f]/5 group-hover:border-[#4c111f]/30 transition-all h-full flex flex-col justify-center">
+                            <span class="block font-bold text-[#4c111f] text-sm sm:text-base">Mallet</span>
+                            <span class="block text-xs sm:text-sm mt-1">
+                                ${formatClubPrice(prices.mallet)}
+                            </span>
                         </div>
                     </label>
                 `;
+            } else {
+                clubTypesContainer.className = isHeritage ? "grid grid-cols-3 gap-2 sm:gap-4" : "grid grid-cols-2 gap-2 sm:gap-4";
+                html = `
+                    <label class="cursor-pointer group">
+                        <input type="radio" name="clubType" value="wood" class="peer sr-only" checked onchange="selectClubType()">
+                        <div class="rounded-xl border-2 border-[#4c111f]/20 p-2 sm:p-4 text-center peer-checked:border-[#4c111f] peer-checked:bg-[#4c111f]/5 group-hover:border-[#4c111f]/30 transition-all h-full flex flex-col justify-center">
+                            <span class="block font-bold text-[#4c111f] text-sm sm:text-base">Wood</span>
+                            <span class="block text-xs sm:text-sm mt-1">
+                                ${formatClubPrice(prices.wood)}
+                            </span>
+                        </div>
+                    </label>
+                    <label class="cursor-pointer group">
+                        <input type="radio" name="clubType" value="driver" class="peer sr-only" onchange="selectClubType()">
+                        <div class="rounded-xl border-2 border-[#4c111f]/20 p-2 sm:p-4 text-center peer-checked:border-[#4c111f] peer-checked:bg-[#4c111f]/5 group-hover:border-[#4c111f]/30 transition-all h-full flex flex-col justify-center">
+                            <span class="block font-bold text-[#4c111f] text-sm sm:text-base">Driver</span>
+                            <span class="block text-xs sm:text-sm mt-1">
+                                ${formatClubPrice(prices.driver)}
+                            </span>
+                        </div>
+                    </label>
+                `;
+
+                if (isHeritage) {
+                    html += `
+                        <label class="cursor-pointer group">
+                            <input type="radio" name="clubType" value="hybrid" class="peer sr-only" onchange="selectClubType()">
+                            <div class="rounded-xl border-2 border-[#4c111f]/20 p-2 sm:p-4 text-center peer-checked:border-[#4c111f] peer-checked:bg-[#4c111f]/5 group-hover:border-[#4c111f]/30 transition-all h-full flex flex-col justify-center">
+                                <span class="block font-bold text-[#4c111f] text-sm sm:text-base">Hybrid</span>
+                                <span class="block text-xs sm:text-sm mt-1">
+                                    ${formatClubPrice(prices.hybrid)}
+                                </span>
+                            </div>
+                        </label>
+                    `;
+                }
             }
             
             clubTypesContainer.innerHTML = html;
@@ -1240,23 +1462,36 @@
             if(!typeEl) return;
             
             const type = typeEl.value;
-            const collectionKey = heritageProducts.some(p => p.id === currentModalProduct.id) ? 'heritage' : 'atelier';
-            let basePrice = PRICING[currentCurrency][collectionKey][type];
+            const collectionKey = getCollectionKey(currentModalProduct.id);
+            
+            let originalItemPrice = PRICING[currentCurrency][collectionKey][type];
+            let discountedItemPrice = Math.ceil(originalItemPrice * (1 - SALE_DISCOUNT));
+            
+            let displayOriginal = originalItemPrice;
+            let displayFinal = discountedItemPrice;
             
             const patchCheckbox = document.getElementById('addPatchCheckbox');
             if(patchCheckbox && patchCheckbox.checked) {
-                basePrice += PRICING[currentCurrency].patch;
+                displayOriginal += PRICING[currentCurrency].patch;
+                displayFinal += PRICING[currentCurrency].patch;
             }
 
             const sym = PRICING[currentCurrency].symbol;
-            document.getElementById('modalPrice').textContent = `${sym}${basePrice}`;
+            
+            if (isSaleActive) {
+                document.getElementById('modalPrice').innerHTML = `
+                    <s class="text-gray-400 text-xl mr-2">${sym}${displayOriginal}</s> 
+                    <span class="text-red-600">${sym}${displayFinal}</span>
+                `;
+            } else {
+                document.getElementById('modalPrice').innerHTML = `${sym}${displayOriginal}`;
+            }
         }
 
         window.selectColor = function(index) {
             selectedColorIndex = index;
             updateModalImage();
             
-            // CLEAN DESCRIPTION FIX
             document.getElementById('modalTitle').textContent = currentModalProduct.colors[index].name;
             document.getElementById('modalDesc').textContent = currentModalProduct.desc;
 
@@ -1275,15 +1510,18 @@
             updateModalState();
         }
 
+        function getSelectedItemImage(colorData, type) {
+            if (type === 'blade') return colorData.bladeImg || colorData.malletImg;
+            if (type === 'mallet') return colorData.malletImg || colorData.bladeImg;
+            if (type === 'driver') return colorData.driverImg;
+            if (type === 'hybrid') return colorData.hybridImg || colorData.woodImg;
+            return colorData.woodImg;
+        }
+
         function updateModalImage() {
             const type = document.querySelector('input[name="clubType"]:checked').value;
             const colorData = currentModalProduct.colors[selectedColorIndex];
-            
-            let imgSrc = colorData.woodImg;
-            if (type === 'driver') imgSrc = colorData.driverImg;
-            if (type === 'hybrid') imgSrc = colorData.hybridImg || colorData.woodImg;
-            
-            document.getElementById('modalImg').src = imgSrc;
+            document.getElementById('modalImg').src = getSelectedItemImage(colorData, type);
         }
 
         function updateModalState() {
@@ -1305,19 +1543,19 @@
             const btn = document.getElementById('addToCartModalBtn');
             const stockStatus = document.getElementById('modalStockStatus');
             
-            // LAUNCH TIME LOCK LOGIC
-            const isHeritage = heritageProducts.some(p => p.id === currentModalProduct.id);
-            const launchDate = new Date('2026-10-20T20:00:00+08:00'); // 8:00 PM Malaysia Time
-            const isLaunched = new Date() >= launchDate;
-            
-            if (isHeritage && !isLaunched) {
+            /* 
+            // OPTIONAL: Uncomment below to lock Cadence Collection until Saturday launch time (Nov 28, 2026)
+            const isCadence = getCollectionKey(currentModalProduct.id) === 'cadence';
+            const cadenceLaunchDate = new Date('2026-11-28T20:00:00+08:00');
+            if (isCadence && new Date() < cadenceLaunchDate) {
                 btn.disabled = true;
-                btn.textContent = "Dropping Oct 20";
+                btn.textContent = "Dropping Nov 28";
                 btn.classList.add('opacity-50', 'cursor-not-allowed', 'bg-gray-800');
                 btn.classList.remove('hover:opacity-90', 'active:scale-95', 'bg-[#4c111f]');
-                stockStatus.innerHTML = `<span class="text-accent font-bold"><i class="fas fa-lock mr-1"></i>Unlocks Oct 20 @ 8:00 PM</span>`;
-                return; // Stop here! Do not check for stock.
+                stockStatus.innerHTML = `<span class="text-accent font-bold"><i class="fas fa-lock mr-1"></i>Unlocks Sat Nov 28 @ 8:00 PM</span>`;
+                return;
             }
+            */
 
             if (remaining <= 0) {
                 btn.disabled = true;
@@ -1337,7 +1575,7 @@
         window.addToCart = function() {
             const type = document.querySelector('input[name="clubType"]:checked').value;
             const color = currentModalProduct.colors[selectedColorIndex];
-            const collectionKey = heritageProducts.some(p => p.id === currentModalProduct.id) ? 'heritage' : 'atelier';
+            const collectionKey = getCollectionKey(currentModalProduct.id);
             
             let patchData = null;
             const wantsPatch = document.getElementById('addPatchCheckbox').checked;
@@ -1362,9 +1600,7 @@
                 };
             }
 
-            let imgSrc = color.woodImg;
-            if (type === 'driver') imgSrc = color.driverImg;
-            if (type === 'hybrid') imgSrc = color.hybridImg || color.woodImg;
+            const imgSrc = getSelectedItemImage(color, type);
 
             cart.push({
                 series: currentModalProduct.series,
@@ -1405,7 +1641,9 @@
                 checkoutBtn.disabled = false;
                 
                 cartItemsEl.innerHTML = cart.map((item, index) => {
-                    let itemBasePrice = PRICING[currentCurrency][item.collectionKey][item.type];
+                    let originalBasePrice = PRICING[currentCurrency][item.collectionKey][item.type];
+                    let itemBasePrice = Math.ceil(originalBasePrice * (1 - SALE_DISCOUNT));
+
                     let patchHtml = '';
                     let patchPrice = 0;
                     
@@ -1420,11 +1658,16 @@
                         `;
                     }
                     
+                    const originalItemTotal = originalBasePrice + patchPrice;
                     const itemTotal = itemBasePrice + patchPrice;
+
+                    let priceHtmlBlock = isSaleActive 
+                        ? `<p class="text-gray-400 line-through text-[10px] m-0">${sym}${originalItemTotal}</p><p class="font-bold text-red-600 m-0">${sym}${itemTotal}</p>`
+                        : `<p class="font-bold text-primary m-0">${sym}${originalItemTotal}</p>`;
 
                     return `
                         <div class="flex gap-4 border-b border-gray-100 pb-4 items-start">
-                            <img src="${item.img}" class="w-20 h-20 object-cover rounded-xl border mt-1" alt="${item.series}">
+                            <img src="${item.img}" class="w-20 h-20 object-cover rounded-xl border mt-1" alt="${item.series}" onerror="this.onerror=null; this.src='https://placehold.co/100x100/4c111f/ffffff?text=Item'">
                             <div class="flex-grow">
                                 <div class="flex justify-between items-start">
                                     <h4 class="font-bold text-sm text-[#4c111f]">${item.series}</h4>
@@ -1433,7 +1676,7 @@
                                 <p class="text-xs text-gray-500 capitalize">${item.type} &bull; ${item.color}</p>
                                 ${patchHtml}
                                 <div class="mt-2 text-right">
-                                    <p class="font-bold text-primary">${sym}${itemTotal}</p>
+                                    ${priceHtmlBlock}
                                 </div>
                             </div>
                         </div>
@@ -1450,7 +1693,8 @@
             let driversCount = 0;
             
             cart.forEach(item => {
-                productsTotal += PRICING[currentCurrency][item.collectionKey][item.type];
+                let discountedPrice = Math.ceil(PRICING[currentCurrency][item.collectionKey][item.type] * (1 - SALE_DISCOUNT));
+                productsTotal += discountedPrice;
                 if (item.type === 'wood') woodsCount++;
                 if (item.type === 'driver') driversCount++;
             });
@@ -1467,6 +1711,15 @@
                 if (zoneInput.value === 'west') shippingFee = p.shippingWest;
                 else if (zoneInput.value === 'east') shippingFee = p.shippingEast;
                 else if (zoneInput.value === 'singapore') shippingFee = p.shipping;
+            }
+
+            // Free Shipping threshold check
+            const freeShipThreshold = currentCurrency === 'MYR' ? FREE_SHIPPING_MYR : FREE_SHIPPING_SGD;
+            let isFreeShipping = false;
+            
+            if (isSaleActive && (productsTotal + totalPatchFees >= freeShipThreshold)) {
+                shippingFee = 0;
+                isFreeShipping = true;
             }
 
             let subTotal = productsTotal + totalPatchFees + shippingFee;
@@ -1486,8 +1739,15 @@
                 totalEl.textContent = `${sym}${calculatedFinalTotal.toFixed(0)}`;
             }
 
-            if (bundlesCount > 0) bundleNotice.classList.remove('hidden');
-            else bundleNotice.classList.add('hidden');
+            if (bundlesCount > 0 || isFreeShipping) {
+                bundleNotice.classList.remove('hidden');
+                let msgs = [];
+                if (bundlesCount > 0) msgs.push('<i class="fas fa-tags mr-1"></i> Bundle discount applied!');
+                if (isFreeShipping) msgs.push('<i class="fas fa-truck-fast mr-1"></i> Free shipping unlocked!');
+                bundleNotice.innerHTML = msgs.join('<br>');
+            } else {
+                bundleNotice.classList.add('hidden');
+            }
         }
         
         window.applyPromoCode = function() {
@@ -1533,7 +1793,7 @@
         function startHoverSlideshow(pid, card) {
             const prod = allProducts.find(p => p.id === pid);
             const imgEl = card.querySelector('.product-img');
-            if (!imgEl || prod.slideshowImages.length <= 1) return;
+            if (!imgEl || !prod || prod.slideshowImages.length <= 1) return;
             let i = 0;
             if (hoverIntervals[pid]) clearInterval(hoverIntervals[pid]);
             hoverIntervals[pid] = setInterval(() => { i = (i + 1) % prod.slideshowImages.length; imgEl.src = prod.slideshowImages[i]; }, 1500); 
@@ -1546,7 +1806,7 @@
             if (imgEl && prod) imgEl.src = prod.slideshowImages[0];
         }
 
-        // --- NEW ZOOM LOGIC (WITH TOUCH SUPPORT) ---
+        // --- ZOOM LOGIC (WITH TOUCH SUPPORT) ---
         const zoomModal = document.getElementById('zoomModal');
         const zoomImg = document.getElementById('zoomImg');
         const closeZoomBtn = document.getElementById('closeZoomBtn');
@@ -1584,27 +1844,21 @@
         if(closeZoomBtn) closeZoomBtn.addEventListener('click', closeZoom);
 
         if(zoomImg) {
-            // Click toggles zoom
             zoomImg.addEventListener('click', function(e) {
                 toggleZoom(e.clientX, e.clientY);
             });
 
-            // Desktop pan
             zoomImg.addEventListener('mousemove', function(e) {
                 if (isZoomed) {
                     updateTransformOrigin(e.clientX, e.clientY);
                 }
             });
             
-            // Mobile Touch preparation
-            zoomImg.addEventListener('touchstart', function(e) {
-                // Allows tapping to work without jumping
-            }, {passive: true});
+            zoomImg.addEventListener('touchstart', function(e) {}, {passive: true});
 
-            // Mobile pan
             zoomImg.addEventListener('touchmove', function(e) {
                 if (isZoomed && e.touches.length === 1) {
-                    e.preventDefault(); // Stop entire page from scrolling while zoomed
+                    e.preventDefault();
                     updateTransformOrigin(e.touches[0].clientX, e.touches[0].clientY);
                 }
             }, {passive: false});
@@ -1635,7 +1889,6 @@
             const y = (clientY / window.innerHeight) * 100;
             zoomImg.style.transformOrigin = `${x}% ${y}%`;
         }
-        // ----------------------
 
         function setupEventListeners() {
             document.getElementById('cartBtn').addEventListener('click', openCart);
@@ -1768,7 +2021,6 @@
                 payload.append("phone", cPhone);
                 payload.append("purpose", `Order: ${cartDetails}. Ship to: ${fullAddress}`);
                 payload.append("send_email", "true"); 
-                // HitPay usually appends its own query variables to this redirect_url (like status=completed or reference=xxx)
                 payload.append("redirect_url", window.location.origin + window.location.pathname + "?status=success"); 
 
                 try {
@@ -1781,7 +2033,8 @@
                     if (response.ok && data.url) window.location.href = data.url;
                     else throw new Error("API Error");
                 } catch (error) {
-                    alert("Payment gateway error. Please try again.");
+                    err.innerHTML = 'Payment gateway error. Please try again.';
+                    err.classList.remove('hidden');
                     btn.innerHTML = originalText;
                     btn.disabled = false;
                 }
