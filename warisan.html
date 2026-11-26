@@ -277,7 +277,7 @@
             </section>
 
             <!-- NEW: Spotted on the Fairways — Community Gallery & Customer Reviews -->
-            <section class="py-16 md:py-24 bg-white border-t border-[#4c111f]/10">
+            <section id="community" class="py-16 md:py-24 bg-white border-t border-[#4c111f]/10 scroll-mt-24">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
                         <div>
@@ -410,6 +410,184 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Cadence Grid (3 Columns on Mobile & Desktop) -->
+                    <div class="grid grid-cols-3 gap-1.5 md:gap-10" id="cadenceGrid">
+                        <!-- Products injected via JS -->
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+        <!-- ========================================== -->
+        <!-- VIEW: HERITAGE COLLECTION                  -->
+        <!-- ========================================== -->
+        <div id="view-heritage" class="hidden">
+            <div class="bg-gray-50 pt-6 pb-2 border-b border-gray-200/50 sticky top-[72px] md:top-[90px] z-30">
+                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                     <a href="#home" class="inline-flex items-center text-gray-500 hover:text-[#4c111f] font-bold text-xs uppercase tracking-wider transition-colors">
+                        <i class="fas fa-arrow-left mr-2"></i> Back to Home
+                     </a>
+                 </div>
+            </div>
+            
+            <section class="relative pt-12 pb-24 bg-gray-50">
+                <div class="max-w-7xl mx-auto px-2 md:px-12 relative z-10">
+                    <div class="text-center mb-10 md:mb-16 px-2 flex flex-col items-center">
+                        <span id="heritageViewBadge" class="bg-[#4c111f] text-white text-[10px] md:text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-5 inline-block shadow-sm">2nd Drop</span>
+                        <h2 class="font-serif text-4xl md:text-5xl font-bold text-[#4c111f] mb-6">THE HERITAGE COLLECTION</h2>
+                        <p class="text-gray-600 md:text-lg max-w-2xl mx-auto font-medium">Where heritage meets the fairways. Handcrafted with premium houndstooth, argyle, and tartan fabrics paired with plush velvet lining.</p>
+                    </div>
+                    <div class="grid grid-cols-3 gap-1.5 md:gap-10" id="heritageGrid">
+                        <!-- Products injected via JS -->
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+        <!-- ========================================== -->
+        <!-- VIEW: ATELIER COLLECTION                   -->
+        <!-- ========================================== -->
+        <div id="view-atelier" class="hidden">
+            <div class="bg-white/90 backdrop-blur-md pt-6 pb-2 border-b border-gray-200/50 sticky top-[72px] md:top-[90px] z-30 shadow-sm">
+                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                     <a href="#home" class="inline-flex items-center text-gray-800 hover:text-[#4c111f] font-bold text-xs uppercase tracking-wider transition-colors">
+                        <i class="fas fa-arrow-left mr-2"></i> Back to Home
+                     </a>
+                 </div>
+            </div>
+            
+            <section class="relative pt-16 pb-36 hero-bg">
+                <div class="absolute inset-0 bg-white/20 backdrop-blur-[2px]"></div>
+                <div class="max-w-7xl mx-auto px-2 md:px-12 relative z-10">
+                    <div class="text-center mb-10 md:mb-16 px-2 flex flex-col items-center">
+                        <span id="atelierViewBadge" class="hidden"></span>
+                        <h2 class="font-serif text-4xl md:text-5xl font-bold text-[#4c111f] mb-6 drop-shadow-sm">THE ATELIER COLLECTION</h2>
+                        <p class="text-gray-800 md:text-lg font-semibold max-w-2xl mx-auto drop-shadow-sm">Our inaugural collection. Three distinct series, meticulously crafted for style and protection. Limited remaining stock available.</p>
+                    </div>
+                    <div class="grid grid-cols-3 gap-1.5 md:gap-10" id="atelierGrid">
+                        <!-- Products injected via JS -->
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+        <!-- ========================================== -->
+        <!-- VIEW: SHOP ALL (Grouped by Club Type)      -->
+        <!-- ========================================== -->
+        <div id="view-shop-all" class="hidden">
+            <div class="bg-gray-50/95 backdrop-blur-md pt-5 pb-3 border-b border-gray-200/70 sticky top-[72px] md:top-[90px] z-30 shadow-sm">
+                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap items-center justify-between gap-3">
+                     <a href="#home" class="inline-flex items-center text-gray-500 hover:text-[#4c111f] font-bold text-xs uppercase tracking-wider transition-colors">
+                        <i class="fas fa-arrow-left mr-2"></i> Back to Home
+                     </a>
+                     <div class="flex items-center gap-1.5 sm:gap-2 overflow-x-auto no-scrollbar">
+                         <a href="#shop-all-putter" class="px-3 py-1.5 rounded-full bg-white border border-gray-200 text-xs font-bold text-[#4c111f] hover:bg-[#4c111f] hover:text-white transition-colors whitespace-nowrap">Putter</a>
+                         <a href="#shop-all-hybrid" class="px-3 py-1.5 rounded-full bg-white border border-gray-200 text-xs font-bold text-[#4c111f] hover:bg-[#4c111f] hover:text-white transition-colors whitespace-nowrap">Hybrid</a>
+                         <a href="#shop-all-wood" class="px-3 py-1.5 rounded-full bg-white border border-gray-200 text-xs font-bold text-[#4c111f] hover:bg-[#4c111f] hover:text-white transition-colors whitespace-nowrap">Wood</a>
+                         <a href="#shop-all-driver" class="px-3 py-1.5 rounded-full bg-white border border-gray-200 text-xs font-bold text-[#4c111f] hover:bg-[#4c111f] hover:text-white transition-colors whitespace-nowrap">Driver</a>
+                         <button id="inStockToggleBtn" onclick="toggleShopAllInStock()" class="px-3 py-1.5 rounded-full bg-white border border-[#4c111f]/30 text-xs font-bold text-[#4c111f] hover:opacity-90 transition-all flex items-center gap-1.5 whitespace-nowrap">
+                             <i id="inStockToggleIcon" class="far fa-square text-xs"></i> In-Stock Only
+                         </button>
+                     </div>
+                 </div>
+            </div>
+
+            <section class="relative pt-10 pb-24 bg-gray-50">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-10 md:mb-14">
+                        <span class="bg-[#4c111f] text-white text-[10px] md:text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-4 inline-block shadow-sm">Live Stock Overview</span>
+                        <h2 class="font-serif text-4xl md:text-5xl font-bold text-[#4c111f] mb-4">SHOP ALL HEADCOVERS</h2>
+                        <p class="text-gray-600 md:text-lg max-w-2xl mx-auto font-medium">Browse every collection in one place, organized by club type with live availability.</p>
+                    </div>
+                    <div id="shopAllContainer" class="space-y-14">
+                        <!-- Sections injected via JS -->
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+        <!-- ========================================== -->
+        <!-- VIEW: TRACK YOUR ORDER (J&T & Teleport)    -->
+        <!-- ========================================== -->
+        <div id="view-track-order" class="hidden">
+            <div class="bg-gray-50 pt-6 pb-2 border-b border-gray-200/50 sticky top-[72px] md:top-[90px] z-30">
+                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                     <a href="#home" class="inline-flex items-center text-gray-500 hover:text-[#4c111f] font-bold text-xs uppercase tracking-wider transition-colors">
+                        <i class="fas fa-arrow-left mr-2"></i> Back to Home
+                     </a>
+                 </div>
+            </div>
+
+            <section class="py-12 md:py-20 bg-gray-50">
+                <div class="max-w-2xl mx-auto px-4 sm:px-6">
+                    <div class="text-center mb-10">
+                        <span class="bg-[#4c111f] text-white text-[10px] md:text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-4 inline-block shadow-sm">Order Status</span>
+                        <h2 class="font-serif text-4xl font-bold text-[#4c111f] mb-3">Track Your Order</h2>
+                        <p class="text-gray-600 text-sm md:text-base font-medium">Enter your tracking number below to view live delivery updates directly inside our site.</p>
+                    </div>
+
+                    <div class="bg-white rounded-2xl shadow-md border border-gray-200/70 p-6 sm:p-8">
+                        <form onsubmit="trackJTParcel(event)" class="space-y-5">
+                            <div>
+                                <label class="block text-xs font-bold text-[#4c111f] uppercase tracking-wider mb-2">Select Courier / Region</label>
+                                <div class="grid grid-cols-2 gap-3">
+                                    <label class="cursor-pointer">
+                                        <input type="radio" name="jtRegion" value="MY" class="peer sr-only" checked onchange="updateTrackPlaceholder()">
+                                        <div class="rounded-xl border-2 border-gray-200 p-3 text-center peer-checked:border-[#4c111f] peer-checked:bg-[#4c111f]/5 transition-all">
+                                            <span class="block font-bold text-sm text-[#4c111f]">Malaysia</span>
+                                            <span class="block text-xs text-gray-500 mt-0.5">J&amp;T Express</span>
+                                        </div>
+                                    </label>
+                                    <label class="cursor-pointer">
+                                        <input type="radio" name="jtRegion" value="SG" class="peer sr-only" onchange="updateTrackPlaceholder()">
+                                        <div class="rounded-xl border-2 border-gray-200 p-3 text-center peer-checked:border-[#4c111f] peer-checked:bg-[#4c111f]/5 transition-all">
+                                            <span class="block font-bold text-sm text-[#4c111f]">Singapore</span>
+                                            <span class="block text-xs text-gray-500 mt-0.5">Teleport</span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label id="jtTrackingLabel" for="jtTrackingInput" class="block text-xs font-bold text-[#4c111f] uppercase tracking-wider mb-2">J&amp;T Express Tracking Number (Malaysia)</label>
+                                <div class="flex flex-col sm:flex-row gap-3">
+                                    <input type="text" id="jtTrackingInput" placeholder="e.g. 620012345678" class="flex-1 border border-gray-300 rounded-xl px-4 py-3 text-base font-semibold uppercase focus:border-[#4c111f] focus:ring-[#4c111f] outline-none" required>
+                                    <button type="submit" class="bg-[#4c111f] text-white px-7 py-3 rounded-xl font-bold hover:opacity-90 transition-opacity shadow-md whitespace-nowrap">
+                                        <i class="fas fa-search mr-2"></i>Track Parcel
+                                    </button>
+                                </div>
+                                <p id="jtTrackError" class="hidden text-xs text-red-500 font-semibold mt-2"></p>
+                            </div>
+                        </form>
+
+                        <!-- In-Page Live Tracking Result Container -->
+                        <div id="jtResultBox" class="hidden mt-8 pt-6 border-t border-gray-200 animate-fade-in-down">
+                            <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+                                <div class="flex items-center gap-2">
+                                    <span id="jtResultNumber" class="font-mono font-bold text-base text-[#4c111f]"></span>
+                                    <button type="button" id="copyTrackBtn" onclick="copyTrackingNumber()" class="text-xs font-semibold text-gray-500 hover:text-[#4c111f] bg-gray-100 px-2.5 py-1 rounded-lg transition-colors">
+                                        <i class="far fa-copy mr-1"></i>Copy
+                                    </button>
+                                </div>
+                                <span id="jtResultCourierBadge" class="bg-red-100 text-red-700 text-xs font-bold px-3 py-1 rounded-full">J&amp;T Express (Malaysia)</span>
+                            </div>
+
+                            <div id="embedTrack" class="w-full min-h-[200px] bg-gray-50 rounded-xl border border-gray-200 overflow-hidden flex items-center justify-center"></div>
+
+                            <div class="mt-4 flex flex-wrap items-center justify-between gap-3 text-xs">
+                                <a id="jtDirectLink" href="#" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-[#4c111f] underline font-medium">
+                                    <i class="fas fa-external-link-alt mr-1"></i><span id="jtDirectLinkText">Not loading? Open on J&amp;T Express</span>
+                                </a>
+                                <a id="jtWhatsappHelp" href="#" target="_blank" rel="noopener noreferrer" class="text-green-700 hover:text-green-800 font-bold inline-flex items-center gap-1.5">
+                                    <i class="fab fa-whatsapp text-sm"></i> Need help with this parcel?
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
         </div>
@@ -500,6 +678,8 @@
                 </div>
             </div>
             
+            <a href="#community" class="menu-link block py-3 text-lg font-medium text-[#4c111f] hover:opacity-80 border-b border-gray-100 transition-all">Community</a>
+
             <a href="#about" class="menu-link block py-3 text-lg font-medium text-[#4c111f] hover:opacity-80 border-b border-gray-100 transition-all">About Us</a>
 
             <!-- NEW: Track Your Order Link -->
@@ -837,6 +1017,12 @@
                                 </li>
                                 <li class="flex items-center gap-2">
                                     <img src="https://flagcdn.com/w20/sg.png" class="w-4 shadow-sm rounded-sm" alt="SG"> Arrives in 2-3 days (SG/non-custom items)
+                                </li>
+                            </ul>
+                        </div>
+                        
+                    </div>
+                    
                     <div class="mt-auto pt-6 border-t border-[#4c111f]/10 flex flex-col gap-3">
                         <div class="flex items-center justify-between gap-4">
                             <div>
@@ -1318,6 +1504,8 @@
                 viewHome.classList.remove('hidden');
                 if (hash === '#about') {
                     setTimeout(() => document.getElementById('about').scrollIntoView({behavior: 'smooth'}), 100);
+                } else if (hash === '#community') {
+                    setTimeout(() => document.getElementById('community').scrollIntoView({behavior: 'smooth'}), 100);
                 } else {
                     window.scrollTo(0, 0);
                 }
