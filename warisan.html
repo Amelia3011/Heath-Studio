@@ -8,6 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Afacad:wght@300;400;500;600&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+    <script src="https://www.tracking.my/track-button.js" async></script>
 
     <script>
         tailwind.config = {
@@ -183,7 +184,7 @@
                         <p class="text-xl text-white-800 mb-6 font-medium">Handcrafted headcovers designed with character, precision, and a considered approach to the game.</p>
                         <p id="heroBadgeText" class="text-xl text-[#4c111f] mb-10 font-bold">The Putter Series | Cadence Collection. Dropping This Saturday.</p>
                         <div class="flex justify-center gap-4">
-                            <a id="heroShopBtn" href="#cadence" class="bg-[#f02a0c] text-white px-8 py-4 rounded-full font-bold shadow-[0_10px_25px_rgba(0,0,0,0.25),_0_0_20px_rgba(57,255,20,0.5)] animate-pulse hover:animate-none hover:scale-105 hover:shadow-[0_15px_35px_rgba(0,0,0,0.3),_0_0_30px_rgba(57,255,20,0.7)] transition-all duration-300">Shop The Drop</a>
+                            <a id="heroShopBtn" href="#cadence" class="bg-[#1E3F20] text-white px-8 py-4 rounded-full font-bold shadow-[0_10px_25px_rgba(0,0,0,0.25),_0_0_20px_rgba(57,255,20,0.5)] animate-pulse hover:animate-none hover:scale-105 hover:shadow-[0_15px_35px_rgba(0,0,0,0.3),_0_0_30px_rgba(57,255,20,0.7)] transition-all duration-300">Shop The Drop</a>
                         </div>
                     </div>
                 </div>
@@ -195,7 +196,7 @@
                 <div class="absolute inset-0 bg-black/20 mix-blend-multiply pointer-events-none"></div>
             </section>
 
-            <!-- COLLECTION CARDS GRID (Featured Full-Width on Mobile, 3-Column on Desktop) -->
+            <!-- COLLECTION CARDS (Cadence Featured + Heritage + Atelier) -->
             <section class="py-16 md:py-24 bg-gray-50 relative z-10 border-t border-[#4c111f]/10">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="text-center mb-10 md:mb-16">
@@ -203,40 +204,35 @@
                         <p class="text-gray-600 max-w-2xl mx-auto font-medium">Explore our distinct series of handcrafted headcovers, designed to elevate your game and protect your clubs with unparalleled style.</p>
                     </div>
                     
-                    <!-- Responsive Grid: New Drop spans 2 cols on mobile for prominence, 3 equal cols on desktop -->
                     <div class="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-6 md:gap-8">
-                        
-                        <!-- NEW: Putter Series | Cadence Collection Banner Card -->
-                        <a href="#cadence" class="col-span-2 md:col-span-1 group relative h-72 sm:h-80 md:h-[500px] rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 block border border-gray-200/50">
-                            <!-- Background Image (Replace 'cadence card.jpg' with your actual cover image) -->
-                            <img src="cadence card.jpg" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="this.src='https://placehold.co/800x1000/1E3F20/ffffff?text=Cadence+Putter+Series'">
-                            <!-- Gradient Overlay -->
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
+                        <!-- NEW: Cadence Putter Series Banner Card (Full width on mobile, 1 col on desktop) -->
+                        <a href="#cadence" class="col-span-2 md:col-span-1 group relative h-64 sm:h-80 md:h-[500px] rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 block border border-gray-200/50">
+                            <img src="cadence card.JPEG" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="this.onerror=null; this.src='https://placehold.co/800x1000/1E3F20/ffffff?text=Cadence+Putter+Series'">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
                             
-                            <!-- New Arrival Badge -->
-                            <div id="cadenceCardBadge" class="absolute top-3 left-3 md:top-6 md:left-6 bg-white text-[#4c111f] text-[9px] md:text-xs font-bold px-2.5 py-1 md:px-3 md:py-1.5 rounded-full uppercase tracking-widest shadow-lg flex items-center gap-1 md:gap-1.5 z-10">
-                                <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></span> <span>New Drop</span>
+                            <div id="cadenceCardBadge" class="absolute top-3 left-3 md:top-6 md:left-6 bg-white text-[#1E3F20] text-[8px] md:text-xs font-bold px-2 py-1 md:px-3 md:py-1.5 rounded-full uppercase tracking-widest shadow-lg flex items-center gap-1 md:gap-1.5 z-10">
+                                <span class="w-1 h-1 md:w-1.5 md:h-1.5 rounded-full bg-red-500 animate-pulse"></span> <span>3rd Drop &bull; New</span>
                             </div>
                             
-                            <!-- Text Content -->
-                            <div class="absolute bottom-0 left-0 p-5 md:p-8 w-full z-10">
-                                <span class="block text-[10px] md:text-xs uppercase tracking-widest text-amber-300 font-bold mb-1">The Putter Series</span>
+                            <div class="absolute bottom-0 left-0 p-4 md:p-8 w-full z-10">
+                                <span class="block text-amber-300 text-[10px] md:text-xs font-bold uppercase tracking-widest mb-1">The Putter Series</span>
                                 <h3 class="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 md:mb-2 shadow-sm leading-tight">Cadence Collection</h3>
-                                <p class="text-gray-200 text-xs md:text-base font-medium mb-4 md:mb-6 transition-all duration-500 transform translate-y-1 opacity-90 group-hover:translate-y-0 group-hover:opacity-100 line-clamp-2 md:line-clamp-none">Precision-crafted blade &amp; mallet putter covers designed for rhythm on the greens.</p>
+                                <p class="text-gray-200 text-xs md:text-base font-medium mb-3 md:mb-6 transition-all duration-500 transform translate-y-2 opacity-80 group-hover:translate-y-0 group-hover:opacity-100 line-clamp-2 md:line-clamp-none">Handcrafted Blade &amp; Mallet putter covers built with magnetic closures and plush velvet interiors.</p>
                                 <span class="inline-flex items-center gap-1.5 md:gap-2 text-white font-bold tracking-wide uppercase text-[10px] md:text-sm border-b md:border-b-2 border-white/30 pb-0.5 md:pb-1 group-hover:border-white transition-colors duration-300">
-                                    Shop Now <span class="hidden sm:inline">Collection</span> <i class="fas fa-arrow-right text-[8px] md:text-xs transition-transform group-hover:translate-x-1"></i>
+                                    Shop Putter Series <i class="fas fa-arrow-right text-[8px] md:text-xs transition-transform group-hover:translate-x-1"></i>
                                 </span>
                             </div>
                         </a>
 
                         <!-- Heritage Banner Card -->
                         <a href="#heritage" class="group relative h-64 sm:h-80 md:h-[500px] rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 block border border-gray-200/50">
-                            <!-- Background Image -->
-                            <img src="heritage card.JPEG" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="this.src='https://placehold.co/800x1000/4c111f/ffffff?text=Heritage'">
-                            <!-- Gradient Overlay -->
+                            <img src="heritage card.JPEG" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="this.onerror=null; this.src='https://placehold.co/800x1000/4c111f/ffffff?text=Heritage'">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
                             
-                            <!-- Text Content -->
+                            <div id="heritageCardBadge" class="absolute top-3 left-3 md:top-6 md:left-6 bg-white text-[#4c111f] text-[8px] md:text-xs font-bold px-2 py-1 md:px-3 md:py-1.5 rounded-full uppercase tracking-widest shadow-lg flex items-center gap-1 md:gap-1.5 z-10">
+                                <span class="w-1 h-1 md:w-1.5 md:h-1.5 rounded-full bg-amber-500"></span> <span>2nd Drop</span>
+                            </div>
+                            
                             <div class="absolute bottom-0 left-0 p-4 md:p-8 w-full z-10">
                                 <h3 class="font-serif text-xl sm:text-2xl md:text-4xl font-bold text-white mb-1 md:mb-2 shadow-sm leading-tight">The Heritage Collection</h3>
                                 <p class="hidden sm:block text-gray-200 text-xs md:text-base font-medium mb-4 md:mb-6 transition-all duration-500 transform translate-y-2 opacity-80 group-hover:translate-y-0 group-hover:opacity-100 line-clamp-2 md:line-clamp-none">Premium houndstooth, argyle, and tartan fabrics paired with plush velvet lining.</p>
@@ -248,12 +244,9 @@
                         
                         <!-- Atelier Banner Card -->
                         <a href="#atelier" class="group relative h-64 sm:h-80 md:h-[500px] rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 block border border-gray-200/50">
-                            <!-- Background Image -->
-                            <img src="ET3.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="this.src='https://placehold.co/800x1000/2f0a13/ffffff?text=Atelier'">
-                            <!-- Gradient Overlay -->
+                            <img src="ET3.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="this.onerror=null; this.src='https://placehold.co/800x1000/2f0a13/ffffff?text=Atelier'">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
                             
-                            <!-- Text Content -->
                             <div class="absolute bottom-0 left-0 p-4 md:p-8 w-full z-10">
                                 <h3 class="font-serif text-xl sm:text-2xl md:text-4xl font-bold text-white mb-1 md:mb-2 shadow-sm leading-tight">The Atelier Collection</h3>
                                 <p class="hidden sm:block text-gray-200 text-xs md:text-base font-medium mb-4 md:mb-6 transition-all duration-500 transform translate-y-2 opacity-80 group-hover:translate-y-0 group-hover:opacity-100 line-clamp-2 md:line-clamp-none">Our inaugural series. Meticulously crafted for style and maximum protection.</p>
@@ -292,10 +285,9 @@
 
 
         <!-- ========================================== -->
-        <!-- VIEW: THE PUTTER SERIES | CADENCE          -->
+        <!-- VIEW: CADENCE COLLECTION (3rd Drop)        -->
         <!-- ========================================== -->
         <div id="view-cadence" class="hidden">
-            <!-- Breadcrumb Navigation -->
             <div class="bg-gray-50 pt-6 pb-2 border-b border-gray-200/50 sticky top-[72px] md:top-[90px] z-30">
                  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                      <a href="#home" class="inline-flex items-center text-gray-500 hover:text-[#4c111f] font-bold text-xs uppercase tracking-wider transition-colors">
@@ -307,9 +299,9 @@
             <section class="relative pt-12 pb-24 bg-gray-50">
                 <div class="max-w-7xl mx-auto px-2 md:px-12 relative z-10">
                     <div class="text-center mb-10 md:mb-16 px-2 flex flex-col items-center">
-                        <span id="cadenceViewBadge" class="bg-[#4c111f] text-white text-[10px] md:text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-5 inline-block shadow-sm">3rd Drop &bull; New Release</span>
-                        <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-[#4c111f] mb-4">THE PUTTER SERIES | CADENCE COLLECTION</h2>
-                        <p class="text-gray-600 md:text-lg max-w-2xl mx-auto font-medium">Find your rhythm on the greens. Handcrafted blade and mallet putter covers built with magnetic closures and ultra-plush protective lining.</p>
+                        <span id="cadenceViewBadge" class="bg-[#1E3F20] text-white text-[10px] md:text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-5 inline-block shadow-sm">3rd Drop &bull; New Release</span>
+                        <h2 class="font-serif text-4xl md:text-5xl font-bold text-[#4c111f] mb-4">THE PUTTER SERIES | CADENCE COLLECTION</h2>
+                        <p class="text-gray-600 md:text-lg max-w-2xl mx-auto font-medium">Poise on the greens. Handcrafted Blade &amp; Mallet putter covers finished with smooth magnetic closures and plush velvet interiors.</p>
                     </div>
                     <!-- Cadence Grid (3 Columns on Mobile & Desktop) -->
                     <div class="grid grid-cols-3 gap-1.5 md:gap-10" id="cadenceGrid">
@@ -324,7 +316,6 @@
         <!-- VIEW: HERITAGE COLLECTION                  -->
         <!-- ========================================== -->
         <div id="view-heritage" class="hidden">
-            <!-- Breadcrumb Navigation -->
             <div class="bg-gray-50 pt-6 pb-2 border-b border-gray-200/50 sticky top-[72px] md:top-[90px] z-30">
                  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                      <a href="#home" class="inline-flex items-center text-gray-500 hover:text-[#4c111f] font-bold text-xs uppercase tracking-wider transition-colors">
@@ -336,7 +327,7 @@
             <section class="relative pt-12 pb-24 bg-gray-50">
                 <div class="max-w-7xl mx-auto px-2 md:px-12 relative z-10">
                     <div class="text-center mb-10 md:mb-16 px-2 flex flex-col items-center">
-                        <span id="heritageViewBadge" class="bg-[#4c111f] text-white text-[10px] md:text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-5 inline-block shadow-sm">Heritage Series</span>
+                        <span id="heritageViewBadge" class="bg-[#4c111f] text-white text-[10px] md:text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-5 inline-block shadow-sm">2nd Drop</span>
                         <h2 class="font-serif text-4xl md:text-5xl font-bold text-[#4c111f] mb-6">THE HERITAGE COLLECTION</h2>
                         <p class="text-gray-600 md:text-lg max-w-2xl mx-auto font-medium">Where heritage meets the fairways. Handcrafted with premium houndstooth, argyle, and tartan fabrics paired with plush velvet lining.</p>
                     </div>
@@ -353,7 +344,6 @@
         <!-- VIEW: ATELIER COLLECTION                   -->
         <!-- ========================================== -->
         <div id="view-atelier" class="hidden">
-            <!-- Breadcrumb Navigation (Transparent on Hero) -->
             <div class="bg-white/90 backdrop-blur-md pt-6 pb-2 border-b border-gray-200/50 sticky top-[72px] md:top-[90px] z-30 shadow-sm">
                  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                      <a href="#home" class="inline-flex items-center text-gray-800 hover:text-[#4c111f] font-bold text-xs uppercase tracking-wider transition-colors">
@@ -378,42 +368,164 @@
             </section>
         </div>
 
+
         <!-- ========================================== -->
         <!-- VIEW: SHOP ALL (Grouped by Club Type)      -->
         <!-- ========================================== -->
         <div id="view-shop-all" class="hidden">
-            <!-- Sticky Breadcrumb & Quick Filter Bar -->
-            <div class="bg-gray-50/95 backdrop-blur-md pt-6 pb-3 border-b border-gray-200/60 sticky top-[72px] md:top-[90px] z-30 shadow-sm">
+            <!-- Sticky Top Bar: Back, Quick Jump, & In-Stock Filter -->
+            <div class="bg-white/95 backdrop-blur-md py-3 border-b border-gray-200/80 sticky top-[72px] md:top-[90px] z-30 shadow-sm">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap items-center justify-between gap-3">
                     <a href="#home" class="inline-flex items-center text-gray-500 hover:text-[#4c111f] font-bold text-xs uppercase tracking-wider transition-colors">
-                        <i class="fas fa-arrow-left mr-2"></i> Back to Home
+                        <i class="fas fa-arrow-left mr-2"></i> Home
                     </a>
 
-                    <!-- Quick Jump Pills & In-Stock Filter -->
-                    <div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1">
-                        <a href="#shop-all-putter" class="px-3 py-1.5 rounded-full bg-white border border-gray-200 text-xs font-bold text-[#4c111f] hover:bg-[#4c111f] hover:text-white transition-colors whitespace-nowrap shadow-sm">Putter</a>
-                        <a href="#shop-all-hybrid" class="px-3 py-1.5 rounded-full bg-white border border-gray-200 text-xs font-bold text-[#4c111f] hover:bg-[#4c111f] hover:text-white transition-colors whitespace-nowrap shadow-sm">Hybrid</a>
-                        <a href="#shop-all-wood" class="px-3 py-1.5 rounded-full bg-white border border-gray-200 text-xs font-bold text-[#4c111f] hover:bg-[#4c111f] hover:text-white transition-colors whitespace-nowrap shadow-sm">Wood</a>
-                        <a href="#shop-all-driver" class="px-3 py-1.5 rounded-full bg-white border border-gray-200 text-xs font-bold text-[#4c111f] hover:bg-[#4c111f] hover:text-white transition-colors whitespace-nowrap shadow-sm">Driver</a>
-                        <button id="inStockToggleBtn" onclick="toggleShopAllInStock()" class="px-3.5 py-1.5 rounded-full bg-white border border-[#4c111f]/30 text-xs font-bold text-[#4c111f] hover:bg-[#4c111f]/5 transition-all whitespace-nowrap flex items-center gap-1.5 shadow-sm">
-                            <i id="inStockToggleIcon" class="far fa-square text-xs"></i>
-                            <span>In-Stock Only</span>
-                        </button>
+                    <div class="flex items-center gap-1.5 sm:gap-2 overflow-x-auto no-scrollbar py-0.5">
+                        <a href="#shop-all-putter" class="px-3 py-1 rounded-full text-xs font-bold bg-gray-100 text-[#4c111f] hover:bg-[#4c111f] hover:text-white transition-colors whitespace-nowrap">Putter</a>
+                        <a href="#shop-all-hybrid" class="px-3 py-1 rounded-full text-xs font-bold bg-gray-100 text-[#4c111f] hover:bg-[#4c111f] hover:text-white transition-colors whitespace-nowrap">Hybrid</a>
+                        <a href="#shop-all-wood" class="px-3 py-1 rounded-full text-xs font-bold bg-gray-100 text-[#4c111f] hover:bg-[#4c111f] hover:text-white transition-colors whitespace-nowrap">Wood</a>
+                        <a href="#shop-all-driver" class="px-3 py-1 rounded-full text-xs font-bold bg-gray-100 text-[#4c111f] hover:bg-[#4c111f] hover:text-white transition-colors whitespace-nowrap">Driver</a>
                     </div>
+
+                    <button id="inStockToggleBtn" onclick="toggleShopAllInStock()" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold border border-[#4c111f] bg-white text-[#4c111f] hover:opacity-90 transition-all shadow-sm">
+                        <i id="inStockToggleIcon" class="far fa-square text-xs"></i>
+                        <span>In-Stock Only</span>
+                    </button>
                 </div>
             </div>
 
-            <section class="relative pt-10 pb-24 bg-gray-50">
-                <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 relative z-10">
+            <section class="relative pt-12 pb-24 bg-gray-50">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="text-center mb-10 md:mb-14">
-                        <span class="bg-[#4c111f] text-white text-[10px] md:text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-4 inline-block shadow-sm">All Collections</span>
+                        <span class="bg-[#4c111f] text-white text-[10px] md:text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-4 inline-block shadow-sm">Live Stock Overview</span>
                         <h2 class="font-serif text-4xl md:text-5xl font-bold text-[#4c111f] mb-4">SHOP ALL</h2>
-                        <p class="text-gray-600 md:text-lg max-w-2xl mx-auto font-medium">Browse every colorway across our collections by club type and see live stock availability at a glance.</p>
+                        <p class="text-gray-600 md:text-lg max-w-2xl mx-auto font-medium">Browse every colorway across all collections at a glance, organized by club type with real-time stock availability.</p>
                     </div>
 
-                    <!-- Dynamic Sections Container (Putter, Hybrid, Wood, Driver) -->
-                    <div id="shopAllContainer" class="space-y-14 md:space-y-20">
-                        <!-- Injected via JS -->
+                    <div id="shopAllContainer" class="space-y-12 md:space-y-16">
+                        <!-- Grouped sections injected via JS -->
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- VIEW: TRACK YOUR ORDER (J&T & TELEPORT)    -->
+        <!-- ========================================== -->
+        <div id="view-track-order" class="hidden">
+            <!-- Breadcrumb Navigation -->
+            <div class="bg-gray-50 pt-6 pb-2 border-b border-gray-200/50 sticky top-[72px] md:top-[90px] z-30">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <a href="#home" class="inline-flex items-center text-gray-500 hover:text-[#4c111f] font-bold text-xs uppercase tracking-wider transition-colors">
+                        <i class="fas fa-arrow-left mr-2"></i> Back to Home
+                    </a>
+                </div>
+            </div>
+
+            <section class="relative pt-12 pb-24 bg-gray-50">
+                <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-10">
+                        <span class="bg-[#4c111f] text-white text-[10px] md:text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-4 inline-block shadow-sm">
+                            <i class="fas fa-truck-fast mr-1.5"></i> J&amp;T Express &amp; Teleport
+                        </span>
+                        <h2 class="font-serif text-4xl md:text-5xl font-bold text-[#4c111f] mb-4">Track Your Order</h2>
+                        <p class="text-gray-600 md:text-lg font-medium">Enter the tracking number sent to your email to view live updates via <strong>J&amp;T Express (MY)</strong> or <strong>Teleport (SG)</strong>.</p>
+                    </div>
+
+                    <!-- Tracking Search Card -->
+                    <div class="bg-white rounded-2xl shadow-lg border border-gray-200/80 p-6 sm:p-8 md:p-10">
+                        <form id="trackOrderForm" onsubmit="trackJTParcel(event)" class="space-y-5">
+                            <!-- Region / Courier Selector -->
+                            <div>
+                                <label class="block text-xs font-bold text-[#4c111f] uppercase tracking-wider mb-2">Select Courier / Region</label>
+                                <div class="grid grid-cols-2 gap-3">
+                                    <label class="cursor-pointer">
+                                        <input type="radio" name="jtRegion" value="MY" class="peer sr-only" checked onchange="updateTrackPlaceholder()">
+                                        <div class="rounded-xl border-2 border-gray-200 p-3 text-center peer-checked:border-[#4c111f] peer-checked:bg-[#4c111f]/5 transition-all flex items-center justify-center gap-2">
+                                            <img src="https://flagcdn.com/w20/my.png" class="w-5 rounded-[2px] shadow-sm" alt="MY">
+                                            <div class="text-left">
+                                                <span class="block font-bold text-sm text-[#4c111f] leading-tight">J&amp;T Express</span>
+                                                <span class="block text-[10px] text-gray-500 font-medium">Malaysia</span>
+                                            </div>
+                                        </div>
+                                    </label>
+                                    <label class="cursor-pointer">
+                                        <input type="radio" name="jtRegion" value="SG" class="peer sr-only" onchange="updateTrackPlaceholder()">
+                                        <div class="rounded-xl border-2 border-gray-200 p-3 text-center peer-checked:border-[#4c111f] peer-checked:bg-[#4c111f]/5 transition-all flex items-center justify-center gap-2">
+                                            <img src="https://flagcdn.com/w20/sg.png" class="w-5 rounded-[2px] shadow-sm" alt="SG">
+                                            <div class="text-left">
+                                                <span class="block font-bold text-sm text-[#4c111f] leading-tight">Teleport</span>
+                                                <span class="block text-[10px] text-gray-500 font-medium">Singapore</span>
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Tracking Number Input -->
+                            <div>
+                                <label id="jtTrackingLabel" for="jtTrackingInput" class="block text-xs font-bold text-[#4c111f] uppercase tracking-wider mb-2">J&amp;T Express Tracking Number</label>
+                                <div class="flex flex-col sm:flex-row gap-3">
+                                    <div class="relative flex-grow">
+                                        <i class="fas fa-barcode absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                                        <input type="text" id="jtTrackingInput" placeholder="e.g. 620012345678" class="w-full pl-11 pr-4 py-3.5 border border-gray-300 rounded-xl text-base font-semibold tracking-wide focus:border-[#4c111f] focus:ring-[#4c111f] uppercase" required>
+                                    </div>
+                                    <button type="submit" class="bg-[#4c111f] text-white px-8 py-3.5 rounded-xl font-bold hover:opacity-90 active:scale-95 transition-all shadow-md flex items-center justify-center gap-2 whitespace-nowrap">
+                                        <i class="fas fa-search"></i> Track Parcel
+                                    </button>
+                                </div>
+                                <p id="jtTrackError" class="text-xs text-red-500 mt-2 hidden font-semibold"></p>
+                            </div>
+                        </form>
+
+                        <!-- Dynamic Tracking Result Box (Embedded Live Tracker) -->
+                        <div id="jtResultBox" class="hidden mt-6 pt-6 border-t border-gray-100 animate-fade-in-down">
+                            <div class="bg-gray-50 rounded-xl p-4 sm:p-5 border border-gray-200/80">
+                                <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+                                    <div>
+                                        <span class="text-[10px] font-bold uppercase tracking-widest text-gray-400 block">Tracking Number</span>
+                                        <div class="flex items-center gap-2">
+                                            <span id="jtResultNumber" class="font-mono text-lg font-bold text-[#4c111f]"></span>
+                                            <button type="button" id="copyTrackBtn" onclick="copyTrackingNumber()" class="text-[11px] font-bold text-gray-500 hover:text-[#4c111f] bg-white border border-gray-200 px-2 py-0.5 rounded-md shadow-sm transition-colors">
+                                                <i class="far fa-copy mr-1"></i>Copy
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <span id="jtResultCourierBadge" class="bg-red-100 text-red-700 text-xs font-bold px-3 py-1 rounded-full">J&amp;T Express</span>
+                                </div>
+
+                                <!-- Live Embedded Tracking Widget Container -->
+                                <div id="embedTrack" class="w-full min-h-[460px] bg-white rounded-xl border border-gray-200 overflow-hidden shadow-inner">
+                                    <p class="text-xs text-gray-400 font-medium text-center py-12"><i class="fas fa-spinner fa-spin mr-1.5"></i>Loading live parcel updates...</p>
+                                </div>
+
+                                <!-- Optional Backup Link & WhatsApp Support -->
+                                <div class="mt-4 pt-3 border-t border-gray-200/70 flex items-center justify-between flex-wrap gap-3">
+                                    <a id="jtDirectLink" href="#" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-gray-500 hover:text-[#4c111f] underline underline-offset-2 inline-flex items-center gap-1.5 transition-colors">
+                                        <i class="fas fa-external-link-alt text-[10px]"></i> <span id="jtDirectLinkText">Open on J&amp;T Express</span>
+                                    </a>
+                                    <a id="jtWhatsappHelp" href="#" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-green-700 hover:text-green-800 inline-flex items-center gap-1.5">
+                                        <i class="fab fa-whatsapp text-sm"></i> WhatsApp Support
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Shipping & Self-Pickup Quick Info -->
+                        <div class="mt-8 pt-6 border-t border-gray-100 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="bg-gray-50 rounded-xl p-4 border border-gray-200/60">
+                                <h4 class="font-bold text-sm text-[#4c111f] mb-1.5 flex items-center gap-2">
+                                    <i class="fas fa-clock text-accent"></i> Dispatch Timeline
+                                </h4>
+                                <p class="text-xs text-gray-600 leading-relaxed">Non-custom orders are packed and dispatched within 24 hours via <strong>J&amp;T Express (MY)</strong> or <strong>Teleport (SG)</strong>. Tracking updates typically appear within a few hours after drop-off.</p>
+                            </div>
+                            <div class="bg-amber-50/70 rounded-xl p-4 border border-amber-200/60">
+                                <h4 class="font-bold text-sm text-[#4c111f] mb-1.5 flex items-center gap-2">
+                                    <i class="fas fa-store text-accent"></i> Self-Pickup (Glenmarie)
+                                </h4>
+                                <p class="text-xs text-gray-600 leading-relaxed">Opted for self-pickup? We are based in <strong>Glenmarie, Shah Alam</strong>. Contact us on WhatsApp to schedule your pickup slot.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -428,6 +540,8 @@
                     <p class="font-serif text-xl font-bold">HEATH STUDIO</p>
                 </div>
                 <div class="flex flex-wrap justify-center gap-4 text-sm mt-4 md:mt-0">
+                    <a href="#track-order" class="text-gray-300 hover:text-white underline-offset-4 hover:underline transition-colors font-semibold">Track Order</a>
+                    <span class="text-gray-500 hidden sm:inline">|</span>
                     <a href="shipping_policy.html" class="text-gray-300 hover:text-white underline-offset-4 hover:underline transition-colors">Shipping Policy</a>
                     <span class="text-gray-500 hidden sm:inline">|</span>
                     <a href="Returnpolicy.html" class="text-gray-300 hover:text-white underline-offset-4 hover:underline transition-colors">Return & Refund Policy</a>
@@ -445,7 +559,7 @@
 
     <!-- Floating WhatsApp Button for Custom Orders -->
     <!-- IMPORTANT: Replace '60123456789' below with your actual WhatsApp number (with country code, no '+' or spaces) -->
-    <a href="https://wa.me/601112985037?text=Hi%20Heath%20Studio!%20I%27d%20like%20to%20enquire%20about%20a%20custom-made%20order."
+    <a href="https://wa.me/60182757370?text=Hi%20Heath%20Studio!%20I%27d%20like%20to%20enquire%20about%20a%20custom-made%20order."
        target="_blank"
        rel="noopener noreferrer"
        aria-label="Chat on WhatsApp for Custom Orders"
@@ -504,6 +618,12 @@
             </div>
             
             <a href="#about" class="menu-link block py-3 text-lg font-medium text-[#4c111f] hover:opacity-80 border-b border-gray-100 transition-all">About Us</a>
+
+            <!-- NEW: Track Your Order Link -->
+            <a href="#track-order" class="menu-link flex items-center justify-between py-3 text-lg font-medium text-[#4c111f] hover:opacity-80 border-b border-gray-100 transition-all">
+                <span>Track Your Order</span>
+                <i class="fas fa-truck-fast text-sm text-accent"></i>
+            </a>
             
             <div class="border-b border-gray-100">
                 <button id="helpMenuBtn" class="w-full flex justify-between items-center py-3 text-lg font-medium text-[#4c111f] hover:opacity-80 transition-all focus:outline-none">
@@ -577,7 +697,7 @@
                         <option value="SG">Singapore</option>
                     </select>
                     
-                    <div class="space-y-2">
+                    <div id="deliveryAddressFields" class="space-y-2">
                         <input type="text" id="custAddress" placeholder="Street Address" class="w-full border-gray-300 rounded-md shadow-sm focus:border-primary focus:ring-primary p-2 border text-base" required>
                         <div class="grid grid-cols-2 gap-2">
                             <input type="text" id="custCity" placeholder="City" class="w-full border-gray-300 rounded-md shadow-sm focus:border-primary focus:ring-primary p-2 border text-base" required>
@@ -591,9 +711,17 @@
                 <div id="formError" class="text-xs text-red-500 mb-3 hidden font-medium text-center">Please fill in all delivery details above.</div>
                 
                 <div class="mb-2">
-                    <label class="block text-sm font-medium text-[#4c111f] mb-2">Shipping Destination</label>
+                    <label class="block text-sm font-medium text-[#4c111f] mb-2">Shipping / Pickup Option</label>
                     <div class="grid grid-cols-2 gap-3" id="shippingOptionsContainer">
                         <!-- Injected via JS based on country -->
+                    </div>
+                    <!-- Self-Pickup Info Box (Shown when Self-Pickup is selected) -->
+                    <div id="pickupNotice" class="hidden mt-3 bg-amber-50 border border-amber-200 rounded-xl p-3.5 text-xs text-amber-900 leading-relaxed animate-fade-in-down">
+                        <p class="font-bold text-[#4c111f] mb-1"><i class="fas fa-map-marker-alt mr-1.5 text-accent"></i>Self-Pickup — Glenmarie, Shah Alam</p>
+                        <p class="mb-2">Skip the shipping fee and wait! We are based in <strong>Glenmarie</strong>. Once your order is placed, please reach out to us on WhatsApp to arrange your pickup time.</p>
+                        <a href="https://wa.me/60123456789?text=Hi%20Heath%20Studio!%20I%20would%20like%20to%20arrange%20a%20self-pickup%20in%20Glenmarie%20for%20my%20order." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 font-bold text-green-700 hover:text-green-800 underline">
+                            <i class="fab fa-whatsapp text-sm"></i> Contact us on WhatsApp to arrange pickup
+                        </a>
                     </div>
                 </div>
 
@@ -974,17 +1102,17 @@
         const PRICING = {
             MYR: { 
                 symbol: 'RM ', 
-                cadence: { blade: 159, mallet: 159 },
+                cadence: { blade: 159, mallet: 129 },
                 atelier: { wood: 109, driver: 129, hybrid: 0 },
                 heritage: { wood: 119, driver: 139, hybrid: 109 },
-                bundleDiscount: 15, 
+                bundleDiscount: 10, 
                 patch: 30, 
                 shippingWest: 10, 
                 shippingEast: 15 
             },
             SGD: { 
                 symbol: 'S$ ', 
-                cadence: { blade: 51, mallet: 51  },
+                cadence: { blade: 38, mallet: 42 },
                 atelier: { wood: 35, driver: 42, hybrid: 0 },
                 heritage: { wood: 38, driver: 44, hybrid: 35 },
                 bundleDiscount: 5, 
@@ -1126,8 +1254,9 @@
             const viewHeritage = document.getElementById('view-heritage');
             const viewAtelier = document.getElementById('view-atelier');
             const viewShopAll = document.getElementById('view-shop-all');
+            const viewTrackOrder = document.getElementById('view-track-order');
             
-            if (!viewHome || !viewCadence || !viewHeritage || !viewAtelier || !viewShopAll) return;
+            if (!viewHome || !viewCadence || !viewHeritage || !viewAtelier || !viewShopAll || !viewTrackOrder) return;
 
             // Hide all views first
             viewHome.classList.add('hidden');
@@ -1135,18 +1264,24 @@
             viewHeritage.classList.add('hidden');
             viewAtelier.classList.add('hidden');
             viewShopAll.classList.add('hidden');
+            viewTrackOrder.classList.add('hidden');
 
             // Show the requested view
-            if (hash === '#shop-all' || hash.startsWith('#shop-all-')) {
+            if (hash === '#track-order') {
+                viewTrackOrder.classList.remove('hidden');
+                // Match default courier region to current currency (MY = J&T Express, SG = Teleport)
+                const regionRadio = document.querySelector(`input[name="jtRegion"][value="${currentCurrency === 'SGD' ? 'SG' : 'MY'}"]`);
+                if (regionRadio) regionRadio.checked = true;
+                updateTrackPlaceholder();
+                window.scrollTo(0, 0);
+            } else if (hash === '#shop-all' || hash.startsWith('#shop-all-')) {
                 viewShopAll.classList.remove('hidden');
                 renderShopAllGrid();
                 if (hash.startsWith('#shop-all-')) {
                     setTimeout(() => {
                         const targetEl = document.getElementById(hash.substring(1));
-                        if (targetEl) {
-                            targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                        }
-                    }, 100);
+                        if (targetEl) targetEl.scrollIntoView({ behavior: 'smooth' });
+                    }, 80);
                 } else {
                     window.scrollTo(0, 0);
                 }
@@ -1162,10 +1297,7 @@
             } else {
                 viewHome.classList.remove('hidden');
                 if (hash === '#about') {
-                    setTimeout(() => {
-                        const aboutEl = document.getElementById('about');
-                        if (aboutEl) aboutEl.scrollIntoView({ behavior: 'smooth' });
-                    }, 100);
+                    setTimeout(() => document.getElementById('about').scrollIntoView({behavior: 'smooth'}), 100);
                 } else {
                     window.scrollTo(0, 0);
                 }
@@ -1253,6 +1385,16 @@
                             <span class="block text-xs text-[#4c111f]/70 mt-1">S$ 12</span>
                         </div>
                     </label>
+                    <label class="cursor-pointer group col-span-2">
+                        <input type="radio" name="shippingZone" value="pickup" class="peer sr-only" onchange="updateCartUI()">
+                        <div class="rounded-xl border-2 border-[#4c111f]/20 p-3 text-center peer-checked:border-[#4c111f] peer-checked:bg-[#4c111f]/5 group-hover:border-[#4c111f]/30 transition-all flex items-center justify-between px-4">
+                            <div class="text-left">
+                                <span class="block font-semibold text-[#4c111f] text-sm"><i class="fas fa-store mr-1.5 text-accent"></i>Self-Pickup (Glenmarie, MY)</span>
+                                <span class="block text-[11px] text-gray-500">Contact us to arrange pickup time</span>
+                            </div>
+                            <span class="text-xs font-bold text-green-700 bg-green-100 px-2.5 py-1 rounded-full uppercase">Free</span>
+                        </div>
+                    </label>
                 `;
             } else {
                 currentCurrency = 'MYR';
@@ -1276,6 +1418,16 @@
                         <div class="rounded-xl border-2 border-[#4c111f]/20 p-3 text-center peer-checked:border-[#4c111f] peer-checked:bg-[#4c111f]/5 group-hover:border-[#4c111f]/30 transition-all">
                             <span class="block font-semibold text-[#4c111f] text-sm">East Malaysia</span>
                             <span class="block text-xs text-[#4c111f]/70 mt-1">RM 15</span>
+                        </div>
+                    </label>
+                    <label class="cursor-pointer group col-span-2">
+                        <input type="radio" name="shippingZone" value="pickup" class="peer sr-only" onchange="updateCartUI()">
+                        <div class="rounded-xl border-2 border-[#4c111f]/20 p-3 text-center peer-checked:border-[#4c111f] peer-checked:bg-[#4c111f]/5 group-hover:border-[#4c111f]/30 transition-all flex items-center justify-between px-4">
+                            <div class="text-left">
+                                <span class="block font-semibold text-[#4c111f] text-sm"><i class="fas fa-store mr-1.5 text-accent"></i>Self-Pickup (Glenmarie)</span>
+                                <span class="block text-[11px] text-gray-500">Contact us to arrange pickup time</span>
+                            </div>
+                            <span class="text-xs font-bold text-green-700 bg-green-100 px-2.5 py-1 rounded-full uppercase">Free</span>
                         </div>
                     </label>
                 `;
@@ -1332,8 +1484,10 @@
 
             const cadenceGridEl = document.getElementById('cadenceGrid');
             if (cadenceGridEl) cadenceGridEl.innerHTML = cadenceProducts.map(generateCard).join('');
-            document.getElementById('heritageGrid').innerHTML = heritageProducts.map(generateCard).join('');
-            document.getElementById('atelierGrid').innerHTML = atelierProducts.map(generateCard).join('');
+            const heritageGridEl = document.getElementById('heritageGrid');
+            if (heritageGridEl) heritageGridEl.innerHTML = heritageProducts.map(generateCard).join('');
+            const atelierGridEl = document.getElementById('atelierGrid');
+            if (atelierGridEl) atelierGridEl.innerHTML = atelierProducts.map(generateCard).join('');
             renderShopAllGrid();
         }
 
@@ -1918,17 +2072,34 @@
 
             const zoneInput = document.querySelector('input[name="shippingZone"]:checked');
             let shippingFee = 0;
+            let isPickup = false;
             if (zoneInput) {
                 if (zoneInput.value === 'west') shippingFee = p.shippingWest;
                 else if (zoneInput.value === 'east') shippingFee = p.shippingEast;
                 else if (zoneInput.value === 'singapore') shippingFee = p.shipping;
+                else if (zoneInput.value === 'pickup') {
+                    shippingFee = 0;
+                    isPickup = true;
+                }
+            }
+
+            // Toggle Pickup Notice & Address Fields visibility
+            const pickupNoticeEl = document.getElementById('pickupNotice');
+            const addressFieldsEl = document.getElementById('deliveryAddressFields');
+            if (pickupNoticeEl) {
+                if (isPickup) pickupNoticeEl.classList.remove('hidden');
+                else pickupNoticeEl.classList.add('hidden');
+            }
+            if (addressFieldsEl) {
+                if (isPickup) addressFieldsEl.classList.add('hidden');
+                else addressFieldsEl.classList.remove('hidden');
             }
 
             // Free Shipping threshold check
             const freeShipThreshold = currentCurrency === 'MYR' ? FREE_SHIPPING_MYR : FREE_SHIPPING_SGD;
             let isFreeShipping = false;
             
-            if (isSaleActive && (productsTotal + totalPatchFees >= freeShipThreshold)) {
+            if (!isPickup && isSaleActive && (productsTotal + totalPatchFees >= freeShipThreshold)) {
                 shippingFee = 0;
                 isFreeShipping = true;
             }
@@ -1950,11 +2121,12 @@
                 totalEl.textContent = `${sym}${calculatedFinalTotal.toFixed(0)}`;
             }
 
-            if (bundlesCount > 0 || isFreeShipping) {
+            if (bundlesCount > 0 || isFreeShipping || isPickup) {
                 bundleNotice.classList.remove('hidden');
                 let msgs = [];
                 if (bundlesCount > 0) msgs.push('<i class="fas fa-tags mr-1"></i> Bundle discount applied!');
-                if (isFreeShipping) msgs.push('<i class="fas fa-truck-fast mr-1"></i> Free shipping unlocked!');
+                if (isPickup) msgs.push('<i class="fas fa-store mr-1"></i> Self-Pickup (Glenmarie) selected — RM 0 shipping!');
+                else if (isFreeShipping) msgs.push('<i class="fas fa-truck-fast mr-1"></i> Free shipping unlocked!');
                 bundleNotice.innerHTML = msgs.join('<br>');
             } else {
                 bundleNotice.classList.add('hidden');
@@ -1964,6 +2136,135 @@
             renderShopAllGrid();
         }
         
+        // ----------------------------------------------------
+        // J&T EXPRESS (MY) & TELEPORT (SG) ORDER TRACKING
+        // ----------------------------------------------------
+        window.updateTrackPlaceholder = function() {
+            const regionEl = document.querySelector('input[name="jtRegion"]:checked');
+            const region = regionEl ? regionEl.value : 'MY';
+            const labelEl = document.getElementById('jtTrackingLabel');
+            const inputEl = document.getElementById('jtTrackingInput');
+            if (!labelEl || !inputEl) return;
+
+            if (region === 'SG') {
+                labelEl.textContent = 'Teleport Tracking Number (Singapore)';
+                inputEl.placeholder = 'e.g. TNX12345678MY';
+            } else {
+                labelEl.textContent = 'J&T Express Tracking Number (Malaysia)';
+                inputEl.placeholder = 'e.g. 620012345678';
+            }
+        }
+
+        window.copyTrackingNumber = function() {
+            const numEl = document.getElementById('jtResultNumber');
+            const btnEl = document.getElementById('copyTrackBtn');
+            if (!numEl || !numEl.textContent) return;
+
+            const tempInput = document.createElement('input');
+            tempInput.value = numEl.textContent;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            try {
+                document.execCommand('copy');
+                if (btnEl) {
+                    btnEl.innerHTML = '<i class="fas fa-check text-green-600 mr-1"></i>Copied';
+                    setTimeout(() => {
+                        btnEl.innerHTML = '<i class="far fa-copy mr-1"></i>Copy';
+                    }, 2000);
+                }
+            } catch (e) {
+                console.error('Copy failed');
+            }
+            document.body.removeChild(tempInput);
+        }
+
+        window.trackJTParcel = function(event) {
+            event.preventDefault();
+            const inputEl = document.getElementById('jtTrackingInput');
+            const errEl = document.getElementById('jtTrackError');
+            const resultBox = document.getElementById('jtResultBox');
+            const embedContainer = document.getElementById('embedTrack');
+            const trackingNum = inputEl.value.trim().replace(/\s+/g, '');
+
+            if (!trackingNum || trackingNum.length < 6) {
+                errEl.textContent = 'Please enter a valid tracking number.';
+                errEl.classList.remove('hidden');
+                resultBox.classList.add('hidden');
+                return;
+            }
+
+            errEl.classList.add('hidden');
+            const regionEl = document.querySelector('input[name="jtRegion"]:checked');
+            const region = regionEl ? regionEl.value : 'MY';
+            const isTeleport = region === 'SG';
+
+            const directUrl = isTeleport
+                ? `https://teleportnextday.com/tracking?trackingNumber=${encodeURIComponent(trackingNum)}`
+                : `https://www.jtexpress.my/tracking/${encodeURIComponent(trackingNum)}`;
+
+            const courierName = isTeleport ? 'Teleport' : 'J&T Express';
+            const courierSlug = isTeleport ? 'teleport' : 'jt';
+            const waText = encodeURIComponent(`Hi Heath Studio! I'd like to check on my order with ${courierName} tracking number: ${trackingNum}`);
+            const waUrl = `https://wa.me/60123456789?text=${waText}`;
+
+            const badgeEl = document.getElementById('jtResultCourierBadge');
+            const directLinkEl = document.getElementById('jtDirectLink');
+            const directLinkTextEl = document.getElementById('jtDirectLinkText');
+
+            document.getElementById('jtResultNumber').textContent = trackingNum.toUpperCase();
+            badgeEl.textContent = isTeleport ? 'Teleport (Singapore)' : 'J&T Express (Malaysia)';
+            badgeEl.className = isTeleport
+                ? 'bg-purple-100 text-purple-800 text-xs font-bold px-3 py-1 rounded-full'
+                : 'bg-red-100 text-red-700 text-xs font-bold px-3 py-1 rounded-full';
+
+            directLinkEl.href = directUrl;
+            directLinkTextEl.textContent = isTeleport ? 'Not loading? Open on Teleport' : 'Not loading? Open on J&T Express';
+            document.getElementById('jtWhatsappHelp').href = waUrl;
+
+            resultBox.classList.remove('hidden');
+            embedContainer.innerHTML = '';
+
+            // Helper to render the embedded live tracker directly on your page
+            const renderEmbeddedTracker = () => {
+                if (window.TrackButton && typeof window.TrackButton.embed === 'function') {
+                    window.TrackButton.embed({
+                        selector: '#embedTrack',
+                        tracking_number: trackingNum,
+                        courier: courierSlug,
+                        theme: 'light',
+                        locale: 'en',
+                        width: '100%',
+                        height: '520px'
+                    });
+                } else {
+                    embedContainer.innerHTML = `
+                        <div class="p-6 text-center">
+                            <p class="text-sm text-gray-600 mb-3">Live tracker could not load inside this view.</p>
+                            <a href="${directUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-[#4c111f] text-white px-5 py-2.5 rounded-xl text-xs font-bold hover:opacity-90 transition-opacity">
+                                <i class="fas fa-external-link-alt"></i> View on ${courierName}
+                            </a>
+                        </div>
+                    `;
+                }
+            };
+
+            if (window.TrackButton) {
+                renderEmbeddedTracker();
+            } else {
+                embedContainer.innerHTML = '<p class="text-xs text-gray-400 font-medium"><i class="fas fa-spinner fa-spin mr-1.5"></i>Loading live parcel updates...</p>';
+                const script = document.createElement('script');
+                script.src = 'https://www.tracking.my/track-button.js';
+                script.onload = () => {
+                    embedContainer.innerHTML = '';
+                    renderEmbeddedTracker();
+                };
+                script.onerror = renderEmbeddedTracker;
+                document.head.appendChild(script);
+            }
+
+            resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
         window.applyPromoCode = function() {
             const input = document.getElementById('promoCodeInput');
             const code = input.value.trim().toUpperCase();
@@ -2232,9 +2533,15 @@
                 const cPost = document.getElementById('custPostcode').value.trim();
                 const cState = document.getElementById('custState').value;
                 const err = document.getElementById('formError');
+                const zoneInput = document.querySelector('input[name="shippingZone"]:checked');
+                const isPickup = zoneInput && zoneInput.value === 'pickup';
 
-                if (!cName || !cEmail || !cPhone || !cAddress || !cCity || !cPost || !cState) {
-                    err.innerHTML = 'Please fill in all delivery details above.'; err.classList.remove('hidden'); return;
+                if (!cName || !cEmail || !cPhone || (!isPickup && (!cAddress || !cCity || !cPost || !cState))) {
+                    err.innerHTML = isPickup
+                        ? 'Please fill in your name, email, and phone number for self-pickup.'
+                        : 'Please fill in all delivery details above.';
+                    err.classList.remove('hidden');
+                    return;
                 }
                 if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(cEmail)) {
                     err.innerHTML = 'Please enter a valid email address.'; err.classList.remove('hidden'); return;
@@ -2256,7 +2563,9 @@
                     return desc;
                 }).join(' | ');
 
-                const fullAddress = `${cAddress}, ${cPost} ${cCity}, ${cState}, ${cCountry === 'SG' ? 'Singapore' : 'Malaysia'}`;
+                const fullAddress = isPickup
+                    ? 'SELF-PICKUP (Glenmarie, Shah Alam)'
+                    : `${cAddress}, ${cPost} ${cCity}, ${cState}, ${cCountry === 'SG' ? 'Singapore' : 'Malaysia'}`;
 
                 const payload = new URLSearchParams();
                 payload.append("amount", calculatedFinalTotal); 
@@ -2265,7 +2574,7 @@
                 payload.append("name", cName);
                 payload.append("email", cEmail);
                 payload.append("phone", cPhone);
-                payload.append("purpose", `Order: ${cartDetails}. Ship to: ${fullAddress}`);
+                payload.append("purpose", `Order: ${cartDetails}. ${isPickup ? fullAddress : 'Ship to: ' + fullAddress}`);
                 payload.append("send_email", "true"); 
                 payload.append("redirect_url", window.location.origin + window.location.pathname + "?status=success"); 
 
