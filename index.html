@@ -8,6 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Afacad:wght@300;400;500;600&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+    <script src="https://www.tracking.my/track-button.js" async></script>
 
     <script>
         tailwind.config = {
@@ -48,7 +49,7 @@
             background-attachment: fixed;
         }
         .home-bg-image {
-            background-image: url('header 5.jpg'); 
+            background-image: url('cadence header.JPEG'); 
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -69,6 +70,19 @@
             animation: marquee 25s linear infinite;
         }
         .marquee-container:hover .animate-marquee {
+            animation-play-state: paused;
+        }
+        @keyframes communityLoop {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-community-loop {
+            display: flex;
+            width: max-content;
+            animation: communityLoop 28s linear infinite;
+        }
+        .community-slideshow-wrap:hover .animate-community-loop,
+        .community-slideshow-wrap:active .animate-community-loop {
             animation-play-state: paused;
         }
         .no-scrollbar::-webkit-scrollbar { display: none; }
@@ -108,10 +122,10 @@
     <header class="bg-[#4c111f] shadow-md sticky top-0 z-50">
         <div class="marquee-container w-full overflow-hidden bg-white/10 backdrop-blur-md py-3 border-b border-white/20 mb-4">
           <div id="mainMarquee" class="animate-marquee flex items-center whitespace-nowrap text-white font-bold tracking-widest text-sm uppercase">
-            <span class="mx-6">WELCOME TO HEATH.STUDIO ⛳️ THE HERITAGE COLLECTION OFFICIALLY LIVE ⛳️ SHIPPING IN 24 HOURS ⛳️</span>
-            <span class="mx-6">WELCOME TO HEATH.STUDIO ⛳️ THE HERITAGE COLLECTION OFFICIALLY LIVE ⛳️ SHIPPING IN 24 HOURS ⛳️</span>
-            <span class="mx-6">WELCOME TO HEATH.STUDIO ⛳️ THE HERITAGE COLLECTION OFFICIALLY LIVE ⛳️ SHIPPING IN 24 HOURS ⛳️</span>
-            <span class="mx-6">WELCOME TO HEATH.STUDIO ⛳️ THE HERITAGE COLLECTION OFFICIALLY LIVE ⛳️ SHIPPING IN 24 HOURS ⛳️</span>
+            <span class="mx-6">WELCOME TO HEATH.STUDIO ⛳️ THE PUTTER SERIES | CADENCE COLLECTION DROP on 28th Nov ⛳️ </span>
+            <span class="mx-6">WELCOME TO HEATH.STUDIO ⛳️ THE PUTTER SERIES | CADENCE COLLECTION DROP on 28th Nov ⛳️ </span>
+            <span class="mx-6">WELCOME TO HEATH.STUDIO ⛳️ THE PUTTER SERIES | CADENCE COLLECTION DROP on 28th Nov ⛳️ </span>
+            <span class="mx-6">WELCOME TO HEATH.STUDIO ⛳️ THE PUTTER SERIES | CADENCE COLLECTION DROP on 28th Nov ⛳️ </span>
           </div>
         </div>
         
@@ -123,7 +137,7 @@
                     </button>
                 </div>
                 <div class="flex-shrink-0 flex items-center justify-center -my-6 md:-my-8">
-                    <!-- Logo now routes back to home -->
+                    <!-- Logo routes back to home -->
                     <a href="#home" class="block">
                         <img src="Heath logo 2.png" alt="Heath Logo" class="h-36 sm:h-20 md:h-24 lg:h-42 w-auto max-w-[200px] md:max-w-none object-contain" onerror="this.onerror=null; this.src='https://placehold.co/200x100/4c111f/ffffff?text=HEATH+LOGO'">
                     </a>
@@ -178,12 +192,25 @@
             <section class="relative overflow-hidden home-bg-image pt-20 lg:pt-28 pb-24">
                 <div class="bg-overlay"></div>
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                    <div class="text-center max-w-3xl mx-auto flex flex-col items-center bg-white/3 backdrop-blur-sm p-8 rounded-2xl shadow-sm">
-                        <h1 class="font-serif text-5xl md:text-7xl font-bold text-[#4c111f] mb-6 leading-tight drop-shadow-sm">Golf, Considered Differently.</h1>
-                        <p class="text-xl text-white-800 mb-6 font-medium">Handcrafted headcovers designed with character, precision, and a considered approach to the game.</p>
-                        <p id="heroBadgeText" class="text-xl text-[#4c111f] mb-10 font-bold">The Heritage Collection. Bundle up to save!</p>
+                    <div class="text-center max-w-3xl mx-auto flex flex-col items-center bg-white/3 backdrop-blur-[1px] p-8 rounded-2xl shadow-sm">
+                        <h1 class="font-serif text-5xl md:text-7xl font-bold text-[#550202] mb-6 leading-tight drop-shadow-sm">Golf, Considered Differently.</h1>
+                        <p class="text-l text-[##eeeeee]-800 mb-6 font-medium">Handcrafted headcovers designed with character, precision, and a considered approach to the game.</p>
+                        <p id="heroBadgeText" class="text-lg text-[#550202] mb-5 font-bold leading-tight">The Putter Series | Cadence Collection.<br>Arriving 28th Nov</p>
+                        <!-- Live Drop Countdown Timer (Hero) -->
+                        <div id="heroCountdown" class="mb-8 bg-white/90 backdrop-blur-md border border-[#4c111f]/15 rounded-2xl px-5 py-3 shadow-md hidden">
+                            <span class="block text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-1.5">Cadence Drop Unlocks In</span>
+                            <div class="flex items-center justify-center gap-2 sm:gap-3 font-mono font-bold text-[#4c111f]">
+                                <div class="text-center"><span class="cd-days text-xl sm:text-2xl">00</span><span class="block text-[9px] font-sans uppercase text-gray-400">Days</span></div>
+                                <span class="text-lg opacity-40 -mt-3">:</span>
+                                <div class="text-center"><span class="cd-hours text-xl sm:text-2xl">00</span><span class="block text-[9px] font-sans uppercase text-gray-400">Hrs</span></div>
+                                <span class="text-lg opacity-40 -mt-3">:</span>
+                                <div class="text-center"><span class="cd-mins text-xl sm:text-2xl">00</span><span class="block text-[9px] font-sans uppercase text-gray-400">Min</span></div>
+                                <span class="text-lg opacity-40 -mt-3">:</span>
+                                <div class="text-center"><span class="cd-secs text-xl sm:text-2xl text-red-600">00</span><span class="block text-[9px] font-sans uppercase text-gray-400">Sec</span></div>
+                            </div>
+                        </div>
                         <div class="flex justify-center gap-4">
-                            <a id="heroShopBtn" href="#heritage" class="bg-[#f02a0c] text-white px-8 py-4 rounded-full font-bold shadow-[0_10px_25px_rgba(0,0,0,0.25),_0_0_20px_rgba(57,255,20,0.5)] animate-pulse hover:animate-none hover:scale-105 hover:shadow-[0_15px_35px_rgba(0,0,0,0.3),_0_0_30px_rgba(57,255,20,0.7)] transition-all duration-300">Shop The Drop</a>
+                            <a id="heroShopBtn" href="#cadence" class="bg-[#ef4726] text-white px-8 py-4 rounded-full font-bold shadow-[0_10px_25px_rgba(0,0,0,0.25),_0_0_20px_rgba(57,255,20,0.5)] animate-pulse hover:animate-none hover:scale-105 hover:shadow-[0_15px_35px_rgba(0,0,0,0.3),_0_0_30px_rgba(57,255,20,0.7)] transition-all duration-300">Shop The Drop</a>
                         </div>
                     </div>
                 </div>
@@ -195,7 +222,7 @@
                 <div class="absolute inset-0 bg-black/20 mix-blend-multiply pointer-events-none"></div>
             </section>
 
-            <!-- SIDE-BY-SIDE COLLECTION CARDS -->
+            <!-- COLLECTION CARDS (Cadence Featured + Heritage + Atelier) -->
             <section class="py-16 md:py-24 bg-gray-50 relative z-10 border-t border-[#4c111f]/10">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="text-center mb-10 md:mb-16">
@@ -203,21 +230,35 @@
                         <p class="text-gray-600 max-w-2xl mx-auto font-medium">Explore our distinct series of handcrafted headcovers, designed to elevate your game and protect your clubs with unparalleled style.</p>
                     </div>
                     
-                    <!-- Forced grid-cols-2 for Side-by-Side mobile -->
-                    <div class="grid grid-cols-2 gap-3 sm:gap-6 md:gap-10">
-                        <!-- Heritage Banner Card -->
-                        <a href="#heritage" class="group relative h-64 sm:h-80 md:h-[500px] rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 block border border-gray-200/50">
-                            <!-- Background Image -->
-                            <img src="heritage card.JPEG" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="this.src='https://placehold.co/800x1000/4c111f/ffffff?text=Heritage'">
-                            <!-- Gradient Overlay -->
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-6 md:gap-8">
+                        <!-- NEW: Cadence Putter Series Banner Card (Full width on mobile, 1 col on desktop) -->
+                        <a href="#cadence" class="col-span-2 md:col-span-1 group relative h-64 sm:h-80 md:h-[500px] rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 block border border-gray-200/50">
+                            <img src="Allblade4.jpg" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="this.onerror=null; this.src='https://placehold.co/800x1000/1E3F20/ffffff?text=Cadence+Putter+Series'">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
                             
-                            <!-- New Arrival Badge -->
-                            <div id="heritageCardBadge" class="absolute top-3 left-3 md:top-6 md:left-6 bg-white text-[#4c111f] text-[8px] md:text-xs font-bold px-2 py-1 md:px-3 md:py-1.5 rounded-full uppercase tracking-widest shadow-lg flex items-center gap-1 md:gap-1.5 z-10">
-                                <span class="w-1 h-1 md:w-1.5 md:h-1.5 rounded-full bg-red-500 animate-pulse"></span> <span class="hidden sm:inline">New Release</span><span class="sm:hidden">New Release</span>
+                            <div id="cadenceCardBadge" class="absolute top-3 left-3 md:top-6 md:left-6 bg-white text-[#1E3F20] text-[8px] md:text-xs font-bold px-2 py-1 md:px-3 md:py-1.5 rounded-full uppercase tracking-widest shadow-lg flex items-center gap-1 md:gap-1.5 z-10">
+                                <span class="w-1 h-1 md:w-1.5 md:h-1.5 rounded-full bg-red-500 animate-pulse"></span> <span>3rd Drop &bull; New</span>
                             </div>
                             
-                            <!-- Text Content -->
+                            <div class="absolute bottom-0 left-0 p-4 md:p-8 w-full z-10">
+                                <span class="block text-amber-300 text-[10px] md:text-xs font-bold uppercase tracking-widest mb-1">The Putter Series</span>
+                                <h3 class="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 md:mb-2 shadow-sm leading-tight">Cadence Collection</h3>
+                                <p class="text-gray-200 text-xs md:text-base font-medium mb-3 md:mb-6 transition-all duration-500 transform translate-y-2 opacity-80 group-hover:translate-y-0 group-hover:opacity-100 line-clamp-2 md:line-clamp-none">Handcrafted Blade &amp; Mallet putter covers built with magnetic closures and plush velvet interiors.</p>
+                                <span class="inline-flex items-center gap-1.5 md:gap-2 text-white font-bold tracking-wide uppercase text-[10px] md:text-sm border-b md:border-b-2 border-white/30 pb-0.5 md:pb-1 group-hover:border-white transition-colors duration-300">
+                                    Shop Putter Series <i class="fas fa-arrow-right text-[8px] md:text-xs transition-transform group-hover:translate-x-1"></i>
+                                </span>
+                            </div>
+                        </a>
+
+                        <!-- Heritage Banner Card -->
+                        <a href="#heritage" class="group relative h-64 sm:h-80 md:h-[500px] rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 block border border-gray-200/50">
+                            <img src="heritage card.JPEG" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="this.onerror=null; this.src='https://placehold.co/800x1000/4c111f/ffffff?text=Heritage'">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
+                            
+                            <div id="heritageCardBadge" class="absolute top-3 left-3 md:top-6 md:left-6 bg-white text-[#4c111f] text-[8px] md:text-xs font-bold px-2 py-1 md:px-3 md:py-1.5 rounded-full uppercase tracking-widest shadow-lg flex items-center gap-1 md:gap-1.5 z-10">
+                                <span class="w-1 h-1 md:w-1.5 md:h-1.5 rounded-full bg-amber-500"></span> <span>2nd Drop</span>
+                            </div>
+                            
                             <div class="absolute bottom-0 left-0 p-4 md:p-8 w-full z-10">
                                 <h3 class="font-serif text-xl sm:text-2xl md:text-4xl font-bold text-white mb-1 md:mb-2 shadow-sm leading-tight">The Heritage Collection</h3>
                                 <p class="hidden sm:block text-gray-200 text-xs md:text-base font-medium mb-4 md:mb-6 transition-all duration-500 transform translate-y-2 opacity-80 group-hover:translate-y-0 group-hover:opacity-100 line-clamp-2 md:line-clamp-none">Premium houndstooth, argyle, and tartan fabrics paired with plush velvet lining.</p>
@@ -229,12 +270,9 @@
                         
                         <!-- Atelier Banner Card -->
                         <a href="#atelier" class="group relative h-64 sm:h-80 md:h-[500px] rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 block border border-gray-200/50">
-                            <!-- Background Image -->
-                            <img src="ET3.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="this.src='https://placehold.co/800x1000/2f0a13/ffffff?text=Atelier'">
-                            <!-- Gradient Overlay -->
+                            <img src="ET3.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="this.onerror=null; this.src='https://placehold.co/800x1000/2f0a13/ffffff?text=Atelier'">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
                             
-                            <!-- Text Content -->
                             <div class="absolute bottom-0 left-0 p-4 md:p-8 w-full z-10">
                                 <h3 class="font-serif text-xl sm:text-2xl md:text-4xl font-bold text-white mb-1 md:mb-2 shadow-sm leading-tight">The Atelier Collection</h3>
                                 <p class="hidden sm:block text-gray-200 text-xs md:text-base font-medium mb-4 md:mb-6 transition-all duration-500 transform translate-y-2 opacity-80 group-hover:translate-y-0 group-hover:opacity-100 line-clamp-2 md:line-clamp-none">Our inaugural series. Meticulously crafted for style and maximum protection.</p>
@@ -249,6 +287,40 @@
 
             <section class="w-full h-48 md:h-96 lg:h-[500px] relative overflow-hidden border-t border-[#4c111f]/20">
                 <img src="Untitled design.png" alt="Golf course green" class="absolute inset-0 w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/1200x500/228b22/ffffff?text=GOLF+GREEN'">
+            </section>
+
+            <!-- Spotted on the Fairways — Looping 5-Photo Community Slideshow & Customer Reviews -->
+            <section id="clubhouse" class="py-16 md:py-24 bg-white border-t border-[#4c111f]/10 scroll-mt-24">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-widest text-accent mb-2 block">Clubhouse &amp; Reviews</span>
+                            <h2 class="font-serif text-3xl md:text-4xl font-bold text-[#4c111f]">Spotted on the Fairways</h2>
+                        </div>
+                        <div class="flex flex-wrap items-center gap-3">
+                            <button type="button" onclick="openReviewModal()" class="inline-flex items-center gap-2 bg-[#4c111f] text-white px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold shadow-md hover:opacity-90 active:scale-95 transition-all focus:outline-none">
+                                <i class="fas fa-pen-nib text-xs"></i> Leave a Review
+                            </button>
+                            <a href="https://instagram.com/heath.golf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-[#4c111f] hover:text-accent border border-[#4c111f]/20 px-4 py-2.5 rounded-full transition-colors">
+                                <i class="fab fa-instagram text-base"></i> Tag @heath.golf
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Seamless Infinite-Looping 5-Photo "In The Bag" Slideshow (Pauses on Hover, Tap to Zoom) -->
+                    <div class="community-slideshow-wrap relative overflow-hidden mb-10 py-2">
+                        <div class="pointer-events-none absolute inset-y-0 left-0 w-8 sm:w-16 bg-gradient-to-r from-white to-transparent z-10"></div>
+                        <div class="pointer-events-none absolute inset-y-0 right-0 w-8 sm:w-16 bg-gradient-to-l from-white to-transparent z-10"></div>
+                        <div id="communitySlideshowTrack" class="animate-community-loop flex items-stretch">
+                            <!-- 5 customer bag photos injected & looped seamlessly via JS -->
+                        </div>
+                    </div>
+
+                    <!-- Dynamic Customer Reviews Grid -->
+                    <div id="reviewsGrid" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- Reviews injected via JS -->
+                    </div>
+                </div>
             </section>
 
             <section id="about" class="py-24 bg-[#4c111f] text-white">
@@ -273,10 +345,9 @@
 
 
         <!-- ========================================== -->
-        <!-- VIEW: HERITAGE COLLECTION                  -->
+        <!-- VIEW: CADENCE COLLECTION (3rd Drop)        -->
         <!-- ========================================== -->
-        <div id="view-heritage" class="hidden">
-            <!-- Breadcrumb Navigation -->
+        <div id="view-cadence" class="hidden">
             <div class="bg-gray-50 pt-6 pb-2 border-b border-gray-200/50 sticky top-[72px] md:top-[90px] z-30">
                  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                      <a href="#home" class="inline-flex items-center text-gray-500 hover:text-[#4c111f] font-bold text-xs uppercase tracking-wider transition-colors">
@@ -288,11 +359,51 @@
             <section class="relative pt-12 pb-24 bg-gray-50">
                 <div class="max-w-7xl mx-auto px-2 md:px-12 relative z-10">
                     <div class="text-center mb-10 md:mb-16 px-2 flex flex-col items-center">
-                        <span id="heritageViewBadge" class="bg-[#4c111f] text-white text-[10px] md:text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-5 inline-block shadow-sm">New Release</span>
+                        <span id="cadenceViewBadge" class="bg-[#1E3F20] text-white text-[10px] md:text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-5 inline-block shadow-sm">3rd Drop &bull; New Release</span>
+                        <h2 class="font-serif text-4xl md:text-5xl font-bold text-[#4c111f] mb-4">THE PUTTER SERIES | CADENCE COLLECTION</h2>
+                        <p class="text-gray-600 md:text-lg max-w-2xl mx-auto font-medium">Poise on the greens. Handcrafted Blade &amp; Mallet putter covers finished with smooth magnetic closures and plush velvet interiors.</p>
+                        <!-- Live Drop Countdown Timer (Cadence Page) -->
+                        <div id="cadenceCountdown" class="mt-6 bg-white border border-[#1E3F20]/20 rounded-2xl px-6 py-3.5 shadow-sm hidden">
+                            <span class="block text-[10px] font-bold uppercase tracking-widest text-[#1E3F20] mb-1.5"><i class="fas fa-lock mr-1"></i>Dropping Sat Nov 28 @ 8:00 PM MYT</span>
+                            <div class="flex items-center justify-center gap-3 font-mono font-bold text-[#4c111f]">
+                                <div class="text-center"><span class="cd-days text-xl sm:text-2xl">00</span><span class="block text-[9px] font-sans uppercase text-gray-400">Days</span></div>
+                                <span class="text-lg opacity-40 -mt-3">:</span>
+                                <div class="text-center"><span class="cd-hours text-xl sm:text-2xl">00</span><span class="block text-[9px] font-sans uppercase text-gray-400">Hrs</span></div>
+                                <span class="text-lg opacity-40 -mt-3">:</span>
+                                <div class="text-center"><span class="cd-mins text-xl sm:text-2xl">00</span><span class="block text-[9px] font-sans uppercase text-gray-400">Min</span></div>
+                                <span class="text-lg opacity-40 -mt-3">:</span>
+                                <div class="text-center"><span class="cd-secs text-xl sm:text-2xl text-red-600">00</span><span class="block text-[9px] font-sans uppercase text-gray-400">Sec</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Cadence Grid (3 Columns on Mobile & Desktop) -->
+                    <div class="grid grid-cols-3 gap-1.5 md:gap-10" id="cadenceGrid">
+                        <!-- Products injected via JS -->
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+        <!-- ========================================== -->
+        <!-- VIEW: HERITAGE COLLECTION                  -->
+        <!-- ========================================== -->
+        <div id="view-heritage" class="hidden">
+            <div class="bg-gray-50 pt-6 pb-2 border-b border-gray-200/50 sticky top-[72px] md:top-[90px] z-30">
+                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                     <a href="#home" class="inline-flex items-center text-gray-500 hover:text-[#4c111f] font-bold text-xs uppercase tracking-wider transition-colors">
+                        <i class="fas fa-arrow-left mr-2"></i> Back to Home
+                     </a>
+                 </div>
+            </div>
+            
+            <section class="relative pt-12 pb-24 bg-gray-50">
+                <div class="max-w-7xl mx-auto px-2 md:px-12 relative z-10">
+                    <div class="text-center mb-10 md:mb-16 px-2 flex flex-col items-center">
+                        <span id="heritageViewBadge" class="bg-[#4c111f] text-white text-[10px] md:text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-5 inline-block shadow-sm">2nd Drop</span>
                         <h2 class="font-serif text-4xl md:text-5xl font-bold text-[#4c111f] mb-6">THE HERITAGE COLLECTION</h2>
                         <p class="text-gray-600 md:text-lg max-w-2xl mx-auto font-medium">Where heritage meets the fairways. Handcrafted with premium houndstooth, argyle, and tartan fabrics paired with plush velvet lining.</p>
                     </div>
-                    <!-- Heritage Grid (3 Columns on Mobile & Desktop) -->
                     <div class="grid grid-cols-3 gap-1.5 md:gap-10" id="heritageGrid">
                         <!-- Products injected via JS -->
                     </div>
@@ -305,7 +416,6 @@
         <!-- VIEW: ATELIER COLLECTION                   -->
         <!-- ========================================== -->
         <div id="view-atelier" class="hidden">
-            <!-- Breadcrumb Navigation (Transparent on Hero) -->
             <div class="bg-white/90 backdrop-blur-md pt-6 pb-2 border-b border-gray-200/50 sticky top-[72px] md:top-[90px] z-30 shadow-sm">
                  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                      <a href="#home" class="inline-flex items-center text-gray-800 hover:text-[#4c111f] font-bold text-xs uppercase tracking-wider transition-colors">
@@ -322,9 +432,127 @@
                         <h2 class="font-serif text-4xl md:text-5xl font-bold text-[#4c111f] mb-6 drop-shadow-sm">THE ATELIER COLLECTION</h2>
                         <p class="text-gray-800 md:text-lg font-semibold max-w-2xl mx-auto drop-shadow-sm">Our inaugural collection. Three distinct series, meticulously crafted for style and protection. Limited remaining stock available.</p>
                     </div>
-                    <!-- Atelier Grid (3 Columns on Mobile & Desktop) -->
                     <div class="grid grid-cols-3 gap-1.5 md:gap-10" id="atelierGrid">
                         <!-- Products injected via JS -->
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+        <!-- ========================================== -->
+        <!-- VIEW: SHOP ALL (Grouped by Club Type)      -->
+        <!-- ========================================== -->
+        <div id="view-shop-all" class="hidden">
+            <div class="bg-gray-50/95 backdrop-blur-md pt-5 pb-3 border-b border-gray-200/70 sticky top-[72px] md:top-[90px] z-30 shadow-sm">
+                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap items-center justify-between gap-3">
+                     <a href="#home" class="inline-flex items-center text-gray-500 hover:text-[#4c111f] font-bold text-xs uppercase tracking-wider transition-colors">
+                        <i class="fas fa-arrow-left mr-2"></i> Back to Home
+                     </a>
+                     <div class="flex items-center gap-1.5 sm:gap-2 overflow-x-auto no-scrollbar">
+                         <a href="#shop-all-putter" class="px-3 py-1.5 rounded-full bg-white border border-gray-200 text-xs font-bold text-[#4c111f] hover:bg-[#4c111f] hover:text-white transition-colors whitespace-nowrap">Putter</a>
+                         <a href="#shop-all-hybrid" class="px-3 py-1.5 rounded-full bg-white border border-gray-200 text-xs font-bold text-[#4c111f] hover:bg-[#4c111f] hover:text-white transition-colors whitespace-nowrap">Hybrid</a>
+                         <a href="#shop-all-wood" class="px-3 py-1.5 rounded-full bg-white border border-gray-200 text-xs font-bold text-[#4c111f] hover:bg-[#4c111f] hover:text-white transition-colors whitespace-nowrap">Wood</a>
+                         <a href="#shop-all-driver" class="px-3 py-1.5 rounded-full bg-white border border-gray-200 text-xs font-bold text-[#4c111f] hover:bg-[#4c111f] hover:text-white transition-colors whitespace-nowrap">Driver</a>
+                         <button id="inStockToggleBtn" onclick="toggleShopAllInStock()" class="px-3 py-1.5 rounded-full bg-white border border-[#4c111f]/30 text-xs font-bold text-[#4c111f] hover:opacity-90 transition-all flex items-center gap-1.5 whitespace-nowrap">
+                             <i id="inStockToggleIcon" class="far fa-square text-xs"></i> In-Stock Only
+                         </button>
+                     </div>
+                 </div>
+            </div>
+
+            <section class="relative pt-10 pb-24 bg-gray-50">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-10 md:mb-14">
+                        <span class="bg-[#4c111f] text-white text-[10px] md:text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-4 inline-block shadow-sm">Live Stock Overview</span>
+                        <h2 class="font-serif text-4xl md:text-5xl font-bold text-[#4c111f] mb-4">SHOP ALL HEADCOVERS</h2>
+                        <p class="text-gray-600 md:text-lg max-w-2xl mx-auto font-medium">Browse every collection in one place, organized by club type with live availability.</p>
+                    </div>
+                    <div id="shopAllContainer" class="space-y-14">
+                        <!-- Sections injected via JS -->
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+        <!-- ========================================== -->
+        <!-- VIEW: TRACK YOUR ORDER (J&T & Teleport)    -->
+        <!-- ========================================== -->
+        <div id="view-track-order" class="hidden">
+            <div class="bg-gray-50 pt-6 pb-2 border-b border-gray-200/50 sticky top-[72px] md:top-[90px] z-30">
+                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                     <a href="#home" class="inline-flex items-center text-gray-500 hover:text-[#4c111f] font-bold text-xs uppercase tracking-wider transition-colors">
+                        <i class="fas fa-arrow-left mr-2"></i> Back to Home
+                     </a>
+                 </div>
+            </div>
+
+            <section class="py-12 md:py-20 bg-gray-50">
+                <div class="max-w-2xl mx-auto px-4 sm:px-6">
+                    <div class="text-center mb-10">
+                        <span class="bg-[#4c111f] text-white text-[10px] md:text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-4 inline-block shadow-sm">Order Status</span>
+                        <h2 class="font-serif text-4xl font-bold text-[#4c111f] mb-3">Track Your Order</h2>
+                        <p class="text-gray-600 text-sm md:text-base font-medium">Enter your tracking number below to view live delivery updates directly inside our site.</p>
+                    </div>
+
+                    <div class="bg-white rounded-2xl shadow-md border border-gray-200/70 p-6 sm:p-8">
+                        <form onsubmit="trackJTParcel(event)" class="space-y-5">
+                            <div>
+                                <label class="block text-xs font-bold text-[#4c111f] uppercase tracking-wider mb-2">Select Courier / Region</label>
+                                <div class="grid grid-cols-2 gap-3">
+                                    <label class="cursor-pointer">
+                                        <input type="radio" name="jtRegion" value="MY" class="peer sr-only" checked onchange="updateTrackPlaceholder()">
+                                        <div class="rounded-xl border-2 border-gray-200 p-3 text-center peer-checked:border-[#4c111f] peer-checked:bg-[#4c111f]/5 transition-all">
+                                            <span class="block font-bold text-sm text-[#4c111f]">Malaysia</span>
+                                            <span class="block text-xs text-gray-500 mt-0.5">J&amp;T Express</span>
+                                        </div>
+                                    </label>
+                                    <label class="cursor-pointer">
+                                        <input type="radio" name="jtRegion" value="SG" class="peer sr-only" onchange="updateTrackPlaceholder()">
+                                        <div class="rounded-xl border-2 border-gray-200 p-3 text-center peer-checked:border-[#4c111f] peer-checked:bg-[#4c111f]/5 transition-all">
+                                            <span class="block font-bold text-sm text-[#4c111f]">Singapore</span>
+                                            <span class="block text-xs text-gray-500 mt-0.5">Teleport</span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label id="jtTrackingLabel" for="jtTrackingInput" class="block text-xs font-bold text-[#4c111f] uppercase tracking-wider mb-2">J&amp;T Express Tracking Number (Malaysia)</label>
+                                <div class="flex flex-col sm:flex-row gap-3">
+                                    <input type="text" id="jtTrackingInput" placeholder="e.g. 620012345678" class="flex-1 border border-gray-300 rounded-xl px-4 py-3 text-base font-semibold uppercase focus:border-[#4c111f] focus:ring-[#4c111f] outline-none" required>
+                                    <button type="submit" class="bg-[#4c111f] text-white px-7 py-3 rounded-xl font-bold hover:opacity-90 transition-opacity shadow-md whitespace-nowrap">
+                                        <i class="fas fa-search mr-2"></i>Track Parcel
+                                    </button>
+                                </div>
+                                <p id="jtTrackError" class="hidden text-xs text-red-500 font-semibold mt-2"></p>
+                            </div>
+                        </form>
+
+                        <!-- In-Page Live Tracking Result Container -->
+                        <div id="jtResultBox" class="hidden mt-8 pt-6 border-t border-gray-200 animate-fade-in-down">
+                            <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+                                <div class="flex items-center gap-2">
+                                    <span id="jtResultNumber" class="font-mono font-bold text-base text-[#4c111f]"></span>
+                                    <button type="button" id="copyTrackBtn" onclick="copyTrackingNumber()" class="text-xs font-semibold text-gray-500 hover:text-[#4c111f] bg-gray-100 px-2.5 py-1 rounded-lg transition-colors">
+                                        <i class="far fa-copy mr-1"></i>Copy
+                                    </button>
+                                </div>
+                                <span id="jtResultCourierBadge" class="bg-red-100 text-red-700 text-xs font-bold px-3 py-1 rounded-full">J&amp;T Express (Malaysia)</span>
+                            </div>
+
+                            <div id="embedTrack" class="w-full min-h-[200px] bg-gray-50 rounded-xl border border-gray-200 overflow-hidden flex items-center justify-center"></div>
+
+                            <div class="mt-4 flex flex-wrap items-center justify-between gap-3 text-xs">
+                                <a id="jtDirectLink" href="#" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-[#4c111f] underline font-medium">
+                                    <i class="fas fa-external-link-alt mr-1"></i><span id="jtDirectLinkText">Not loading? Open on J&amp;T Express</span>
+                                </a>
+                                <a id="jtWhatsappHelp" href="#" target="_blank" rel="noopener noreferrer" class="text-green-700 hover:text-green-800 font-bold inline-flex items-center gap-1.5">
+                                    <i class="fab fa-whatsapp text-sm"></i> Need help with this parcel?
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -339,6 +567,8 @@
                     <p class="font-serif text-xl font-bold">HEATH STUDIO</p>
                 </div>
                 <div class="flex flex-wrap justify-center gap-4 text-sm mt-4 md:mt-0">
+                    <a href="#track-order" class="text-gray-300 hover:text-white underline-offset-4 hover:underline transition-colors font-semibold">Track Order</a>
+                    <span class="text-gray-500 hidden sm:inline">|</span>
                     <a href="shipping_policy.html" class="text-gray-300 hover:text-white underline-offset-4 hover:underline transition-colors">Shipping Policy</a>
                     <span class="text-gray-500 hidden sm:inline">|</span>
                     <a href="Returnpolicy.html" class="text-gray-300 hover:text-white underline-offset-4 hover:underline transition-colors">Return & Refund Policy</a>
@@ -354,10 +584,27 @@
         </div>
     </footer>
 
+    <!-- Floating WhatsApp Button for Custom Orders -->
+    <a href="https://wa.me/60182757370?text=Hi%20Heath%20Studio!%20I%27d%20like%20to%20enquire%20about%20a%20custom-made%20order."
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Chat on WhatsApp for Custom Orders"
+       class="fixed bottom-5 right-5 z-40 group flex items-center gap-2.5 focus:outline-none">
+        <!-- Subtle Label Pill -->
+        <span class="bg-white text-[#4c111f] text-xs sm:text-sm font-bold px-3.5 py-2 rounded-full shadow-lg border border-gray-200/80 transition-all duration-300 group-hover:scale-105">
+            Custom Order?
+        </span>
+        <!-- WhatsApp Circular Icon -->
+        <span class="w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-xl group-hover:bg-[#1ebe5d] group-hover:scale-110 active:scale-95 transition-all duration-300 relative">
+            <span class="absolute inset-0 rounded-full bg-[#25D366] opacity-30 animate-ping pointer-events-none"></span>
+            <i class="fab fa-whatsapp text-3xl relative z-10"></i>
+        </span>
+    </a>
+
     <!-- Mobile Navigation Overlay & Menu -->
     <div id="menuOverlay" class="fixed inset-0 bg-black bg-opacity-50 z-[60] hidden transition-opacity duration-300 opacity-0"></div>
 
-    <div id="sideMenu" class="fixed top-0 left-0 h-[100dvh] w-[250px] sm:w-[300px] bg-white shadow-2xl z-[70] transform -translate-x-full transition-transform duration-300 ease-in-out flex flex-col">
+    <div id="sideMenu" class="fixed top-0 left-0 h-[100dvh] w-[260px] sm:w-[300px] bg-white shadow-2xl z-[70] transform -translate-x-full transition-transform duration-300 ease-in-out flex flex-col">
         <div class="p-6 border-b flex justify-between items-center bg-gray-50 flex-shrink-0">
             <h2 class="font-serif text-2xl font-bold text-[#4c111f]">Menu</h2>
             <button id="closeMenuBtn" class="text-gray-500 hover:text-[#4c111f] p-2 focus:outline-none" aria-label="Close menu"><i class="fas fa-times text-xl"></i></button>
@@ -365,18 +612,44 @@
         <div class="flex-1 px-6 pt-6 space-y-2 overflow-y-auto no-scrollbar">
             <a href="#home" class="menu-link block py-3 text-lg font-medium text-[#4c111f] hover:opacity-80 border-b border-gray-100 transition-all">Home</a>
             
+            <!-- Shop All Dropdown -->
+            <div class="border-b border-gray-100">
+                <button id="shopAllMenuBtn" class="w-full flex justify-between items-center py-3 text-lg font-medium text-[#4c111f] hover:opacity-80 transition-all focus:outline-none">
+                    <span>Shop All</span>
+                    <i class="fas fa-chevron-down text-sm transition-transform duration-300" id="shopAllMenuIcon"></i>
+                </button>
+                <div id="shopAllSubMenu" class="hidden flex-col pl-4 pb-2 space-y-2 mt-1">
+                    <a href="#shop-all" class="menu-link block py-2 text-base font-bold text-[#4c111f] hover:text-accent transition-all">View All Products</a>
+                    <a href="#shop-all-putter" class="menu-link block py-1.5 text-sm font-medium text-gray-600 hover:text-[#4c111f] transition-all">Putter</a>
+                    <a href="#shop-all-hybrid" class="menu-link block py-1.5 text-sm font-medium text-gray-600 hover:text-[#4c111f] transition-all">Hybrid</a>
+                    <a href="#shop-all-wood" class="menu-link block py-1.5 text-sm font-medium text-gray-600 hover:text-[#4c111f] transition-all">Wood</a>
+                    <a href="#shop-all-driver" class="menu-link block py-1.5 text-sm font-medium text-gray-600 hover:text-[#4c111f] transition-all">Driver</a>
+                </div>
+            </div>
+
             <div class="border-b border-gray-100">
                 <button id="collectionsMenuBtn" class="w-full flex justify-between items-center py-3 text-lg font-medium text-[#4c111f] hover:opacity-80 transition-all focus:outline-none">
                     <span>Collections</span>
                     <i class="fas fa-chevron-down text-sm transition-transform duration-300" id="collectionsMenuIcon"></i>
                 </button>
                 <div id="collectionsSubMenu" class="hidden flex-col pl-4 pb-2 space-y-2 mt-1">
-                    <a href="#heritage" class="menu-link block py-2 text-base font-bold text-accent hover:text-[#4c111f] transition-all">The Heritage Collection <span class="text-xs ml-1 bg-red-100 text-red-700 px-1.5 rounded">NEW</span></a>
+                    <a href="#cadence" class="menu-link block py-2 text-base font-bold text-accent hover:text-[#4c111f] transition-all leading-snug">
+                        The Putter Series | Cadence Collection
+                        <span class="text-[10px] ml-1 bg-red-100 text-red-700 px-1.5 py-0.5 rounded uppercase align-middle">NEW</span>
+                    </a>
+                    <a href="#heritage" class="menu-link block py-2 text-base font-medium text-gray-600 hover:text-[#4c111f] transition-all">The Heritage Collection</a>
                     <a href="#atelier" class="menu-link block py-2 text-base font-medium text-gray-600 hover:text-[#4c111f] transition-all">The Atelier Collection</a>
                 </div>
             </div>
             
+            <a href="#clubhouse" class="menu-link block py-3 text-lg font-medium text-[#4c111f] hover:opacity-80 border-b border-gray-100 transition-all">Clubhouse</a>
+
             <a href="#about" class="menu-link block py-3 text-lg font-medium text-[#4c111f] hover:opacity-80 border-b border-gray-100 transition-all">About Us</a>
+
+            <a href="#track-order" class="menu-link flex items-center justify-between py-3 text-lg font-medium text-[#4c111f] hover:opacity-80 border-b border-gray-100 transition-all">
+                <span>Track Your Order</span>
+                <i class="fas fa-truck-fast text-sm text-accent"></i>
+            </a>
             
             <div class="border-b border-gray-100">
                 <button id="helpMenuBtn" class="w-full flex justify-between items-center py-3 text-lg font-medium text-[#4c111f] hover:opacity-80 transition-all focus:outline-none">
@@ -431,8 +704,38 @@
             <div id="cartItems" class="p-6 space-y-4"></div>
             
             <div class="p-6 border-t bg-gray-50/50 mt-auto">
+                <!-- Smart Bundle Upsell Nudge -->
+                <div id="bundleUpsellNotice" class="hidden mb-4 bg-amber-50 border border-amber-200/80 rounded-xl px-3.5 py-2.5 text-xs text-amber-900 font-medium flex items-center justify-between gap-2">
+                    <span id="bundleUpsellText"></span>
+                    <a id="bundleUpsellLink" href="#shop-all-wood" onclick="closeCart()" class="text-[#4c111f] font-bold underline whitespace-nowrap hover:opacity-75">Add Now</a>
+                </div>
+
+                <!-- Itemized Order Breakdown (Mini-Receipt) -->
+                <div id="cartBreakdown" class="space-y-1.5 text-sm text-gray-600 mb-3 pb-3 border-b border-gray-200 hidden">
+                    <div class="flex justify-between">
+                        <span>Items Subtotal</span>
+                        <span id="breakdownItems" class="font-medium text-gray-800">RM 0</span>
+                    </div>
+                    <div id="breakdownPatchRow" class="flex justify-between hidden">
+                        <span>Custom Embroidery Patches</span>
+                        <span id="breakdownPatches" class="font-medium text-gray-800">RM 0</span>
+                    </div>
+                    <div id="breakdownBundleRow" class="flex justify-between text-green-700 hidden">
+                        <span>Bundle Savings</span>
+                        <span id="breakdownBundle" class="font-bold">-RM 0</span>
+                    </div>
+                    <div id="breakdownPromoRow" class="flex justify-between text-green-700 hidden">
+                        <span>Promo Discount</span>
+                        <span id="breakdownPromo" class="font-bold">-RM 0</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span id="breakdownShippingLabel">Shipping</span>
+                        <span id="breakdownShipping" class="font-medium text-gray-800">RM 0</span>
+                    </div>
+                </div>
+
                 <div class="flex justify-between items-center mb-4">
-                    <span class="text-gray-600">Subtotal</span>
+                    <span class="text-gray-800 font-bold">Total</span>
                     <span class="font-bold text-2xl text-primary flex items-center gap-2" id="cartTotal">RM 0</span>
                 </div>
                 <div class="text-sm font-medium text-green-600 bg-green-50 px-3 py-2 rounded-md mb-4 hidden border border-green-100" id="bundleNotice">
@@ -450,7 +753,7 @@
                         <option value="SG">Singapore</option>
                     </select>
                     
-                    <div class="space-y-2">
+                    <div id="deliveryAddressFields" class="space-y-2">
                         <input type="text" id="custAddress" placeholder="Street Address" class="w-full border-gray-300 rounded-md shadow-sm focus:border-primary focus:ring-primary p-2 border text-base" required>
                         <div class="grid grid-cols-2 gap-2">
                             <input type="text" id="custCity" placeholder="City" class="w-full border-gray-300 rounded-md shadow-sm focus:border-primary focus:ring-primary p-2 border text-base" required>
@@ -464,9 +767,17 @@
                 <div id="formError" class="text-xs text-red-500 mb-3 hidden font-medium text-center">Please fill in all delivery details above.</div>
                 
                 <div class="mb-2">
-                    <label class="block text-sm font-medium text-[#4c111f] mb-2">Shipping Destination</label>
+                    <label class="block text-sm font-medium text-[#4c111f] mb-2">Shipping / Pickup Option</label>
                     <div class="grid grid-cols-2 gap-3" id="shippingOptionsContainer">
                         <!-- Injected via JS based on country -->
+                    </div>
+                    <!-- Self-Pickup Info Box (Shown when Self-Pickup is selected) -->
+                    <div id="pickupNotice" class="hidden mt-3 bg-amber-50 border border-amber-200 rounded-xl p-3.5 text-xs text-amber-900 leading-relaxed animate-fade-in-down">
+                        <p class="font-bold text-[#4c111f] mb-1"><i class="fas fa-map-marker-alt mr-1.5 text-accent"></i>Self-Pickup — Glenmarie, Shah Alam</p>
+                        <p class="mb-2">Skip the shipping fee and wait! We are based in <strong>Glenmarie</strong>. Once your order is placed, please reach out to us on WhatsApp to arrange your pickup time.</p>
+                        <a href="https://wa.me/60182757370?text=Hi%20Heath%20Studio!%20I%20would%20like%20to%20arrange%20a%20self-pickup%20in%20Glenmarie%20for%20my%20order." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 font-bold text-green-700 hover:text-green-800 underline">
+                            <i class="fab fa-whatsapp text-sm"></i> Contact us on WhatsApp to arrange pickup
+                        </a>
                     </div>
                 </div>
 
@@ -509,18 +820,28 @@
         <div class="absolute inset-0 bg-black bg-opacity-60 backdrop-blur-sm transition-opacity duration-300 opacity-0" id="modalBackdrop"></div>
         <div class="bg-white rounded-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto m-4 relative z-10 shadow-2xl transform scale-95 opacity-0 transition-all duration-300 no-scrollbar flex flex-col md:block" id="modalContent">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
-                <!-- UPDATED Modal Image Container for Zoom functionality -->
-                <div class="bg-gray-100 flex items-center justify-center p-6 relative h-[280px] sm:h-[350px] md:h-auto md:min-h-[400px] shrink-0 group cursor-zoom-in sticky top-0 z-30 border-b border-gray-200/60 md:border-none shadow-sm md:shadow-none" onclick="openZoom(document.getElementById('modalImg').src)">
-                    <!-- Close button moved inside sticky container so it stays visible -->
+                <!-- Modal Image Container with Multi-Angle Gallery & Zoom -->
+                <div class="bg-gray-100 flex flex-col items-center justify-center p-5 relative min-h-[300px] sm:min-h-[380px] md:min-h-[460px] shrink-0 sticky top-0 z-30 border-b border-gray-200/60 md:border-none shadow-sm md:shadow-none">
                     <button id="closeModal" class="absolute top-4 right-4 text-[#4c111f]/60 hover:text-[#4c111f] z-40 bg-white/90 backdrop-blur rounded-full w-10 h-10 flex items-center justify-center shadow-sm focus:outline-none border border-white" onclick="event.stopPropagation();">
                         <i class="fas fa-times text-lg"></i>
                     </button>
-                    
-                    <img id="modalImg" src="" alt="Product" class="max-w-full h-full object-contain drop-shadow-xl rounded-lg transition-transform duration-300 group-hover:scale-105">
-                    <!-- Icon is now permanently visible on mobile (opacity-100), and shows on hover for desktop -->
-                    <div class="absolute bottom-4 right-4 bg-white/80 backdrop-blur text-[#4c111f] w-10 h-10 flex items-center justify-center rounded-full shadow-md opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity z-10 pointer-events-none">
-                        <i class="fas fa-search-plus"></i>
+
+                    <!-- Main Image Stage -->
+                    <div class="relative w-full h-[220px] sm:h-[290px] md:h-[360px] flex items-center justify-center group cursor-zoom-in" onclick="openZoom(document.getElementById('modalImg').src)">
+                        <button type="button" id="modalPrevImgBtn" onclick="event.stopPropagation(); stepModalGallery(-1)" class="hidden absolute left-1 top-1/2 -translate-y-1/2 z-20 w-9 h-9 rounded-full bg-white/85 hover:bg-white text-[#4c111f] shadow-md items-center justify-center transition-all" aria-label="Previous image">
+                            <i class="fas fa-chevron-left text-xs"></i>
+                        </button>
+                        <img id="modalImg" src="" alt="Product" class="max-w-full max-h-full object-contain drop-shadow-xl rounded-lg transition-transform duration-300 group-hover:scale-105" onerror="this.onerror=null; this.src='https://placehold.co/600x600/f3f4f6/4c111f?text=Product+Image'">
+                        <button type="button" id="modalNextImgBtn" onclick="event.stopPropagation(); stepModalGallery(1)" class="hidden absolute right-1 top-1/2 -translate-y-1/2 z-20 w-9 h-9 rounded-full bg-white/85 hover:bg-white text-[#4c111f] shadow-md items-center justify-center transition-all" aria-label="Next image">
+                            <i class="fas fa-chevron-right text-xs"></i>
+                        </button>
+                        <div class="absolute bottom-2 right-2 bg-white/80 backdrop-blur text-[#4c111f] w-9 h-9 flex items-center justify-center rounded-full shadow-md opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity z-10 pointer-events-none">
+                            <i class="fas fa-search-plus text-sm"></i>
+                        </div>
                     </div>
+
+                    <!-- Multi-Angle Thumbnail Strip -->
+                    <div id="modalThumbnails" class="flex items-center justify-center gap-2 mt-3 w-full overflow-x-auto no-scrollbar py-1"></div>
                 </div>
                 <div class="p-8 md:p-12 flex flex-col justify-center">
                     <span id="modalSeries" class="text-sm font-semibold text-accent uppercase tracking-wider mb-2"></span>
@@ -531,7 +852,7 @@
                         <div class="flex gap-4" id="modalColors"></div>
                     </div>
                     <div class="mb-4">
-                        <h4 class="text-sm font-medium text-[#4c111f] mb-3 uppercase tracking-wide">Select Club Type</h4>
+                        <h4 class="text-sm font-medium text-[#4c111f] mb-3 uppercase tracking-wide" id="modalClubTypeHeading">Select Club Type</h4>
                         <div class="grid grid-cols-2 gap-4" id="modalClubTypes">
                             <!-- Injected dynamically based on collection/currency -->
                         </div>
@@ -559,7 +880,6 @@
                                     
                                     <!-- DYNAMIC LIVE PREVIEW -->
                                     <div class="w-full h-40 bg-[#f3f4f6] rounded-lg mb-6 border border-gray-200 shadow-inner flex items-center justify-center relative overflow-hidden">
-                                        <!-- Subtle background texture -->
                                         <div class="absolute inset-0 opacity-[0.03]" style="background-image: repeating-linear-gradient(45deg, #000 0, #000 1px, transparent 0, transparent 50%); background-size: 10px 10px;"></div>
                                         <p class="absolute top-2 left-3 text-[10px] font-bold text-gray-400 uppercase tracking-widest z-10 flex items-center gap-1">
                                             <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></span> Live Preview
@@ -567,9 +887,7 @@
                                         
                                         <!-- The Virtual Patch -->
                                         <div id="livePatchElement" class="bg-white rounded-md shadow-xl flex items-center justify-center relative transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] z-20 border-[3px] border-[#4c111f]" style="width: 180px; height: 60px;">
-                                            <!-- Faux stitching inner border -->
                                             <div id="patchInnerBorder" class="absolute inset-[3px] border-[1px] border-dashed rounded-[2px] pointer-events-none opacity-60 border-[#4c111f]"></div>
-                                            <!-- Embroidered Text -->
                                             <span id="livePatchText" class="text-xl font-serif font-bold tracking-[0.1em] transition-all duration-200 text-center px-2 w-full truncate text-[#4c111f]">HEATH</span>
                                         </div>
                                     </div>
@@ -634,6 +952,19 @@
                                 </div>
                             </div>
                         </div>
+
+                        <!-- Fit Guide, Materials & Care Accordion -->
+                        <div class="mt-4 border border-gray-200 rounded-xl overflow-hidden shadow-sm">
+                            <button type="button" onclick="toggleFitGuide()" class="w-full flex items-center justify-between p-4 bg-white hover:bg-gray-50 transition-colors text-left focus:outline-none">
+                                <span class="font-bold text-sm text-[#4c111f] flex items-center gap-2">
+                                    <i class="fas fa-ruler-combined text-accent"></i> Fit Guide, Materials &amp; Care
+                                </span>
+                                <i class="fas fa-chevron-down text-gray-400 text-xs transition-transform duration-300" id="fitGuideChevron"></i>
+                            </button>
+                            <div id="fitGuideBody" class="hidden px-4 pb-4 pt-3 border-t border-gray-100 bg-gray-50/50 text-xs text-gray-600 space-y-2 leading-relaxed animate-fade-in-down">
+                                <!-- Dynamically populated based on Putter vs Wood/Driver/Hybrid -->
+                            </div>
+                        </div>
                         
                         <div class="mt-6 bg-green-50/80 border border-green-100 rounded-xl p-4">
                             <div class="flex items-center gap-2 mb-2">
@@ -642,28 +973,34 @@
                             </div>
                             <ul class="space-y-1.5 text-xs text-green-700 font-medium">
                                 <li class="flex items-center gap-2">
-                                    <i class="fas fa-box text-[10px] opacity-70"></i> Pack & ship within 24 hours for non custom items. (Custom items: ETA 7-14 Days)
+                                    <i class="fas fa-box text-[10px] opacity-70"></i> Pack &amp; ship in 3-5days for non custom items. (Custom items: ETA 7-14 Days)
                                 </li>
                                 <li class="flex items-center gap-2">
-                                    <img src="https://flagcdn.com/w20/my.png" class="w-4 shadow-sm rounded-sm" alt="MY"> Arrives in 1-2 days (MY/non-custom items)
+                                    <img src="https://flagcdn.com/w20/my.png" class="w-4 shadow-sm rounded-sm" alt="MY"> Arrives in 3-5 days (MY/non-custom items)
                                 </li>
                                 <li class="flex items-center gap-2">
-                                    <img src="https://flagcdn.com/w20/sg.png" class="w-4 shadow-sm rounded-sm" alt="SG"> Arrives in 2-3 days (SG/non-custom items)
+                                    <img src="https://flagcdn.com/w20/sg.png" class="w-4 shadow-sm rounded-sm" alt="SG"> Arrives in 4-5 days (SG/non-custom items)
                                 </li>
                             </ul>
                         </div>
                         
                     </div>
                     
-                    <div class="mt-auto pt-6 border-t border-[#4c111f]/10 flex items-center justify-between">
-                        <div>
-                            <p class="text-xs text-[#4c111f]/50 mb-1">Total Price</p>
-                            <div class="font-bold text-3xl text-[#4c111f]" id="modalPrice">RM 109</div>
-                            <div id="modalStockStatus" class="text-sm mt-1 h-5"></div>
+                    <div class="mt-auto pt-6 border-t border-[#4c111f]/10 flex flex-col gap-3">
+                        <div class="flex items-center justify-between gap-4">
+                            <div>
+                                <p class="text-xs text-[#4c111f]/50 mb-1">Total Price</p>
+                                <div class="font-bold text-3xl text-[#4c111f]" id="modalPrice">RM 109</div>
+                                <div id="modalStockStatus" class="text-sm mt-1 h-5"></div>
+                            </div>
+                            <button id="addToCartModalBtn" class="bg-[#4c111f] text-white px-8 py-4 rounded-xl font-bold hover:opacity-90 transition-all shadow-lg active:scale-95 focus:outline-none">
+                                Add to Cart
+                            </button>
                         </div>
-                        <button id="addToCartModalBtn" class="bg-[#4c111f] text-white px-8 py-4 rounded-xl font-bold hover:opacity-90 transition-all shadow-lg active:scale-95 focus:outline-none">
-                            Add to Cart
-                        </button>
+                        <!-- Sold Out Restock / Custom Order Lead Button -->
+                        <a id="whatsappRestockBtn" href="#" target="_blank" rel="noopener noreferrer" class="hidden w-full bg-[#25D366] hover:bg-[#1ebe5d] text-white py-3 px-4 rounded-xl font-bold text-sm text-center shadow-md transition-all flex items-center justify-center gap-2">
+                            <i class="fab fa-whatsapp text-lg"></i> Request Restock / Custom Order on WhatsApp
+                        </a>
                     </div>
                 </div>
             </div>
@@ -685,6 +1022,76 @@
         </div>
     </div>
 
+    <!-- Leave a Review Modal -->
+    <div id="reviewModal" class="fixed inset-0 z-[95] hidden items-center justify-center">
+        <div class="absolute inset-0 bg-black bg-opacity-60 backdrop-blur-sm transition-opacity duration-300 opacity-0" id="reviewModalBackdrop" onclick="closeReviewModal()"></div>
+        <div class="bg-white rounded-2xl w-full max-w-md m-4 relative z-10 shadow-2xl transform scale-95 opacity-0 transition-all duration-300 p-6 sm:p-8 max-h-[90vh] overflow-y-auto no-scrollbar" id="reviewModalContent">
+            <button type="button" onclick="closeReviewModal()" class="absolute top-4 right-4 text-gray-400 hover:text-[#4c111f] w-9 h-9 rounded-full flex items-center justify-center focus:outline-none transition-colors" aria-label="Close review modal">
+                <i class="fas fa-times text-lg"></i>
+            </button>
+
+            <div class="mb-6">
+                <span class="text-[11px] font-bold uppercase tracking-widest text-accent block mb-1">Share Your Experience</span>
+                <h2 class="font-serif text-2xl sm:text-3xl font-bold text-[#4c111f]">Leave a Review</h2>
+                <p class="text-xs text-gray-500 mt-1">Tell fellow golfers what you think about your Heath headcovers.</p>
+            </div>
+
+            <form id="reviewForm" onsubmit="submitReview(event)" class="space-y-4">
+                <!-- Interactive 5-Star Rating -->
+                <div>
+                    <label class="block text-xs font-bold text-[#4c111f] uppercase tracking-wider mb-2">Your Rating</label>
+                    <div class="flex items-center gap-2" id="reviewStarPicker">
+                        <button type="button" onclick="setReviewRating(1)" class="review-star-btn text-2xl text-amber-400 hover:scale-110 transition-transform focus:outline-none" data-star="1" aria-label="1 star"><i class="fas fa-star"></i></button>
+                        <button type="button" onclick="setReviewRating(2)" class="review-star-btn text-2xl text-amber-400 hover:scale-110 transition-transform focus:outline-none" data-star="2" aria-label="2 stars"><i class="fas fa-star"></i></button>
+                        <button type="button" onclick="setReviewRating(3)" class="review-star-btn text-2xl text-amber-400 hover:scale-110 transition-transform focus:outline-none" data-star="3" aria-label="3 stars"><i class="fas fa-star"></i></button>
+                        <button type="button" onclick="setReviewRating(4)" class="review-star-btn text-2xl text-amber-400 hover:scale-110 transition-transform focus:outline-none" data-star="4" aria-label="4 stars"><i class="fas fa-star"></i></button>
+                        <button type="button" onclick="setReviewRating(5)" class="review-star-btn text-2xl text-amber-400 hover:scale-110 transition-transform focus:outline-none" data-star="5" aria-label="5 stars"><i class="fas fa-star"></i></button>
+                        <span id="reviewRatingLabel" class="text-xs font-bold text-gray-500 ml-2">5 / 5</span>
+                    </div>
+                </div>
+
+                <!-- Name & Region -->
+                <div class="grid grid-cols-3 gap-3">
+                    <div class="col-span-2">
+                        <label for="reviewName" class="block text-xs font-bold text-[#4c111f] uppercase tracking-wider mb-1.5">Your Name</label>
+                        <input type="text" id="reviewName" maxlength="40" placeholder="e.g. Amirul H." class="w-full border border-gray-300 rounded-xl px-3.5 py-2.5 text-sm focus:border-[#4c111f] focus:ring-[#4c111f] outline-none" required>
+                    </div>
+                    <div>
+                        <label for="reviewRegion" class="block text-xs font-bold text-[#4c111f] uppercase tracking-wider mb-1.5">Region</label>
+                        <select id="reviewRegion" class="w-full border border-gray-300 rounded-xl px-3.5 py-2.5 text-sm bg-white focus:border-[#4c111f] focus:ring-[#4c111f] outline-none">
+                            <option value="MY">MY</option>
+                            <option value="SG">SG</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Collection / Item Purchased -->
+                <div>
+                    <label for="reviewCollection" class="block text-xs font-bold text-[#4c111f] uppercase tracking-wider mb-1.5">Collection Purchased</label>
+                    <select id="reviewCollection" class="w-full border border-gray-300 rounded-xl px-3.5 py-2.5 text-sm bg-white focus:border-[#4c111f] focus:ring-[#4c111f] outline-none">
+                        <option value="Cadence Collection">The Putter Series | Cadence Collection</option>
+                        <option value="Heritage Collection">The Heritage Collection</option>
+                        <option value="Atelier Collection">The Atelier Collection</option>
+                        <option value="Custom Order">Custom-Made / Embroidery Order</option>
+                    </select>
+                </div>
+
+                <!-- Review Comment -->
+                <div>
+                    <label for="reviewComment" class="block text-xs font-bold text-[#4c111f] uppercase tracking-wider mb-1.5">Your Review</label>
+                    <textarea id="reviewComment" rows="3" maxlength="320" placeholder="How's the fit, material, or delivery?" class="w-full border border-gray-300 rounded-xl px-3.5 py-2.5 text-sm focus:border-[#4c111f] focus:ring-[#4c111f] outline-none resize-none" required></textarea>
+                </div>
+
+                <p id="reviewFormError" class="hidden text-xs text-red-500 font-semibold"></p>
+                <p id="reviewFormSuccess" class="hidden text-xs text-green-700 bg-green-50 border border-green-200 rounded-xl px-3 py-2 font-semibold"></p>
+
+                <button type="submit" id="submitReviewBtn" class="w-full bg-[#4c111f] text-white py-3.5 rounded-xl font-bold hover:opacity-90 active:scale-95 transition-all shadow-md">
+                    Post Review
+                </button>
+            </form>
+        </div>
+    </div>
+
     <!-- Fullscreen Zoom Modal -->
     <div id="zoomModal" class="fixed inset-0 z-[100] hidden bg-black/95 backdrop-blur-sm items-center justify-center overflow-hidden transition-opacity duration-300 opacity-0">
         <button id="closeZoomBtn" class="absolute top-4 right-4 text-white/70 hover:text-white z-[110] bg-black/50 hover:bg-black/80 rounded-full w-12 h-12 flex items-center justify-center focus:outline-none transition-all" aria-label="Close Zoom">
@@ -701,7 +1108,7 @@
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
         import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-        import { getFirestore, doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+        import { getFirestore, doc, getDoc, setDoc, collection, addDoc, getDocs, query, orderBy, limit } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
         const appId = typeof __app_id !== 'undefined' ? __app_id : 'heath-studio-dev';
         const firebaseConfigStr = typeof __firebase_config !== 'undefined' ? __firebase_config : '{}';
@@ -738,6 +1145,33 @@
             }
         };
 
+        window.fetchCloudReviews = async function() {
+            if (!db || !auth) return [];
+            if (!auth.currentUser) await new Promise(r => setTimeout(r, 600));
+            if (!auth.currentUser) return [];
+            try {
+                const reviewsCol = collection(db, 'artifacts', appId, 'public', 'data', 'reviews');
+                const q = query(reviewsCol, orderBy('createdAt', 'desc'), limit(12));
+                const snap = await getDocs(q);
+                return snap.docs.map(d => d.data());
+            } catch (error) {
+                return [];
+            }
+        };
+
+        window.saveCloudReview = async function(reviewObj) {
+            if (!db || !auth) return false;
+            if (!auth.currentUser) await new Promise(r => setTimeout(r, 600));
+            if (!auth.currentUser) return false;
+            try {
+                const reviewsCol = collection(db, 'artifacts', appId, 'public', 'data', 'reviews');
+                await addDoc(reviewsCol, reviewObj);
+                return true;
+            } catch (error) {
+                return false;
+            }
+        };
+
         function generateLocalFallbackID() {
             const randomNum = Math.floor(Math.random() * 90000 + 10000);
             return `HTHG-${randomNum}`;
@@ -745,6 +1179,105 @@
     </script>
 
     <script>
+        // ============================================================
+        // NEW: 5 Customer Bag Photos for Looping Community Slideshow
+        // Replace 'customer1.jpg'..'customer5.jpg' with your 5 photo filenames!
+        // ============================================================
+        const communityPhotos = [
+            { img: 'Clubhouse1.JPG', handle: '@amrrhkmi', caption: 'Tartan Crimson • KL' },
+            { img: 'Clubhouse2.JPEG', handle: '@aishagffrey', caption: 'Argyle Blush • Selangor' },
+            { img: 'Clubhouse3.JPG', handle: '@adzharkahar', caption: 'Terracotta Moss • Selangor' },
+            { img: 'Clubhouse4.JPG', handle: '@_bilboa', caption: 'Azure Moss • KL' },
+            { img: 'Clubhouse5.JPEG', handle: '@_nrmnhkm_', caption: 'Custom Order • Singapore' },
+            { img: 'Clubhouse6.JPG', handle: '@amirulasyraafcz', caption: 'BlackBone • KL' }
+        ];
+
+        // ============================================================
+        // Data for The Putter Series | Cadence Collection (3rd Drop)
+        // ============================================================
+        const cadenceProducts = [
+            { 
+                id: 'cadence-ochre', 
+                series: 'Cadence Ochre', 
+                desc: 'Warm golden-brown tones in tactile waffle, timeless herringbone and classic stripe weaves with magnetic closure.', 
+                slideshowImages: ['PineB.JPG', 'Bunker2.JPG', 'Waffle3.JPG'], 
+                colors: [
+                    { 
+                        name: 'Waffle', 
+                        hex: '#F7BE14', 
+                        bladeImg: 'WaffleB.JPG', 
+                        malletImg: 'Waffle4.JPEG', 
+                        galleryImages: ['Waffle1.JPG', 'WaffleB.JPG', 'Waffle2.JPG', 'Waffle4.JPEG', 'WaffleB2.JPG'],
+                        stock: { blade: 3, mallet: 3 } 
+                    },
+                     { 
+                        name: 'Pine', 
+                        hex: '#05472A', 
+                        bladeImg: 'PineB.JPG', 
+                        malletImg: 'Pine4.JPEG', 
+                        galleryImages: ['Pine1.JPG', 'PineB.JPG', 'Pine2.JPG', 'PineB2.JPG', 'Pine4.JPEG','Pine3.JPG'],
+                        stock: { blade: 3, mallet: 3 } 
+                    },
+                    { 
+                        name: 'Bunker', 
+                        hex: '#654321', 
+                        bladeImg: 'BunkerB.JPG', 
+                        malletImg: 'Bunker4.JPEG', 
+                        galleryImages: ['Bunker1.JPG', 'BunkerB.JPG', 'Bunker2.JPG', 'BunkerB2.JPG', 'Bunker4.JPEG', 'Bunker3.JPG'],
+                        stock: { blade: 3, mallet: 3 } 
+                    }
+                ] 
+            },
+            { 
+                id: 'cadence-coastal', 
+                series: 'Cadence Coastal', 
+                desc: 'Refined coastal blues in textured waffle and tailored houndstooth patterns with plush velvet lining.', 
+                slideshowImages: ['ChimeB.JPG', 'Breeze2.JPG', 'Porcelain3.JPG'], 
+                colors: [
+                    { 
+                        name: 'Breeze', 
+                        hex: '#aec9ea', 
+                        bladeImg: 'BreezeB.JPG', 
+                        malletImg: 'Breeze2.JPG', 
+                        galleryImages: ['Breeze1.JPG', 'BreezeB.JPG', 'Breeze2.JPG', 'BreezeB2.JPG', 'Breeze3.JPG'],
+                        stock: { blade: 3, mallet: 3 } 
+                    },
+                    { 
+                        name: 'Porcelain', 
+                        hex: '#151667', 
+                        bladeImg: 'ChimeB.JPG', 
+                        malletImg: 'Porcelain4.JPEG', 
+                        galleryImages: ['Porcelain.JPG', 'ChimeB.JPG', 'Porcelain2.JPG', 'ChimeB2.JPG', 'Porcelain4.JPEG'],
+                        stock: { blade: 3, mallet: 3 } 
+                    }
+                ] 
+            },
+            { 
+                id: 'cadence-classic', 
+                series: 'Cadence Classic', 
+                desc: 'Timeless fairway tweed greens and plain finishes alongside our sleek tweed Midnight black.', 
+                slideshowImages: ['MidnightB.JPG', 'Forest2.JPG', 'Midnight3.JPG'], 
+                colors: [
+                    { 
+                        name: 'Forest', 
+                        hex: '#304529', 
+                        bladeImg: 'ForestB.JPG', 
+                        malletImg: 'Forest4.JPEG', 
+                        galleryImages: ['Forest1.JPG', 'ForestB.JPG', 'Forest2.JPG', 'ForestB2.JPG', 'Forest3.JPG'],
+                        stock: { blade: 3, mallet: 3 } 
+                    },
+                    { 
+                        name: 'Midnight', 
+                        hex: '#000000', 
+                        bladeImg: 'MidnightB.JPG', 
+                        malletImg: 'Midnight4.JPEG', 
+                        galleryImages: ['Midnight1.JPG', 'MidnightB.JPG', 'Midnight2.JPG', 'MidnightB2.JPG', 'Midnight4.JPEG'],
+                        stock: { blade: 3, mallet: 3 } 
+                    }
+                ] 
+            }
+        ];
+
         // Data for Atelier Collection
         const atelierProducts = [
             { 
@@ -794,21 +1327,23 @@
             }
         ];
         
-        const allProducts = [...heritageProducts, ...atelierProducts];
+        const allProducts = [...cadenceProducts, ...heritageProducts, ...atelierProducts];
 
-        // NEW Split Pricing Structure
+        // Split Pricing Structure
         const PRICING = {
             MYR: { 
                 symbol: 'RM ', 
+                cadence: { blade: 159, mallet: 159 },
                 atelier: { wood: 109, driver: 129, hybrid: 0 },
                 heritage: { wood: 119, driver: 139, hybrid: 109 },
-                bundleDiscount: 10, 
+                bundleDiscount: 15, 
                 patch: 30, 
-                shippingWest: 10, 
-                shippingEast: 15 
+                shippingWest: 7, 
+                shippingEast: 14 
             },
             SGD: { 
                 symbol: 'S$ ', 
+                cadence: { blade: 51, mallet: 51 },
                 atelier: { wood: 35, driver: 42, hybrid: 0 },
                 heritage: { wood: 38, driver: 44, hybrid: 35 },
                 bundleDiscount: 5, 
@@ -816,12 +1351,19 @@
                 shipping: 12 
             } 
         };
+
+        // Helper to determine which collection a product belongs to
+        function getCollectionKey(productId) {
+            if (cadenceProducts.some(p => p.id === productId)) return 'cadence';
+            if (heritageProducts.some(p => p.id === productId)) return 'heritage';
+            return 'atelier';
+        }
         
         const SGD_TO_MYR_RATE = 3.25; 
         
-        // 11.11 Sale Time Control
-        const SALE_START = new Date('2026-11-11T00:00:00+08:00'); // 12:00 AM Nov 11 MYT
-        const SALE_END = new Date('2026-11-11T23:59:59+08:00');   // 11:59 PM Nov 11 MYT
+        // Sale Time Control (Expired after 11.11; update dates for future sales)
+        const SALE_START = new Date('2026-11-11T00:00:00+08:00');
+        const SALE_END = new Date('2026-11-11T23:59:59+08:00');
         
         function checkSaleActive() {
             const now = new Date();
@@ -831,33 +1373,340 @@
         const isSaleActive = checkSaleActive();
         const SALE_DISCOUNT = isSaleActive ? 0.11 : 0;
         const FREE_SHIPPING_MYR = 250;
-        const FREE_SHIPPING_SGD = Math.ceil(250 / SGD_TO_MYR_RATE); 
+        const FREE_SHIPPING_SGD = Math.ceil(250 / SGD_TO_MYR_RATE);
+
+        // Saturday Cadence Drop Launch Timer (Sat Nov 28, 2026 @ 8:00 PM MYT)
+        const CADENCE_LAUNCH_DATE = new Date('2026-11-28T20:00:00+08:00');
+        const CART_STORAGE_KEY = 'heath_golf_cart_v1';
+        const REVIEWS_STORAGE_KEY = 'heath_golf_reviews_v1';
+
+        const DEFAULT_REVIEWS = [
+            {
+                name: 'Amirul H.',
+                region: 'MY',
+                collection: 'Heritage Collection',
+                rating: 5,
+                comment: 'The velvet lining feels super plush on my driver and the custom embroidered patch came out way cleaner than I expected. Easily the best-looking covers in my flight.'
+            },
+            {
+                name: 'Marcus T.',
+                region: 'SG',
+                collection: 'Heritage Collection',
+                rating: 5,
+                comment: 'Ordered on Tuesday night and received it in Singapore by Thursday via Teleport. Quality rivals luxury golf brands at twice the price.'
+            },
+            {
+                name: 'Rachel L.',
+                region: 'MY',
+                collection: 'Heritage Collection',
+                rating: 5,
+                comment: 'Picked up the Heritage bundle in Glenmarie before my weekend round. Snug fit, zero slipping in the cart, and the tartan texture looks unreal in person.'
+            }
+        ];
 
         let currentCurrency = 'MYR';
-        let cart = [];
+        let cart = loadCartFromStorage();
+        let selectedReviewRating = 5;
         let currentModalProduct = null;
         let selectedColorIndex = 0;
         let calculatedFinalTotal = 0; 
         let hoverIntervals = {};
+        let shopAllInStockOnly = false;
+        let modalGalleryImages = [];
+        let currentGalleryIndex = 0;
         
         let discountApplied = false;
         let discountType = '';
         let discountAmount = 0;
 
+        // ----------------------------------------------------
+        // LOOPING COMMUNITY SLIDESHOW (5 Customer Photos)
+        // ----------------------------------------------------
+        function renderCommunitySlideshow() {
+            const track = document.getElementById('communitySlideshowTrack');
+            if (!track || !communityPhotos.length) return;
+
+            const buildSlideCard = (photo, idx) => `
+                <div onclick="openZoom('${photo.img}')" class="flex-shrink-0 w-52 sm:w-64 aspect-[4/5] mr-4 rounded-2xl overflow-hidden relative group shadow-sm hover:shadow-xl border border-gray-200/70 cursor-zoom-in transition-shadow duration-300">
+                    <img src="${photo.img}" alt="In the bag - ${escapeHtml(photo.handle)}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='https://placehold.co/400x500/4c111f/ffffff?text=Customer+Bag+${(idx % communityPhotos.length) + 1}'">
+                    <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent p-3.5">
+                        <span class="text-white text-xs font-bold block">${escapeHtml(photo.handle)}</span>
+                        <span class="text-gray-200 text-[10px]">${escapeHtml(photo.caption)}</span>
+                    </div>
+                </div>
+            `;
+
+            // Duplicate the 5 photos once so CSS translateX(-50%) loops seamlessly with zero jump
+            const loopedSlides = [...communityPhotos, ...communityPhotos];
+            track.innerHTML = loopedSlides.map(buildSlideCard).join('');
+        }
+
+        // ----------------------------------------------------
+        // CART PERSISTENCE (localStorage) & META PIXEL HELPER
+        // ----------------------------------------------------
+        function loadCartFromStorage() {
+            try {
+                const saved = localStorage.getItem(CART_STORAGE_KEY);
+                const parsed = saved ? JSON.parse(saved) : [];
+                return Array.isArray(parsed) ? parsed : [];
+            } catch (e) {
+                return [];
+            }
+        }
+
+        function saveCartToStorage() {
+            try {
+                localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cart));
+            } catch (e) {
+                // Ignore storage quota or private-mode errors
+            }
+        }
+
+        function trackMetaEvent(eventName, params = {}) {
+            try {
+                if (typeof fbq === 'function') {
+                    fbq('track', eventName, params);
+                }
+            } catch (e) {
+                // Ignore if pixel blocked by adblocker
+            }
+        }
+
+        function isCadenceLaunched() {
+            return new Date() >= CADENCE_LAUNCH_DATE;
+        }
+
+        function startDropCountdown() {
+            const heroCd = document.getElementById('heroCountdown');
+            const cadenceCd = document.getElementById('cadenceCountdown');
+
+            const tick = () => {
+                const diff = CADENCE_LAUNCH_DATE - new Date();
+                if (diff <= 0) {
+                    if (heroCd) heroCd.classList.add('hidden');
+                    if (cadenceCd) cadenceCd.classList.add('hidden');
+                    const heroBadge = document.getElementById('heroBadgeText');
+                    if (heroBadge && !isSaleActive) {
+                        heroBadge.textContent = "The Putter Series | Cadence Collection. Officially Live.";
+                    }
+                    if (currentModalProduct) updateModalState();
+                    return false;
+                }
+
+                if (heroCd) heroCd.classList.remove('hidden');
+                if (cadenceCd) cadenceCd.classList.remove('hidden');
+
+                const days = String(Math.floor(diff / (1000 * 60 * 60 * 24))).padStart(2, '0');
+                const hours = String(Math.floor((diff / (1000 * 60 * 60)) % 24)).padStart(2, '0');
+                const mins = String(Math.floor((diff / (1000 * 60)) % 60)).padStart(2, '0');
+                const secs = String(Math.floor((diff / 1000) % 60)).padStart(2, '0');
+
+                document.querySelectorAll('.cd-days').forEach(el => el.textContent = days);
+                document.querySelectorAll('.cd-hours').forEach(el => el.textContent = hours);
+                document.querySelectorAll('.cd-mins').forEach(el => el.textContent = mins);
+                document.querySelectorAll('.cd-secs').forEach(el => el.textContent = secs);
+                return true;
+            };
+
+            if (tick()) {
+                const timerId = setInterval(() => {
+                    if (!tick()) clearInterval(timerId);
+                }, 1000);
+            }
+        }
+
         document.addEventListener('DOMContentLoaded', async () => {
-            applySaleUI(); // Check and apply 11.11 UI modifications
+            applySaleUI();
+            startDropCountdown();
+            setupEventListeners();
+            renderProductGrids();
+            renderCommunitySlideshow();
+            loadAndRenderReviews();
             setupRouter(); 
             await detectUserLocation();
             setupMobileAutoplay(); 
-            setupEventListeners();
-            checkPaymentStatus(); // <-- ADDED: Checks for return from payment gateway
+            checkPaymentStatus();
         });
+
+        // ----------------------------------------------------
+        // COMMUNITY REVIEWS (Display + Leave a Review Modal)
+        // ----------------------------------------------------
+        function escapeHtml(str) {
+            return String(str || '')
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;');
+        }
+
+        function loadLocalReviews() {
+            try {
+                const raw = localStorage.getItem(REVIEWS_STORAGE_KEY);
+                const parsed = raw ? JSON.parse(raw) : [];
+                return Array.isArray(parsed) ? parsed : [];
+            } catch (e) {
+                return [];
+            }
+        }
+
+        function saveLocalReview(reviewObj) {
+            try {
+                const existing = loadLocalReviews();
+                existing.unshift(reviewObj);
+                localStorage.setItem(REVIEWS_STORAGE_KEY, JSON.stringify(existing.slice(0, 15)));
+            } catch (e) {
+                // Ignore storage quota errors
+            }
+        }
+
+        function renderReviews(reviewsList) {
+            const grid = document.getElementById('reviewsGrid');
+            if (!grid) return;
+
+            grid.innerHTML = reviewsList.map(r => {
+                const stars = Math.min(5, Math.max(1, parseInt(r.rating, 10) || 5));
+                const starsHtml = Array.from({ length: 5 }, (_, idx) =>
+                    `<i class="${idx < stars ? 'fas text-amber-500' : 'far text-gray-300'} fa-star"></i>`
+                ).join('');
+                const colTag = r.collection ? `<span class="text-[10px] font-bold uppercase tracking-wider text-accent bg-amber-50 px-2 py-0.5 rounded-full">${escapeHtml(r.collection)}</span>` : '';
+
+                return `
+                    <div class="bg-gray-50 rounded-2xl p-6 border border-gray-200/70 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between gap-2 mb-3">
+                                <div class="flex items-center gap-1 text-xs">${starsHtml}</div>
+                                ${colTag}
+                            </div>
+                            <p class="text-gray-700 text-sm leading-relaxed mb-4">"${escapeHtml(r.comment)}"</p>
+                        </div>
+                        <div class="flex items-center justify-between text-xs pt-2 border-t border-gray-200/60">
+                            <span class="font-bold text-[#4c111f]">${escapeHtml(r.name)}</span>
+                            <span class="text-green-700 font-semibold"><i class="fas fa-check-circle mr-1"></i>Verified Buyer &bull; ${escapeHtml(r.region || 'MY')}</span>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        async function loadAndRenderReviews() {
+            const localReviews = loadLocalReviews();
+            renderReviews([...localReviews, ...DEFAULT_REVIEWS]);
+
+            if (typeof window.fetchCloudReviews === 'function') {
+                const cloudReviews = await window.fetchCloudReviews();
+                if (cloudReviews && cloudReviews.length > 0) {
+                    renderReviews([...cloudReviews, ...DEFAULT_REVIEWS]);
+                }
+            }
+        }
+
+        window.setReviewRating = function(stars) {
+            selectedReviewRating = stars;
+            const label = document.getElementById('reviewRatingLabel');
+            if (label) label.textContent = `${stars} / 5`;
+
+            document.querySelectorAll('.review-star-btn').forEach(btn => {
+                const val = parseInt(btn.getAttribute('data-star'), 10);
+                if (val <= stars) {
+                    btn.classList.add('text-amber-400');
+                    btn.classList.remove('text-gray-300');
+                } else {
+                    btn.classList.remove('text-amber-400');
+                    btn.classList.add('text-gray-300');
+                }
+            });
+        }
+
+        window.openReviewModal = function() {
+            const modal = document.getElementById('reviewModal');
+            const backdrop = document.getElementById('reviewModalBackdrop');
+            const content = document.getElementById('reviewModalContent');
+            if (!modal) return;
+
+            document.getElementById('reviewForm').reset();
+            const regionSel = document.getElementById('reviewRegion');
+            if (regionSel) regionSel.value = currentCurrency === 'SGD' ? 'SG' : 'MY';
+            setReviewRating(5);
+            document.getElementById('reviewFormError').classList.add('hidden');
+            document.getElementById('reviewFormSuccess').classList.add('hidden');
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            setTimeout(() => {
+                backdrop.classList.remove('opacity-0');
+                content.classList.remove('scale-95', 'opacity-0');
+            }, 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        window.closeReviewModal = function() {
+            const modal = document.getElementById('reviewModal');
+            const backdrop = document.getElementById('reviewModalBackdrop');
+            const content = document.getElementById('reviewModalContent');
+            if (!modal) return;
+
+            backdrop.classList.add('opacity-0');
+            content.classList.add('scale-95', 'opacity-0');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.body.style.overflow = '';
+            }, 300);
+        }
+
+        window.submitReview = async function(event) {
+            event.preventDefault();
+            const name = document.getElementById('reviewName').value.trim();
+            const region = document.getElementById('reviewRegion').value;
+            const colName = document.getElementById('reviewCollection').value;
+            const comment = document.getElementById('reviewComment').value.trim();
+            const errEl = document.getElementById('reviewFormError');
+            const okEl = document.getElementById('reviewFormSuccess');
+            const btn = document.getElementById('submitReviewBtn');
+
+            if (!name || comment.length < 5) {
+                errEl.textContent = 'Please enter your name and a short review (at least 5 characters).';
+                errEl.classList.remove('hidden');
+                return;
+            }
+            errEl.classList.add('hidden');
+
+            const originalBtnText = btn.innerHTML;
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-1.5"></i> Posting...';
+
+            const newReview = {
+                name,
+                region,
+                collection: colName,
+                rating: selectedReviewRating,
+                comment,
+                createdAt: Date.now()
+            };
+
+            saveLocalReview(newReview);
+            if (typeof window.saveCloudReview === 'function') {
+                await window.saveCloudReview(newReview);
+            }
+
+            await loadAndRenderReviews();
+
+            okEl.innerHTML = '<i class="fas fa-check-circle mr-1.5"></i>Thank you! Your review is now live on our page.';
+            okEl.classList.remove('hidden');
+            btn.disabled = false;
+            btn.innerHTML = originalBtnText;
+
+            setTimeout(() => {
+                closeReviewModal();
+            }, 1300);
+        }
 
         // ----------------------------------------------------
         // SALE TIME UI TOGGLE
         // ----------------------------------------------------
         function applySaleUI() {
-            if (!isSaleActive) return; // Keep normal HTML if sale hasn't started
+            if (!isSaleActive) return;
 
             const marquee = document.getElementById('mainMarquee');
             if (marquee) {
@@ -873,12 +1722,6 @@
             
             const heroBtn = document.getElementById('heroShopBtn');
             if (heroBtn) heroBtn.textContent = "Shop The Sale";
-
-            const heritageCardBadge = document.getElementById('heritageCardBadge');
-            if (heritageCardBadge) {
-                heritageCardBadge.className = "absolute top-3 left-3 md:top-6 md:left-6 bg-white text-red-600 text-[8px] md:text-xs font-bold px-2 py-1 md:px-3 md:py-1.5 rounded-full uppercase tracking-widest shadow-lg flex items-center gap-1 md:gap-1.5 z-10";
-                heritageCardBadge.innerHTML = `<span class="w-1 h-1 md:w-1.5 md:h-1.5 rounded-full bg-red-500 animate-pulse"></span> <span class="hidden sm:inline">Sale Live</span><span class="sm:hidden">11% Off</span>`;
-            }
 
             const hViewBadge = document.getElementById('heritageViewBadge');
             if (hViewBadge) {
@@ -899,9 +1742,7 @@
         // ----------------------------------------------------
         function checkPaymentStatus() {
             const urlParams = new URLSearchParams(window.location.search);
-            // Most gateways use status=success, status=completed, or append a reference parameter
             if (urlParams.get('status') === 'success' || urlParams.get('status') === 'completed' || urlParams.has('reference')) {
-                // Show modal
                 const successModal = document.getElementById('successModal');
                 const backdrop = document.getElementById('successModalBackdrop');
                 const content = document.getElementById('successModalContent');
@@ -915,11 +1756,9 @@
                     }, 10);
                 }
                 
-                // Clean the URL to prevent the popup showing again if the user refreshes
                 window.history.replaceState({}, document.title, window.location.pathname);
-                
-                // Clear the cart
                 cart = [];
+                saveCartToStorage();
                 updateCartUI();
             }
         }
@@ -941,25 +1780,49 @@
         // SPA Router Logic
         // ----------------------------------------------------
         function setupRouter() {
-            window.addEventListener('hashchange', handleRoute);
-            handleRoute(); // Run immediately on load
+            window.addEventListener('hashchange', () => handleRoute(window.location.hash));
+            handleRoute(window.location.hash);
         }
 
-        function handleRoute() {
-            const hash = window.location.hash;
+        function handleRoute(explicitHash) {
+            const hash = typeof explicitHash === 'string' ? explicitHash : window.location.hash;
             const viewHome = document.getElementById('view-home');
+            const viewCadence = document.getElementById('view-cadence');
             const viewHeritage = document.getElementById('view-heritage');
             const viewAtelier = document.getElementById('view-atelier');
+            const viewShopAll = document.getElementById('view-shop-all');
+            const viewTrackOrder = document.getElementById('view-track-order');
             
-            if(!viewHome || !viewHeritage || !viewAtelier) return;
+            if (!viewHome || !viewCadence || !viewHeritage || !viewAtelier || !viewShopAll || !viewTrackOrder) return;
 
-            // Hide everything first
             viewHome.classList.add('hidden');
+            viewCadence.classList.add('hidden');
             viewHeritage.classList.add('hidden');
             viewAtelier.classList.add('hidden');
+            viewShopAll.classList.add('hidden');
+            viewTrackOrder.classList.add('hidden');
 
-            // Show the requested page and scroll to top seamlessly
-            if (hash === '#heritage') {
+            if (hash === '#track-order') {
+                viewTrackOrder.classList.remove('hidden');
+                const regionRadio = document.querySelector(`input[name="jtRegion"][value="${currentCurrency === 'SGD' ? 'SG' : 'MY'}"]`);
+                if (regionRadio) regionRadio.checked = true;
+                updateTrackPlaceholder();
+                window.scrollTo(0, 0);
+            } else if (hash === '#shop-all' || hash.startsWith('#shop-all-')) {
+                viewShopAll.classList.remove('hidden');
+                renderShopAllGrid();
+                if (hash.startsWith('#shop-all-')) {
+                    setTimeout(() => {
+                        const targetEl = document.getElementById(hash.substring(1));
+                        if (targetEl) targetEl.scrollIntoView({ behavior: 'smooth' });
+                    }, 80);
+                } else {
+                    window.scrollTo(0, 0);
+                }
+            } else if (hash === '#cadence') {
+                viewCadence.classList.remove('hidden');
+                window.scrollTo(0, 0);
+            } else if (hash === '#heritage') {
                 viewHeritage.classList.remove('hidden');
                 window.scrollTo(0, 0);
             } else if (hash === '#atelier') {
@@ -969,6 +1832,8 @@
                 viewHome.classList.remove('hidden');
                 if (hash === '#about') {
                     setTimeout(() => document.getElementById('about').scrollIntoView({behavior: 'smooth'}), 100);
+                } else if (hash === '#clubhouse') {
+                    setTimeout(() => document.getElementById('clubhouse').scrollIntoView({behavior: 'smooth'}), 100);
                 } else {
                     window.scrollTo(0, 0);
                 }
@@ -1053,7 +1918,17 @@
                         <input type="radio" name="shippingZone" value="singapore" class="peer sr-only" checked onchange="updateCartUI()">
                         <div class="rounded-xl border-2 border-[#4c111f]/20 p-3 text-center peer-checked:border-[#4c111f] peer-checked:bg-[#4c111f]/5 group-hover:border-[#4c111f]/30 transition-all">
                             <span class="block font-semibold text-[#4c111f] text-sm">International (Singapore)</span>
-                            <span class="block text-xs text-[#4c111f]/70 mt-1">S$ 12</span>
+                            <span class="block text-xs text-[#4c111f]/70 mt-1">S$ ${PRICING.SGD.shipping}</span>
+                        </div>
+                    </label>
+                    <label class="cursor-pointer group col-span-2">
+                        <input type="radio" name="shippingZone" value="pickup" class="peer sr-only" onchange="updateCartUI()">
+                        <div class="rounded-xl border-2 border-[#4c111f]/20 p-3 text-center peer-checked:border-[#4c111f] peer-checked:bg-[#4c111f]/5 group-hover:border-[#4c111f]/30 transition-all flex items-center justify-between px-4">
+                            <div class="text-left">
+                                <span class="block font-semibold text-[#4c111f] text-sm"><i class="fas fa-store mr-1.5 text-accent"></i>Self-Pickup (Glenmarie, MY)</span>
+                                <span class="block text-[11px] text-gray-500">Contact us to arrange pickup time</span>
+                            </div>
+                            <span class="text-xs font-bold text-green-700 bg-green-100 px-2.5 py-1 rounded-full uppercase">Free</span>
                         </div>
                     </label>
                 `;
@@ -1071,14 +1946,24 @@
                         <input type="radio" name="shippingZone" value="west" class="peer sr-only" checked onchange="updateCartUI()">
                         <div class="rounded-xl border-2 border-[#4c111f]/20 p-3 text-center peer-checked:border-[#4c111f] peer-checked:bg-[#4c111f]/5 group-hover:border-[#4c111f]/30 transition-all">
                             <span class="block font-semibold text-[#4c111f] text-sm">West Malaysia</span>
-                            <span class="block text-xs text-[#4c111f]/70 mt-1">RM 10</span>
+                            <span class="block text-xs text-[#4c111f]/70 mt-1">RM ${PRICING.MYR.shippingWest}</span>
                         </div>
                     </label>
                     <label class="cursor-pointer group">
                         <input type="radio" name="shippingZone" value="east" class="peer sr-only" onchange="updateCartUI()">
                         <div class="rounded-xl border-2 border-[#4c111f]/20 p-3 text-center peer-checked:border-[#4c111f] peer-checked:bg-[#4c111f]/5 group-hover:border-[#4c111f]/30 transition-all">
                             <span class="block font-semibold text-[#4c111f] text-sm">East Malaysia</span>
-                            <span class="block text-xs text-[#4c111f]/70 mt-1">RM 15</span>
+                            <span class="block text-xs text-[#4c111f]/70 mt-1">RM ${PRICING.MYR.shippingEast}</span>
+                        </div>
+                    </label>
+                    <label class="cursor-pointer group col-span-2">
+                        <input type="radio" name="shippingZone" value="pickup" class="peer sr-only" onchange="updateCartUI()">
+                        <div class="rounded-xl border-2 border-[#4c111f]/20 p-3 text-center peer-checked:border-[#4c111f] peer-checked:bg-[#4c111f]/5 group-hover:border-[#4c111f]/30 transition-all flex items-center justify-between px-4">
+                            <div class="text-left">
+                                <span class="block font-semibold text-[#4c111f] text-sm"><i class="fas fa-store mr-1.5 text-accent"></i>Self-Pickup (Glenmarie)</span>
+                                <span class="block text-[11px] text-gray-500">Contact us to arrange pickup time</span>
+                            </div>
+                            <span class="text-xs font-bold text-green-700 bg-green-100 px-2.5 py-1 rounded-full uppercase">Free</span>
                         </div>
                     </label>
                 `;
@@ -1100,19 +1985,17 @@
             const sym = PRICING[currentCurrency].symbol;
             
             const generateCard = (product) => {
-                const collectionKey = heritageProducts.some(p => p.id === product.id) ? 'heritage' : 'atelier';
+                const collectionKey = getCollectionKey(product.id);
                 const prices = PRICING[currentCurrency][collectionKey];
                 
-                // Dynamically find the lowest price to display on the "From" tag
-                let startingPrice = prices.wood;
-                if (prices.hybrid > 0 && prices.hybrid < startingPrice) {
-                    startingPrice = prices.hybrid;
-                }
+                const validPrices = Object.values(prices).filter(v => v > 0);
+                const startingPrice = Math.min(...validPrices);
+                const placeholderBg = collectionKey === 'cadence' ? '1E3F20' : '4c111f';
                 
                 return `
                 <div class="product-card group cursor-pointer" data-product-id="${product.id}" onclick="openModal('${product.id}')" onmouseenter="startHoverSlideshow('${product.id}', this)" onmouseleave="stopHoverSlideshow('${product.id}', this)">
                     <div class="relative bg-gray-100 rounded-lg md:rounded-2xl overflow-hidden aspect-[4/5] mb-2 md:mb-6 shadow-sm group-hover:shadow-xl transition-shadow duration-300 border border-gray-200/50">
-                        <img src="${product.slideshowImages[0]}" alt="${product.series}" class="product-img w-full h-full object-cover transition-opacity duration-300">
+                        <img src="${product.slideshowImages[0]}" alt="${product.series}" class="product-img w-full h-full object-cover transition-opacity duration-300" onerror="this.onerror=null; this.src='https://placehold.co/600x750/${placeholderBg}/ffffff?text=${encodeURIComponent(product.series)}'">
                         <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center p-1 md:p-2">
                             <span class="bg-white text-primary px-2 py-1 md:px-8 md:py-3 rounded-full font-bold text-[10px] sm:text-xs md:text-base opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 shadow-xl text-center leading-tight">
                                 <span class="hidden md:inline">Select Options</span>
@@ -1134,8 +2017,144 @@
                 `;
             };
 
-            document.getElementById('heritageGrid').innerHTML = heritageProducts.map(generateCard).join('');
-            document.getElementById('atelierGrid').innerHTML = atelierProducts.map(generateCard).join('');
+            const cadenceGridEl = document.getElementById('cadenceGrid');
+            if (cadenceGridEl) cadenceGridEl.innerHTML = cadenceProducts.map(generateCard).join('');
+            const heritageGridEl = document.getElementById('heritageGrid');
+            if (heritageGridEl) heritageGridEl.innerHTML = heritageProducts.map(generateCard).join('');
+            const atelierGridEl = document.getElementById('atelierGrid');
+            if (atelierGridEl) atelierGridEl.innerHTML = atelierProducts.map(generateCard).join('');
+            renderShopAllGrid();
+        }
+
+        // Toggle "In-Stock Only" filter on Shop All page
+        window.toggleShopAllInStock = function() {
+            shopAllInStockOnly = !shopAllInStockOnly;
+            const btn = document.getElementById('inStockToggleBtn');
+            const icon = document.getElementById('inStockToggleIcon');
+            if (btn && icon) {
+                if (shopAllInStockOnly) {
+                    btn.classList.remove('bg-white', 'text-[#4c111f]');
+                    btn.classList.add('bg-[#4c111f]', 'text-white');
+                    icon.className = 'fas fa-check-square text-xs';
+                } else {
+                    btn.classList.add('bg-white', 'text-[#4c111f]');
+                    btn.classList.remove('bg-[#4c111f]', 'text-white');
+                    icon.className = 'far fa-square text-xs';
+                }
+            }
+            renderShopAllGrid();
+        }
+
+        // Render the Shop All view grouped by Putter, Hybrid, Wood, Driver
+        function renderShopAllGrid() {
+            const container = document.getElementById('shopAllContainer');
+            if (!container) return;
+
+            const sym = PRICING[currentCurrency].symbol;
+            const sections = [
+                { id: 'shop-all-putter', title: 'Putter', subtitle: 'Blade & Mallet covers from Cadence Collection', types: ['blade', 'mallet'] },
+                { id: 'shop-all-hybrid', title: 'Hybrid', subtitle: 'Hybrid covers across our collections', types: ['hybrid'] },
+                { id: 'shop-all-wood', title: 'Wood', subtitle: 'Fairway wood covers across our collections', types: ['wood'] },
+                { id: 'shop-all-driver', title: 'Driver', subtitle: 'Driver covers across our collections', types: ['driver'] }
+            ];
+
+            const sectionHtml = sections.map(section => {
+                let items = [];
+
+                allProducts.forEach(product => {
+                    const collectionKey = getCollectionKey(product.id);
+                    const collectionPrices = PRICING[currentCurrency][collectionKey];
+
+                    section.types.forEach(clubType => {
+                        const basePrice = collectionPrices[clubType];
+                        if (!basePrice || basePrice <= 0) return;
+
+                        product.colors.forEach((color, colorIndex) => {
+                            const totalStock = color.stock[clubType] || 0;
+                            const inCartCount = cart.filter(c =>
+                                c.series === product.series &&
+                                c.color === color.name &&
+                                c.type === clubType
+                            ).length;
+                            const remaining = Math.max(0, totalStock - inCartCount);
+
+                            items.push({
+                                productId: product.id,
+                                series: product.series,
+                                collectionKey,
+                                colorIndex,
+                                colorName: color.name,
+                                clubType,
+                                img: getSelectedItemImage(color, clubType),
+                                price: basePrice,
+                                remaining
+                            });
+                        });
+                    });
+                });
+
+                items.sort((a, b) => (b.remaining > 0 ? 1 : 0) - (a.remaining > 0 ? 1 : 0));
+
+                const inStockCount = items.filter(i => i.remaining > 0).length;
+                const displayItems = shopAllInStockOnly ? items.filter(i => i.remaining > 0) : items;
+
+                const cardsHtml = displayItems.length > 0
+                    ? `<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-5 md:gap-7">
+                        ${displayItems.map(item => {
+                            const isSoldOut = item.remaining <= 0;
+                            const placeholderBg = item.collectionKey === 'cadence' ? '1E3F20' : '4c111f';
+                            const badgeHtml = isSoldOut
+                                ? `<span class="absolute top-2 left-2 bg-gray-900/80 backdrop-blur-sm text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">Sold Out</span>`
+                                : `<span class="absolute top-2 left-2 bg-green-600/90 backdrop-blur-sm text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider shadow-sm">${item.remaining} in stock</span>`;
+
+                            const priceHtml = isSaleActive
+                                ? `<span class="text-gray-400 line-through text-xs mr-1">${sym}${item.price}</span><span class="text-red-600 font-bold">${sym}${Math.ceil(item.price * (1 - SALE_DISCOUNT))}</span>`
+                                : `<span class="text-[#4c111f] font-bold">${sym}${item.price}</span>`;
+
+                            return `
+                                <div onclick="openModal('${item.productId}', ${item.colorIndex}, '${item.clubType}')" class="group cursor-pointer bg-white rounded-xl md:rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-200/70 flex flex-col ${isSoldOut ? 'opacity-65' : ''}">
+                                    <div class="relative bg-gray-100 aspect-[4/5] overflow-hidden">
+                                        <img src="${item.img}" alt="${item.colorName} ${item.clubType}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 ${isSoldOut ? 'grayscale-[40%]' : ''}" onerror="this.onerror=null; this.src='https://placehold.co/600x750/${placeholderBg}/ffffff?text=${encodeURIComponent(item.colorName)}'">
+                                        ${badgeHtml}
+                                        <span class="absolute top-2 right-2 bg-white/90 backdrop-blur-sm text-[#4c111f] text-[9px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider shadow-sm">${item.clubType}</span>
+                                    </div>
+                                    <div class="p-3 md:p-4 flex flex-col flex-grow justify-between">
+                                        <div>
+                                            <p class="text-[10px] uppercase tracking-wider font-bold text-accent mb-0.5">${item.series}</p>
+                                            <h4 class="font-serif text-sm sm:text-base md:text-lg font-bold text-[#4c111f] leading-snug mb-1">${item.colorName}</h4>
+                                        </div>
+                                        <div class="flex items-center justify-between pt-2 border-t border-gray-100 mt-2">
+                                            <span class="text-sm md:text-base">${priceHtml}</span>
+                                            <span class="text-[10px] sm:text-xs font-bold uppercase tracking-wider ${isSoldOut ? 'text-gray-400' : 'text-[#4c111f] group-hover:text-accent'} transition-colors">
+                                                ${isSoldOut ? 'Sold Out' : 'Select <i class="fas fa-arrow-right ml-0.5 text-[9px]"></i>'}
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            `;
+                        }).join('')}
+                    </div>`
+                    : `<div class="bg-white rounded-2xl border border-dashed border-gray-300 p-8 text-center">
+                        <p class="text-gray-500 text-sm font-medium">No ${section.title.toLowerCase()} headcovers currently in stock. Turn off "In-Stock Only" to view sold-out designs.</p>
+                    </div>`;
+
+                return `
+                    <div id="${section.id}" class="scroll-mt-40">
+                        <div class="flex flex-wrap items-end justify-between gap-2 mb-5 pb-3 border-b border-[#4c111f]/15">
+                            <div>
+                                <h3 class="font-serif text-2xl sm:text-3xl font-bold text-[#4c111f]">${section.title}</h3>
+                                <p class="text-xs sm:text-sm text-gray-500 font-medium mt-0.5">${section.subtitle}</p>
+                            </div>
+                            <span class="text-xs font-bold px-3 py-1 rounded-full ${inStockCount > 0 ? 'bg-green-100 text-green-800' : 'bg-gray-200 text-gray-600'}">
+                                ${inStockCount} Available
+                            </span>
+                        </div>
+                        ${cardsHtml}
+                    </div>
+                `;
+            }).join('');
+
+            container.innerHTML = sectionHtml;
         }
 
         window.togglePatchOptions = function() {
@@ -1198,7 +2217,6 @@
                 liveText.classList.add('font-sans', 'text-xl', 'font-bold', 'tracking-[0.1em]');
             }
             
-            // Rotating clockwise (90deg)
             if (posVertical) {
                 liveElement.style.transform = 'rotate(90deg) scale(0.9)';
             } else {
@@ -1210,18 +2228,32 @@
             }
         }
 
-        window.openModal = function(productId) {
+        window.openModal = function(productId, presetColorIndex = 0, presetClubType = null) {
             currentModalProduct = allProducts.find(p => p.id === productId);
-            selectedColorIndex = 0;
+            selectedColorIndex = (presetColorIndex >= 0 && presetColorIndex < currentModalProduct.colors.length) ? presetColorIndex : 0;
             
             document.getElementById('modalSeries').textContent = currentModalProduct.series;
-            
-            // CLEAN DESCRIPTION FIX
             document.getElementById('modalDesc').textContent = currentModalProduct.desc;
-            document.getElementById('modalTitle').textContent = currentModalProduct.colors[0].name;
+            document.getElementById('modalTitle').textContent = currentModalProduct.colors[selectedColorIndex].name;
 
-            injectModalClubs();
+            injectModalClubs(presetClubType);
             updateModalImage();
+            populateFitGuide();
+
+            const fitBody = document.getElementById('fitGuideBody');
+            const fitChev = document.getElementById('fitGuideChevron');
+            if (fitBody) fitBody.classList.add('hidden');
+            if (fitChev) fitChev.classList.remove('rotate-180');
+
+            const activeTypeEl = document.querySelector('input[name="clubType"]:checked');
+            const viewCollectionKey = getCollectionKey(currentModalProduct.id);
+            const viewPrice = activeTypeEl ? PRICING[currentCurrency][viewCollectionKey][activeTypeEl.value] : 0;
+            trackMetaEvent('ViewContent', {
+                content_name: `${currentModalProduct.series} - ${currentModalProduct.colors[selectedColorIndex].name}`,
+                content_category: viewCollectionKey,
+                value: Math.ceil(viewPrice * (1 - SALE_DISCOUNT)),
+                currency: currentCurrency
+            });
 
             const patchCheckbox = document.getElementById('addPatchCheckbox');
             if (patchCheckbox) {
@@ -1237,7 +2269,7 @@
             }
 
             document.getElementById('modalColors').innerHTML = currentModalProduct.colors.map((color, index) => `
-                <button onclick="selectColor(${index})" class="w-12 h-12 rounded-full transition-all ${index === selectedColorIndex ? 'border-4 border-white ring-2 ring-primary scale-110 shadow-md' : 'border-2 border-gray-200'}" style="${color.bgStyle ? color.bgStyle : `background-color: ${color.hex}`}" id="colorBtn-${index}"></button>
+                <button onclick="selectColor(${index})" title="${color.name}" aria-label="${color.name}" class="w-12 h-12 rounded-full transition-all ${index === selectedColorIndex ? 'border-4 border-white ring-2 ring-primary scale-110 shadow-md' : 'border-2 border-gray-200'}" style="${color.bgStyle ? color.bgStyle : `background-color: ${color.hex}`}" id="colorBtn-${index}"></button>
             `).join('');
 
             document.getElementById('productModal').classList.remove('hidden');
@@ -1252,54 +2284,86 @@
             setTimeout(() => updatePatchPreview(), 50);
         }
 
-        function injectModalClubs() {
+        function injectModalClubs(presetClubType = null) {
             const sym = PRICING[currentCurrency].symbol;
-            const isHeritage = heritageProducts.some(p => p.id === currentModalProduct.id);
-            const collectionKey = isHeritage ? 'heritage' : 'atelier';
+            const collectionKey = getCollectionKey(currentModalProduct.id);
+            const isCadence = collectionKey === 'cadence';
+            const isHeritage = collectionKey === 'heritage';
             const prices = PRICING[currentCurrency][collectionKey];
             
             const clubTypesContainer = document.getElementById('modalClubTypes');
-            
-            clubTypesContainer.className = isHeritage ? "grid grid-cols-3 gap-2 sm:gap-4" : "grid grid-cols-2 gap-2 sm:gap-4";
+            const clubHeading = document.getElementById('modalClubTypeHeading');
+            if (clubHeading) {
+                clubHeading.textContent = isCadence ? 'Select Putter Type' : 'Select Club Type';
+            }
             
             const formatClubPrice = (price) => {
                 if (!isSaleActive) return `<span class="text-[#4c111f]/70">${sym}${price}</span>`;
                 return `<span class="text-gray-400 line-through mr-1">${sym}${price}</span><span class="text-red-600 font-bold">${sym}${Math.ceil(price * (1 - SALE_DISCOUNT))}</span>`;
             };
 
-            let html = `
-                <label class="cursor-pointer group">
-                    <input type="radio" name="clubType" value="wood" class="peer sr-only" checked onchange="selectClubType()">
-                    <div class="rounded-xl border-2 border-[#4c111f]/20 p-2 sm:p-4 text-center peer-checked:border-[#4c111f] peer-checked:bg-[#4c111f]/5 group-hover:border-[#4c111f]/30 transition-all h-full flex flex-col justify-center">
-                        <span class="block font-bold text-[#4c111f] text-sm sm:text-base">Wood</span>
-                        <span class="block text-xs sm:text-sm mt-1">
-                            ${formatClubPrice(prices.wood)}
-                        </span>
-                    </div>
-                </label>
-                <label class="cursor-pointer group">
-                    <input type="radio" name="clubType" value="driver" class="peer sr-only" onchange="selectClubType()">
-                    <div class="rounded-xl border-2 border-[#4c111f]/20 p-2 sm:p-4 text-center peer-checked:border-[#4c111f] peer-checked:bg-[#4c111f]/5 group-hover:border-[#4c111f]/30 transition-all h-full flex flex-col justify-center">
-                        <span class="block font-bold text-[#4c111f] text-sm sm:text-base">Driver</span>
-                        <span class="block text-xs sm:text-sm mt-1">
-                            ${formatClubPrice(prices.driver)}
-                        </span>
-                    </div>
-                </label>
-            `;
+            let html = '';
 
-            if (isHeritage) {
-                html += `
+            if (isCadence) {
+                clubTypesContainer.className = "grid grid-cols-2 gap-2 sm:gap-4";
+                const defaultType = (presetClubType === 'mallet') ? 'mallet' : 'blade';
+                html = `
                     <label class="cursor-pointer group">
-                        <input type="radio" name="clubType" value="hybrid" class="peer sr-only" onchange="selectClubType()">
+                        <input type="radio" name="clubType" value="blade" class="peer sr-only" ${defaultType === 'blade' ? 'checked' : ''} onchange="selectClubType()">
                         <div class="rounded-xl border-2 border-[#4c111f]/20 p-2 sm:p-4 text-center peer-checked:border-[#4c111f] peer-checked:bg-[#4c111f]/5 group-hover:border-[#4c111f]/30 transition-all h-full flex flex-col justify-center">
-                            <span class="block font-bold text-[#4c111f] text-sm sm:text-base">Hybrid</span>
+                            <span class="block font-bold text-[#4c111f] text-sm sm:text-base">Blade</span>
                             <span class="block text-xs sm:text-sm mt-1">
-                                ${formatClubPrice(prices.hybrid)}
+                                ${formatClubPrice(prices.blade)}
+                            </span>
+                        </div>
+                    </label>
+                    <label class="cursor-pointer group">
+                        <input type="radio" name="clubType" value="mallet" class="peer sr-only" ${defaultType === 'mallet' ? 'checked' : ''} onchange="selectClubType()">
+                        <div class="rounded-xl border-2 border-[#4c111f]/20 p-2 sm:p-4 text-center peer-checked:border-[#4c111f] peer-checked:bg-[#4c111f]/5 group-hover:border-[#4c111f]/30 transition-all h-full flex flex-col justify-center">
+                            <span class="block font-bold text-[#4c111f] text-sm sm:text-base">Mallet</span>
+                            <span class="block text-xs sm:text-sm mt-1">
+                                ${formatClubPrice(prices.mallet)}
                             </span>
                         </div>
                     </label>
                 `;
+            } else {
+                clubTypesContainer.className = isHeritage ? "grid grid-cols-3 gap-2 sm:gap-4" : "grid grid-cols-2 gap-2 sm:gap-4";
+                const defaultType = (presetClubType === 'driver' || (isHeritage && presetClubType === 'hybrid')) ? presetClubType : 'wood';
+                html = `
+                    <label class="cursor-pointer group">
+                        <input type="radio" name="clubType" value="wood" class="peer sr-only" ${defaultType === 'wood' ? 'checked' : ''} onchange="selectClubType()">
+                        <div class="rounded-xl border-2 border-[#4c111f]/20 p-2 sm:p-4 text-center peer-checked:border-[#4c111f] peer-checked:bg-[#4c111f]/5 group-hover:border-[#4c111f]/30 transition-all h-full flex flex-col justify-center">
+                            <span class="block font-bold text-[#4c111f] text-sm sm:text-base">Wood</span>
+                            <span class="block text-xs sm:text-sm mt-1">
+                                ${formatClubPrice(prices.wood)}
+                            </span>
+                        </div>
+                    </label>
+                    <label class="cursor-pointer group">
+                        <input type="radio" name="clubType" value="driver" class="peer sr-only" ${defaultType === 'driver' ? 'checked' : ''} onchange="selectClubType()">
+                        <div class="rounded-xl border-2 border-[#4c111f]/20 p-2 sm:p-4 text-center peer-checked:border-[#4c111f] peer-checked:bg-[#4c111f]/5 group-hover:border-[#4c111f]/30 transition-all h-full flex flex-col justify-center">
+                            <span class="block font-bold text-[#4c111f] text-sm sm:text-base">Driver</span>
+                            <span class="block text-xs sm:text-sm mt-1">
+                                ${formatClubPrice(prices.driver)}
+                            </span>
+                        </div>
+                    </label>
+                `;
+
+                if (isHeritage) {
+                    html += `
+                        <label class="cursor-pointer group">
+                            <input type="radio" name="clubType" value="hybrid" class="peer sr-only" ${defaultType === 'hybrid' ? 'checked' : ''} onchange="selectClubType()">
+                            <div class="rounded-xl border-2 border-[#4c111f]/20 p-2 sm:p-4 text-center peer-checked:border-[#4c111f] peer-checked:bg-[#4c111f]/5 group-hover:border-[#4c111f]/30 transition-all h-full flex flex-col justify-center">
+                                <span class="block font-bold text-[#4c111f] text-sm sm:text-base">Hybrid</span>
+                                <span class="block text-xs sm:text-sm mt-1">
+                                    ${formatClubPrice(prices.hybrid)}
+                                </span>
+                            </div>
+                        </label>
+                    `;
+                }
             }
             
             clubTypesContainer.innerHTML = html;
@@ -1313,7 +2377,7 @@
             if(!typeEl) return;
             
             const type = typeEl.value;
-            const collectionKey = heritageProducts.some(p => p.id === currentModalProduct.id) ? 'heritage' : 'atelier';
+            const collectionKey = getCollectionKey(currentModalProduct.id);
             
             let originalItemPrice = PRICING[currentCurrency][collectionKey][type];
             let discountedItemPrice = Math.ceil(originalItemPrice * (1 - SALE_DISCOUNT));
@@ -1343,7 +2407,6 @@
             selectedColorIndex = index;
             updateModalImage();
             
-            // CLEAN DESCRIPTION FIX
             document.getElementById('modalTitle').textContent = currentModalProduct.colors[index].name;
             document.getElementById('modalDesc').textContent = currentModalProduct.desc;
 
@@ -1362,15 +2425,97 @@
             updateModalState();
         }
 
+        function getSelectedItemImage(colorData, type) {
+            if (type === 'blade') return colorData.bladeImg || colorData.malletImg;
+            if (type === 'mallet') return colorData.malletImg || colorData.bladeImg;
+            if (type === 'driver') return colorData.driverImg;
+            if (type === 'hybrid') return colorData.hybridImg || colorData.woodImg;
+            return colorData.woodImg;
+        }
+
         function updateModalImage() {
-            const type = document.querySelector('input[name="clubType"]:checked').value;
+            const typeEl = document.querySelector('input[name="clubType"]:checked');
+            if (!typeEl || !currentModalProduct) return;
+            const type = typeEl.value;
             const colorData = currentModalProduct.colors[selectedColorIndex];
-            
-            let imgSrc = colorData.woodImg;
-            if (type === 'driver') imgSrc = colorData.driverImg;
-            if (type === 'hybrid') imgSrc = colorData.hybridImg || colorData.woodImg;
-            
-            document.getElementById('modalImg').src = imgSrc;
+            const primaryImg = getSelectedItemImage(colorData, type);
+
+            // Use per-colorway galleryImages when available so switching swatches shows that colorway's angles
+            const extraAngles = colorData.galleryImages || currentModalProduct.slideshowImages || [];
+            const gallerySet = [primaryImg, ...extraAngles].filter(Boolean);
+            modalGalleryImages = [...new Set(gallerySet)];
+            currentGalleryIndex = 0;
+            renderModalGallery();
+        }
+
+        function renderModalGallery() {
+            const modalImg = document.getElementById('modalImg');
+            const thumbsEl = document.getElementById('modalThumbnails');
+            const prevBtn = document.getElementById('modalPrevImgBtn');
+            const nextBtn = document.getElementById('modalNextImgBtn');
+            if (!modalImg || modalGalleryImages.length === 0) return;
+
+            modalImg.src = modalGalleryImages[currentGalleryIndex];
+
+            const showNav = modalGalleryImages.length > 1;
+            if (prevBtn) {
+                prevBtn.classList.toggle('hidden', !showNav);
+                prevBtn.classList.toggle('flex', showNav);
+            }
+            if (nextBtn) {
+                nextBtn.classList.toggle('hidden', !showNav);
+                nextBtn.classList.toggle('flex', showNav);
+            }
+
+            if (thumbsEl) {
+                thumbsEl.innerHTML = showNav ? modalGalleryImages.map((src, idx) => `
+                    <button type="button" onclick="event.stopPropagation(); selectModalGalleryImage(${idx})" class="w-12 h-12 sm:w-14 sm:h-14 rounded-lg overflow-hidden border-2 flex-shrink-0 transition-all ${idx === currentGalleryIndex ? 'border-[#4c111f] ring-2 ring-[#4c111f]/20 scale-105' : 'border-transparent opacity-60 hover:opacity-100'}">
+                        <img src="${src}" alt="Angle ${idx + 1}" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/100x100/f3f4f6/4c111f?text=${idx + 1}'">
+                    </button>
+                `).join('') : '';
+            }
+        }
+
+        window.selectModalGalleryImage = function(idx) {
+            if (idx < 0 || idx >= modalGalleryImages.length) return;
+            currentGalleryIndex = idx;
+            renderModalGallery();
+        }
+
+        window.stepModalGallery = function(delta) {
+            if (modalGalleryImages.length <= 1) return;
+            currentGalleryIndex = (currentGalleryIndex + delta + modalGalleryImages.length) % modalGalleryImages.length;
+            renderModalGallery();
+        }
+
+        window.toggleFitGuide = function() {
+            const body = document.getElementById('fitGuideBody');
+            const chev = document.getElementById('fitGuideChevron');
+            if (!body || !chev) return;
+            body.classList.toggle('hidden');
+            chev.classList.toggle('rotate-180');
+        }
+
+        function populateFitGuide() {
+            const body = document.getElementById('fitGuideBody');
+            if (!body || !currentModalProduct) return;
+            const isCadence = getCollectionKey(currentModalProduct.id) === 'cadence';
+
+            if (isCadence) {
+                body.innerHTML = `
+                    <p><strong>Blade Fit:</strong> Fits standard Newport / Anser-style blade putters (heel-shafted &amp; plumber-neck).</p>
+                    <p><strong>Mallet Fit:</strong> Fits mid-mallet &amp; full mallet heads including TaylorMade Spider, Odyssey 2-Ball, and Scotty Cameron Phantom (heel-shafted &amp; plumber-neck).</p>
+                    <p><strong>Closure &amp; Lining:</strong> Strong hidden magnetic closure paired with ultra-soft plush velvet interior to prevent chatter.</p>
+                    <p><strong>Care:</strong> Spot clean gently with a damp microfiber cloth and air dry away from direct heat.</p>
+                `;
+            } else {
+                body.innerHTML = `
+                    <p><strong>Driver Fit:</strong> Tailored for all modern 460cc driver heads with a structured yet easy-glide neck.</p>
+                    <p><strong>Wood &amp; Hybrid Fit:</strong> Fits standard 3W/5W/7W fairway woods and rescue/hybrid clubs with snug internal elastic.</p>
+                    <p><strong>Materials:</strong> Handcrafted woven exterior fabrics lined with thick, scratch-free plush velvet padding.</p>
+                    <p><strong>Care:</strong> Spot clean gently with mild soap and a damp cloth; do not machine wash or tumble dry.</p>
+                `;
+            }
         }
 
         function updateModalState() {
@@ -1391,19 +2536,17 @@
             const remaining = stockAvailable - inCart;
             const btn = document.getElementById('addToCartModalBtn');
             const stockStatus = document.getElementById('modalStockStatus');
+            const restockBtn = document.getElementById('whatsappRestockBtn');
             
-            // LAUNCH TIME LOCK LOGIC
-            const isHeritage = heritageProducts.some(p => p.id === currentModalProduct.id);
-            const launchDate = new Date('2026-10-20T20:00:00+08:00'); // 8:00 PM Malaysia Time
-            const isLaunched = new Date() >= launchDate;
-            
-            if (isHeritage && !isLaunched) {
+            const isCadence = getCollectionKey(currentModalProduct.id) === 'cadence';
+            if (isCadence && !isCadenceLaunched()) {
                 btn.disabled = true;
-                btn.textContent = "Dropping Oct 20";
+                btn.textContent = "Dropping Nov 28";
                 btn.classList.add('opacity-50', 'cursor-not-allowed', 'bg-gray-800');
-                btn.classList.remove('hover:opacity-90', 'active:scale-95', 'bg-[#4c111f]');
-                stockStatus.innerHTML = `<span class="text-accent font-bold"><i class="fas fa-lock mr-1"></i>Unlocks Oct 20 @ 8:00 PM</span>`;
-                return; // Stop here! Do not check for stock.
+                btn.classList.remove('hover:opacity-90', 'active:scale-95', 'bg-[#4c111f]', 'bg-gray-400');
+                stockStatus.innerHTML = `<span class="text-accent font-bold"><i class="fas fa-lock mr-1"></i>Unlocks Sat Nov 28 @ 8:00 PM</span>`;
+                if (restockBtn) restockBtn.classList.add('hidden');
+                return;
             }
 
             if (remaining <= 0) {
@@ -1412,19 +2555,27 @@
                 btn.classList.add('opacity-50', 'cursor-not-allowed', 'bg-gray-400');
                 btn.classList.remove('hover:opacity-90', 'active:scale-95', 'bg-[#4c111f]', 'bg-gray-800');
                 stockStatus.innerHTML = `<span class="text-red-500 font-bold"><i class="fas fa-times-circle mr-1"></i>Out of stock</span>`;
+
+                if (restockBtn) {
+                    const clubLabel = type.charAt(0).toUpperCase() + type.slice(1);
+                    const waMsg = encodeURIComponent(`Hi Heath Studio! Is the ${colorData.name} (${clubLabel}) restocking soon, or can I request a custom order?`);
+                    restockBtn.href = `https://wa.me/60182757370?text=${waMsg}`;
+                    restockBtn.classList.remove('hidden');
+                }
             } else {
                 btn.disabled = false;
                 btn.textContent = "Add to Cart";
                 btn.classList.remove('opacity-50', 'cursor-not-allowed', 'bg-gray-400', 'bg-gray-800');
                 btn.classList.add('hover:opacity-90', 'active:scale-95', 'bg-[#4c111f]');
                 stockStatus.innerHTML = `<span class="text-accent font-medium"><i class="fas fa-check-circle mr-1"></i>${remaining} left in stock</span>`;
+                if (restockBtn) restockBtn.classList.add('hidden');
             }
         }
 
         window.addToCart = function() {
             const type = document.querySelector('input[name="clubType"]:checked').value;
             const color = currentModalProduct.colors[selectedColorIndex];
-            const collectionKey = heritageProducts.some(p => p.id === currentModalProduct.id) ? 'heritage' : 'atelier';
+            const collectionKey = getCollectionKey(currentModalProduct.id);
             
             let patchData = null;
             const wantsPatch = document.getElementById('addPatchCheckbox').checked;
@@ -1449,9 +2600,7 @@
                 };
             }
 
-            let imgSrc = color.woodImg;
-            if (type === 'driver') imgSrc = color.driverImg;
-            if (type === 'hybrid') imgSrc = color.hybridImg || color.woodImg;
+            const imgSrc = getSelectedItemImage(color, type);
 
             cart.push({
                 series: currentModalProduct.series,
@@ -1460,6 +2609,15 @@
                 color: color.name,
                 img: imgSrc,
                 patch: patchData 
+            });
+            saveCartToStorage();
+
+            const addedPrice = Math.ceil(PRICING[currentCurrency][collectionKey][type] * (1 - SALE_DISCOUNT)) + (patchData ? patchData.price : 0);
+            trackMetaEvent('AddToCart', {
+                content_name: `${currentModalProduct.series} - ${color.name} (${type})`,
+                content_type: 'product',
+                value: addedPrice,
+                currency: currentCurrency
             });
             
             updateCartUI();
@@ -1470,6 +2628,7 @@
 
         window.removeFromCart = function(index) {
             cart.splice(index, 1);
+            saveCartToStorage();
             updateCartUI();
             
             if(currentModalProduct && !document.getElementById('productModal').classList.contains('hidden')) {
@@ -1493,7 +2652,7 @@
                 
                 cartItemsEl.innerHTML = cart.map((item, index) => {
                     let originalBasePrice = PRICING[currentCurrency][item.collectionKey][item.type];
-                    let itemBasePrice = Math.ceil(originalBasePrice * (1 - SALE_DISCOUNT)); // Applied 11% Discount if active
+                    let itemBasePrice = Math.ceil(originalBasePrice * (1 - SALE_DISCOUNT));
 
                     let patchHtml = '';
                     let patchPrice = 0;
@@ -1518,7 +2677,7 @@
 
                     return `
                         <div class="flex gap-4 border-b border-gray-100 pb-4 items-start">
-                            <img src="${item.img}" class="w-20 h-20 object-cover rounded-xl border mt-1" alt="${item.series}">
+                            <img src="${item.img}" class="w-20 h-20 object-cover rounded-xl border mt-1" alt="${item.series}" onerror="this.onerror=null; this.src='https://placehold.co/100x100/4c111f/ffffff?text=Item'">
                             <div class="flex-grow">
                                 <div class="flex justify-between items-start">
                                     <h4 class="font-bold text-sm text-[#4c111f]">${item.series}</h4>
@@ -1550,6 +2709,7 @@
                 if (item.type === 'driver') driversCount++;
             });
             
+            const rawItemsSubtotal = productsTotal;
             let bundlesCount = Math.min(woodsCount, driversCount);
             let totalBundleDiscount = bundlesCount * p.bundleDiscount;
             productsTotal = productsTotal - totalBundleDiscount;
@@ -1558,27 +2718,44 @@
 
             const zoneInput = document.querySelector('input[name="shippingZone"]:checked');
             let shippingFee = 0;
+            let isPickup = false;
             if (zoneInput) {
                 if (zoneInput.value === 'west') shippingFee = p.shippingWest;
                 else if (zoneInput.value === 'east') shippingFee = p.shippingEast;
                 else if (zoneInput.value === 'singapore') shippingFee = p.shipping;
+                else if (zoneInput.value === 'pickup') {
+                    shippingFee = 0;
+                    isPickup = true;
+                }
             }
 
-            // Free Shipping threshold check
+            const pickupNoticeEl = document.getElementById('pickupNotice');
+            const addressFieldsEl = document.getElementById('deliveryAddressFields');
+            if (pickupNoticeEl) {
+                if (isPickup) pickupNoticeEl.classList.remove('hidden');
+                else pickupNoticeEl.classList.add('hidden');
+            }
+            if (addressFieldsEl) {
+                if (isPickup) addressFieldsEl.classList.add('hidden');
+                else addressFieldsEl.classList.remove('hidden');
+            }
+
             const freeShipThreshold = currentCurrency === 'MYR' ? FREE_SHIPPING_MYR : FREE_SHIPPING_SGD;
             let isFreeShipping = false;
             
-            if (isSaleActive && (productsTotal + totalPatchFees >= freeShipThreshold)) {
+            if (!isPickup && isSaleActive && (productsTotal + totalPatchFees >= freeShipThreshold)) {
                 shippingFee = 0;
                 isFreeShipping = true;
             }
 
             let subTotal = productsTotal + totalPatchFees + shippingFee;
+            let promoSavings = 0;
             
             if (discountApplied && cart.length > 0) {
                 if (discountType === 'percentage') {
                     discountAmount = subTotal * 0.10; 
                 }
+                promoSavings = discountAmount;
                 calculatedFinalTotal = subTotal - discountAmount;
                 
                 totalEl.innerHTML = `
@@ -1590,17 +2767,212 @@
                 totalEl.textContent = `${sym}${calculatedFinalTotal.toFixed(0)}`;
             }
 
-            if (bundlesCount > 0 || isFreeShipping) {
+            const breakdownEl = document.getElementById('cartBreakdown');
+            if (breakdownEl) {
+                if (cart.length > 0) {
+                    breakdownEl.classList.remove('hidden');
+                    document.getElementById('breakdownItems').textContent = `${sym}${rawItemsSubtotal.toFixed(0)}`;
+
+                    const patchRow = document.getElementById('breakdownPatchRow');
+                    if (totalPatchFees > 0) {
+                        patchRow.classList.remove('hidden');
+                        document.getElementById('breakdownPatches').textContent = `${sym}${totalPatchFees.toFixed(0)}`;
+                    } else {
+                        patchRow.classList.add('hidden');
+                    }
+
+                    const bundleRow = document.getElementById('breakdownBundleRow');
+                    if (totalBundleDiscount > 0) {
+                        bundleRow.classList.remove('hidden');
+                        document.getElementById('breakdownBundle').textContent = `-${sym}${totalBundleDiscount.toFixed(0)}`;
+                    } else {
+                        bundleRow.classList.add('hidden');
+                    }
+
+                    const promoRow = document.getElementById('breakdownPromoRow');
+                    if (promoSavings > 0) {
+                        promoRow.classList.remove('hidden');
+                        document.getElementById('breakdownPromo').textContent = `-${sym}${promoSavings.toFixed(0)}`;
+                    } else {
+                        promoRow.classList.add('hidden');
+                    }
+
+                    const shipLabelEl = document.getElementById('breakdownShippingLabel');
+                    const shipValEl = document.getElementById('breakdownShipping');
+                    if (isPickup) {
+                        shipLabelEl.textContent = 'Self-Pickup (Glenmarie)';
+                        shipValEl.innerHTML = '<span class="text-green-700 font-bold">FREE</span>';
+                    } else if (shippingFee === 0) {
+                        shipLabelEl.textContent = 'Shipping';
+                        shipValEl.innerHTML = '<span class="text-green-700 font-bold">FREE</span>';
+                    } else {
+                        shipLabelEl.textContent = 'Shipping';
+                        shipValEl.textContent = `${sym}${shippingFee.toFixed(0)}`;
+                    }
+                } else {
+                    breakdownEl.classList.add('hidden');
+                }
+            }
+
+            const upsellBox = document.getElementById('bundleUpsellNotice');
+            const upsellText = document.getElementById('bundleUpsellText');
+            const upsellLink = document.getElementById('bundleUpsellLink');
+            if (upsellBox && upsellText && upsellLink) {
+                if (driversCount > woodsCount) {
+                    upsellText.innerHTML = `<i class="fas fa-sparkles mr-1 text-accent"></i>Add a matching <strong>Wood</strong> cover to save <strong>${sym}${p.bundleDiscount}</strong>!`;
+                    upsellLink.setAttribute('href', '#shop-all-wood');
+                    upsellBox.classList.remove('hidden');
+                } else if (woodsCount > driversCount) {
+                    upsellText.innerHTML = `<i class="fas fa-sparkles mr-1 text-accent"></i>Add a matching <strong>Driver</strong> cover to save <strong>${sym}${p.bundleDiscount}</strong>!`;
+                    upsellLink.setAttribute('href', '#shop-all-driver');
+                    upsellBox.classList.remove('hidden');
+                } else {
+                    upsellBox.classList.add('hidden');
+                }
+            }
+
+            if (bundlesCount > 0 || isFreeShipping || isPickup) {
                 bundleNotice.classList.remove('hidden');
                 let msgs = [];
                 if (bundlesCount > 0) msgs.push('<i class="fas fa-tags mr-1"></i> Bundle discount applied!');
-                if (isFreeShipping) msgs.push('<i class="fas fa-truck-fast mr-1"></i> Free shipping unlocked!');
+                if (isPickup) msgs.push('<i class="fas fa-store mr-1"></i> Self-Pickup (Glenmarie) selected — RM 0 shipping!');
+                else if (isFreeShipping) msgs.push('<i class="fas fa-truck-fast mr-1"></i> Free shipping unlocked!');
                 bundleNotice.innerHTML = msgs.join('<br>');
             } else {
                 bundleNotice.classList.add('hidden');
             }
+
+            renderShopAllGrid();
         }
         
+        // ----------------------------------------------------
+        // J&T EXPRESS (MY) & TELEPORT (SG) ORDER TRACKING
+        // ----------------------------------------------------
+        window.updateTrackPlaceholder = function() {
+            const regionEl = document.querySelector('input[name="jtRegion"]:checked');
+            const region = regionEl ? regionEl.value : 'MY';
+            const labelEl = document.getElementById('jtTrackingLabel');
+            const inputEl = document.getElementById('jtTrackingInput');
+            if (!labelEl || !inputEl) return;
+
+            if (region === 'SG') {
+                labelEl.textContent = 'Teleport Tracking Number (Singapore)';
+                inputEl.placeholder = 'e.g. TNX12345678MY';
+            } else {
+                labelEl.textContent = 'J&T Express Tracking Number (Malaysia)';
+                inputEl.placeholder = 'e.g. 620012345678';
+            }
+        }
+
+        window.copyTrackingNumber = function() {
+            const numEl = document.getElementById('jtResultNumber');
+            const btnEl = document.getElementById('copyTrackBtn');
+            if (!numEl || !numEl.textContent) return;
+
+            const tempInput = document.createElement('input');
+            tempInput.value = numEl.textContent;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            try {
+                document.execCommand('copy');
+                if (btnEl) {
+                    btnEl.innerHTML = '<i class="fas fa-check text-green-600 mr-1"></i>Copied';
+                    setTimeout(() => {
+                        btnEl.innerHTML = '<i class="far fa-copy mr-1"></i>Copy';
+                    }, 2000);
+                }
+            } catch (e) {
+                console.error('Copy failed');
+            }
+            document.body.removeChild(tempInput);
+        }
+
+        window.trackJTParcel = function(event) {
+            event.preventDefault();
+            const inputEl = document.getElementById('jtTrackingInput');
+            const errEl = document.getElementById('jtTrackError');
+            const resultBox = document.getElementById('jtResultBox');
+            const embedContainer = document.getElementById('embedTrack');
+            const trackingNum = inputEl.value.trim().replace(/\s+/g, '');
+
+            if (!trackingNum || trackingNum.length < 6) {
+                errEl.textContent = 'Please enter a valid tracking number.';
+                errEl.classList.remove('hidden');
+                resultBox.classList.add('hidden');
+                return;
+            }
+
+            errEl.classList.add('hidden');
+            const regionEl = document.querySelector('input[name="jtRegion"]:checked');
+            const region = regionEl ? regionEl.value : 'MY';
+            const isTeleport = region === 'SG';
+
+            const directUrl = isTeleport
+                ? `https://teleportnextday.com/tracking?trackingNumber=${encodeURIComponent(trackingNum)}`
+                : `https://www.jtexpress.my/tracking/${encodeURIComponent(trackingNum)}`;
+
+            const courierName = isTeleport ? 'Teleport' : 'J&T Express';
+            const courierSlug = isTeleport ? 'teleport' : 'jt';
+            const waText = encodeURIComponent(`Hi Heath Studio! I'd like to check on my order with ${courierName} tracking number: ${trackingNum}`);
+            const waUrl = `https://wa.me/60182757370?text=${waText}`;
+
+            const badgeEl = document.getElementById('jtResultCourierBadge');
+            const directLinkEl = document.getElementById('jtDirectLink');
+            const directLinkTextEl = document.getElementById('jtDirectLinkText');
+
+            document.getElementById('jtResultNumber').textContent = trackingNum.toUpperCase();
+            badgeEl.textContent = isTeleport ? 'Teleport (Singapore)' : 'J&T Express (Malaysia)';
+            badgeEl.className = isTeleport
+                ? 'bg-purple-100 text-purple-800 text-xs font-bold px-3 py-1 rounded-full'
+                : 'bg-red-100 text-red-700 text-xs font-bold px-3 py-1 rounded-full';
+
+            directLinkEl.href = directUrl;
+            directLinkTextEl.textContent = isTeleport ? 'Not loading? Open on Teleport' : 'Not loading? Open on J&T Express';
+            document.getElementById('jtWhatsappHelp').href = waUrl;
+
+            resultBox.classList.remove('hidden');
+            embedContainer.innerHTML = '';
+
+            const renderEmbeddedTracker = () => {
+                if (window.TrackButton && typeof window.TrackButton.embed === 'function') {
+                    window.TrackButton.embed({
+                        selector: '#embedTrack',
+                        tracking_number: trackingNum,
+                        courier: courierSlug,
+                        theme: 'light',
+                        locale: 'en',
+                        width: '100%',
+                        height: '520px'
+                    });
+                } else {
+                    embedContainer.innerHTML = `
+                        <div class="p-6 text-center">
+                            <p class="text-sm text-gray-600 mb-3">Live tracker could not load inside this view.</p>
+                            <a href="${directUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-[#4c111f] text-white px-5 py-2.5 rounded-xl text-xs font-bold hover:opacity-90 transition-opacity">
+                                <i class="fas fa-external-link-alt"></i> View on ${courierName}
+                            </a>
+                        </div>
+                    `;
+                }
+            };
+
+            if (window.TrackButton) {
+                renderEmbeddedTracker();
+            } else {
+                embedContainer.innerHTML = '<p class="text-xs text-gray-400 font-medium"><i class="fas fa-spinner fa-spin mr-1.5"></i>Loading live parcel updates...</p>';
+                const script = document.createElement('script');
+                script.src = 'https://www.tracking.my/track-button.js';
+                script.onload = () => {
+                    embedContainer.innerHTML = '';
+                    renderEmbeddedTracker();
+                };
+                script.onerror = renderEmbeddedTracker;
+                document.head.appendChild(script);
+            }
+
+            resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
         window.applyPromoCode = function() {
             const input = document.getElementById('promoCodeInput');
             const code = input.value.trim().toUpperCase();
@@ -1644,7 +3016,7 @@
         function startHoverSlideshow(pid, card) {
             const prod = allProducts.find(p => p.id === pid);
             const imgEl = card.querySelector('.product-img');
-            if (!imgEl || prod.slideshowImages.length <= 1) return;
+            if (!imgEl || !prod || prod.slideshowImages.length <= 1) return;
             let i = 0;
             if (hoverIntervals[pid]) clearInterval(hoverIntervals[pid]);
             hoverIntervals[pid] = setInterval(() => { i = (i + 1) % prod.slideshowImages.length; imgEl.src = prod.slideshowImages[i]; }, 1500); 
@@ -1657,7 +3029,7 @@
             if (imgEl && prod) imgEl.src = prod.slideshowImages[0];
         }
 
-        // --- NEW ZOOM LOGIC (WITH TOUCH SUPPORT) ---
+        // --- ZOOM LOGIC (WITH TOUCH SUPPORT) ---
         const zoomModal = document.getElementById('zoomModal');
         const zoomImg = document.getElementById('zoomImg');
         const closeZoomBtn = document.getElementById('closeZoomBtn');
@@ -1695,27 +3067,21 @@
         if(closeZoomBtn) closeZoomBtn.addEventListener('click', closeZoom);
 
         if(zoomImg) {
-            // Click toggles zoom
             zoomImg.addEventListener('click', function(e) {
                 toggleZoom(e.clientX, e.clientY);
             });
 
-            // Desktop pan
             zoomImg.addEventListener('mousemove', function(e) {
                 if (isZoomed) {
                     updateTransformOrigin(e.clientX, e.clientY);
                 }
             });
             
-            // Mobile Touch preparation
-            zoomImg.addEventListener('touchstart', function(e) {
-                // Allows tapping to work without jumping
-            }, {passive: true});
+            zoomImg.addEventListener('touchstart', function(e) {}, {passive: true});
 
-            // Mobile pan
             zoomImg.addEventListener('touchmove', function(e) {
                 if (isZoomed && e.touches.length === 1) {
-                    e.preventDefault(); // Stop entire page from scrolling while zoomed
+                    e.preventDefault();
                     updateTransformOrigin(e.touches[0].clientX, e.touches[0].clientY);
                 }
             }, {passive: false});
@@ -1746,7 +3112,6 @@
             const y = (clientY / window.innerHeight) * 100;
             zoomImg.style.transformOrigin = `${x}% ${y}%`;
         }
-        // ----------------------
 
         function setupEventListeners() {
             document.getElementById('cartBtn').addEventListener('click', openCart);
@@ -1806,6 +3171,17 @@
                 if (menuOptions && !menuOptions.classList.contains('hidden') && !menuSelectBtn.contains(e.target) && !menuOptions.contains(e.target)) toggleMenuDropdown();
             });
 
+            const shopAllMenuBtn = document.getElementById('shopAllMenuBtn');
+            const shopAllSubMenu = document.getElementById('shopAllSubMenu');
+            const shopAllMenuIcon = document.getElementById('shopAllMenuIcon');
+            if (shopAllMenuBtn) {
+                shopAllMenuBtn.addEventListener('click', () => {
+                    shopAllSubMenu.classList.toggle('hidden');
+                    shopAllSubMenu.classList.toggle('flex');
+                    shopAllMenuIcon.classList.toggle('rotate-180');
+                });
+            }
+
             const collectionsMenuBtn = document.getElementById('collectionsMenuBtn');
             const collectionsSubMenu = document.getElementById('collectionsSubMenu');
             const collectionsMenuIcon = document.getElementById('collectionsMenuIcon');
@@ -1831,6 +3207,27 @@
             document.querySelectorAll('.menu-link').forEach(link => {
                 link.addEventListener('click', closeMenu);
             });
+
+            // Direct internal hash routing so menu & quick-jump links always work (in Preview and on live GitHub)
+            document.addEventListener('click', (e) => {
+                const link = e.target.closest('a[href^="#"]');
+                if (!link) return;
+                const targetHash = link.getAttribute('href');
+                if (!targetHash || targetHash === '#') return;
+
+                e.preventDefault();
+                if (link.classList.contains('menu-link')) {
+                    closeMenu();
+                }
+                try {
+                    if (window.location.hash !== targetHash) {
+                        window.location.hash = targetHash;
+                    }
+                } catch (err) {
+                    // Ignore hash update errors in restricted iframe sandboxes
+                }
+                handleRoute(targetHash);
+            });
             
             document.getElementById('checkoutBtn').addEventListener('click', async () => {
                 if (cart.length === 0) return;
@@ -1844,14 +3241,26 @@
                 const cPost = document.getElementById('custPostcode').value.trim();
                 const cState = document.getElementById('custState').value;
                 const err = document.getElementById('formError');
+                const zoneInput = document.querySelector('input[name="shippingZone"]:checked');
+                const isPickup = zoneInput && zoneInput.value === 'pickup';
 
-                if (!cName || !cEmail || !cPhone || !cAddress || !cCity || !cPost || !cState) {
-                    err.innerHTML = 'Please fill in all delivery details above.'; err.classList.remove('hidden'); return;
+                if (!cName || !cEmail || !cPhone || (!isPickup && (!cAddress || !cCity || !cPost || !cState))) {
+                    err.innerHTML = isPickup
+                        ? 'Please fill in your name, email, and phone number for self-pickup.'
+                        : 'Please fill in all delivery details above.';
+                    err.classList.remove('hidden');
+                    return;
                 }
                 if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(cEmail)) {
                     err.innerHTML = 'Please enter a valid email address.'; err.classList.remove('hidden'); return;
                 }
                 err.classList.add('hidden');
+
+                trackMetaEvent('InitiateCheckout', {
+                    value: calculatedFinalTotal,
+                    currency: currentCurrency,
+                    num_items: cart.length
+                });
                 
                 const btn = document.getElementById('checkoutBtn');
                 const originalText = btn.innerHTML;
@@ -1868,7 +3277,9 @@
                     return desc;
                 }).join(' | ');
 
-                const fullAddress = `${cAddress}, ${cPost} ${cCity}, ${cState}, ${cCountry === 'SG' ? 'Singapore' : 'Malaysia'}`;
+                const fullAddress = isPickup
+                    ? 'SELF-PICKUP (Glenmarie, Shah Alam)'
+                    : `${cAddress}, ${cPost} ${cCity}, ${cState}, ${cCountry === 'SG' ? 'Singapore' : 'Malaysia'}`;
 
                 const payload = new URLSearchParams();
                 payload.append("amount", calculatedFinalTotal); 
@@ -1877,9 +3288,8 @@
                 payload.append("name", cName);
                 payload.append("email", cEmail);
                 payload.append("phone", cPhone);
-                payload.append("purpose", `Order: ${cartDetails}. Ship to: ${fullAddress}`);
+                payload.append("purpose", `Order: ${cartDetails}. ${isPickup ? fullAddress : 'Ship to: ' + fullAddress}`);
                 payload.append("send_email", "true"); 
-                // HitPay usually appends its own query variables to this redirect_url (like status=completed or reference=xxx)
                 payload.append("redirect_url", window.location.origin + window.location.pathname + "?status=success"); 
 
                 try {
@@ -1892,7 +3302,8 @@
                     if (response.ok && data.url) window.location.href = data.url;
                     else throw new Error("API Error");
                 } catch (error) {
-                    alert("Payment gateway error. Please try again.");
+                    err.innerHTML = 'Payment gateway error. Please try again.';
+                    err.classList.remove('hidden');
                     btn.innerHTML = originalText;
                     btn.disabled = false;
                 }
