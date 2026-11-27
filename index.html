@@ -2883,7 +2883,7 @@
             document.body.removeChild(tempInput);
         }
 
-        window.trackJTParcel = function(event) {
+          window.trackJTParcel = function(event) {
             event.preventDefault();
             const inputEl = document.getElementById('jtTrackingInput');
             const errEl = document.getElementById('jtTrackError');
@@ -2923,12 +2923,37 @@
                 : 'bg-red-100 text-red-700 text-xs font-bold px-3 py-1 rounded-full';
 
             directLinkEl.href = directUrl;
-            directLinkTextEl.textContent = isTeleport ? 'Not loading? Open on Teleport' : 'Not loading? Open on J&T Express';
+            directLinkTextEl.textContent = isTeleport ? 'Not loading? Open on Teleport' : 'Open on J&T Express';
             document.getElementById('jtWhatsappHelp').href = waUrl;
 
             resultBox.classList.remove('hidden');
             embedContainer.innerHTML = '';
 
+            // J&T Express blocks 3rd-party embeds — show a clean direct-portal card instead
+            if (!isTeleport) {
+                embedContainer.innerHTML = `
+                    <div class="p-6 sm:p-8 text-center w-full">
+                        <div class="w-12 h-12 rounded-full bg-red-50 text-red-600 flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-truck-fast text-xl"></i>
+                        </div>
+                        <h4 class="font-serif text-lg font-bold text-[#4c111f] mb-1">Track on Official J&amp;T Express Portal</h4>
+                        <p class="text-xs text-gray-500 max-w-sm mx-auto mb-5 leading-relaxed">
+                            For security, J&amp;T Express Malaysia displays live parcel updates directly on their official website.
+                        </p>
+                        <a href="${directUrl}" target="_blank" rel="noopener noreferrer" onclick="copyTrackingNumber()" class="inline-flex items-center justify-center gap-2 bg-[#4c111f] text-white px-6 py-3.5 rounded-xl text-sm font-bold hover:opacity-90 active:scale-95 transition-all shadow-md">
+                            <span>View Live Status on J&amp;T Express</span>
+                            <i class="fas fa-external-link-alt text-xs"></i>
+                        </a>
+                        <p class="text-[11px] text-gray-400 mt-3">
+                            Your tracking number is copied automatically when you click above.
+                        </p>
+                    </div>
+                `;
+                resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                return;
+            }
+
+            // Keep live in-page tracker for Teleport (Singapore)
             const renderEmbeddedTracker = () => {
                 if (window.TrackButton && typeof window.TrackButton.embed === 'function') {
                     window.TrackButton.embed({
