@@ -1108,7 +1108,7 @@
    <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
         import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-        import { getFirestore, doc, getDoc, setDoc, collection, addDoc, getDocs, query, orderBy, limit } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+       import { getFirestore, doc, getDoc, setDoc, collection, addDoc, getDocs, query, orderBy, limit, onSnapshot, runTransaction } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
         const appId = 'heath-studio-dev';
         const firebaseConfig = {
@@ -1178,7 +1178,74 @@
             const randomNum = Math.floor(Math.random() * 90000 + 10000);
             return `HTHG-${randomNum}`;
         }
-    </script>
+   const inventoryRef = doc(db, 'artifacts', appId, 'public', 'data', 'store_metadata', 'inventory');
+
+        // 1. Listen to live stock in real time (auto-creates inventory doc on first run)
+        window.startLiveStockSync = function(allProductsList, onStockUpdated) {
+            onSnapshot(inventoryRef, async (snap) => {
+                if (!snap.exists()) {
+                    // First-time setup: automatically upload your current HTML stock counts to Firebase!
+                    const initialStock = {};
+                    allProductsList.forEach(prod => {
+                        prod.colors.forEach(c => {
+                            Object.entries(c.stock || {}).forEach(([clubType, qty]) => {
+                                initialStock[`${prod.series} - ${c.name} - ${clubType}`] = qty;
+                            });
+                        });
+                    });
+                    try {
+                        await authReady;
+                        await setDoc(inventoryRef, initialStock);
+                    } catch (e) {
+                        console.error("Initial stock upload error:", e);
+                    }
+                    return;
+                }
+
+                const cloudStock = snap.data() || {};
+                allProductsList.forEach(prod => {
+                    prod.colors.forEach(c => {
+                        Object.keys(c.stock || {}).forEach(clubType => {
+                            const key = `${prod.series} - ${c.name} - ${clubType}`;
+                            if (typeof cloudStock[key] === 'number') {
+                                c.stock[clubType] = cloudStock[key];
+                            }
+                        });
+                    });
+                });
+
+                if (typeof onStockUpdated === 'function') onStockUpdated();
+            });
+        };
+
+        // 2. Safely deduct purchased items in Firebase (never goes below 0)
+        window.deductStockInFirebase = async function(purchasedItems) {
+            if (!Array.isArray(purchasedItems) || purchasedItems.length === 0) return;
+            try {
+                await authReady;
+                await runTransaction(db, async (transaction) => {
+                    const snap = await transaction.get(inventoryRef);
+                    if (!snap.exists()) return;
+
+                    const data = snap.data();
+                    const updates = {};
+
+                    purchasedItems.forEach(item => {
+                        const key = `${item.series} - ${item.color} - ${item.type}`;
+                        const currentQty = typeof updates[key] === 'number'
+                            ? updates[key]
+                            : (typeof data[key] === 'number' ? data[key] : 0);
+                        updates[key] = Math.max(0, currentQty - 1);
+                    });
+
+                    transaction.update(inventoryRef, updates);
+                });
+                console.log("Live stock deducted in Firebase!");
+            } catch (err) {
+                console.error("Stock deduction error:", err);
+            }
+        }; 
+   </script>
 
 
     <script>
@@ -1516,6 +1583,14 @@
             startDropCountdown();
             setupEventListeners();
             renderProductGrids();
+             if (typeof window.startLiveStockSync === 'function') {
+                window.startLiveStockSync(allProducts, () => {
+                    renderShopAllGrid();
+                    if (currentModalProduct && !document.getElementById('productModal').classList.contains('hidden')) {
+                        updateModalState();
+                    }
+                });
+            }
             renderCommunitySlideshow();
             loadAndRenderReviews();
             setupRouter(); 
@@ -1739,6 +1814,19 @@
         function checkPaymentStatus() {
             const urlParams = new URLSearchParams(window.location.search);
             if (urlParams.get('status') === 'success' || urlParams.get('status') === 'completed' || urlParams.has('reference')) {
+                // Deduct purchased items from live Firebase inventory
+                try {
+                    const pendingRaw = localStorage.getItem('heath_pending_order_v1');
+                    if (pendingRaw) {
+                        const pendingItems = JSON.parse(pendingRaw);
+                        localStorage.removeItem('heath_pending_order_v1');
+                        if (typeof window.deductStockInFirebase === 'function') {
+                            window.deductStockInFirebase(pendingItems);
+                        }
+                    }
+                } catch (e) {
+                    console.error('Pending order read error:', e);
+                }
                 const successModal = document.getElementById('successModal');
                 const backdrop = document.getElementById('successModalBackdrop');
                 const content = document.getElementById('successModalContent');
@@ -3320,7 +3408,11 @@
                         body: payload.toString()
                     });
                     const data = await response.json();
-                    if (response.ok && data.url) window.location.href = data.url;
+                    if (response.ok && data.url) {
+                        // Save items temporarily so we can deduct stock when HitPay returns ?status=success
+                        localStorage.setItem('heath_pending_order_v1', JSON.stringify(cart));
+                        window.location.href = data.url;
+                    }
                     else throw new Error("API Error");
                 } catch (error) {
                     err.innerHTML = 'Payment gateway error. Please try again.';
