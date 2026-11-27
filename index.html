@@ -1115,20 +1115,29 @@
         
         let db, auth;
 
-        if (firebaseConfigStr !== '{}') {
-            const firebaseConfig = JSON.parse(firebaseConfigStr);
-            const app = initializeApp(firebaseConfig);
-            db = getFirestore(app);
-            auth = getAuth(app);
+        const appId = 'heath-studio-dev';
+        const firebaseConfig = {
+            // PASTE YOUR REAL KEYS FROM STEP 2 RIGHT HERE
+            apiKey: "AIzaSyCdBsXYRV6RiACh7X2eiPWvPxszBEZMX6A",
+            authDomain: "heath-studio.firebaseapp.com,
+            projectId: "heath-studio",
+            storageBucket: "heath-studio.firebasestorage.app",
+            messagingSenderId: "1067588243315",
+            appId: "1:1067588243315:web:db2aecb97ba5860f2e3f06"
+        };
+        
+        let db, auth;
 
-            async function authenticate() {
-                try {
-                    await signInAnonymously(auth);
-                } catch (error) { console.error("Firebase Error"); }
-            }
-            authenticate();
+        const app = initializeApp(firebaseConfig);
+        db = getFirestore(app);
+        auth = getAuth(app);
+
+        async function authenticate() {
+            try {
+                await signInAnonymously(auth);
+            } catch (error) { console.error("Firebase Error", error); }
         }
-
+        authenticate();
         window.generateUniversalOrderID = async function() {
             if (!db || !auth) return generateLocalFallbackID();
             if (!auth.currentUser) await new Promise(r => setTimeout(r, 800)); 
@@ -2095,7 +2104,7 @@
 
                 items.sort((a, b) => (b.remaining > 0 ? 1 : 0) - (a.remaining > 0 ? 1 : 0));
 
-                const inStockCount = items.filter(i => i.remaining > 0).length;
+                const inStockCount = items.reduce((sum, i) => sum + i.remaining, 0);
                 const displayItems = shopAllInStockOnly ? items.filter(i => i.remaining > 0) : items;
 
                 const cardsHtml = displayItems.length > 0
