@@ -1245,6 +1245,23 @@
                 console.error("Stock deduction error:", err);
             }
         }; 
+    // 3. Save pending order items so HitPay's webhook knows what to deduct
+        window.savePendingOrderToFirebase = async function(orderId, cartItems) {
+            if (!orderId || !Array.isArray(cartItems) || cartItems.length === 0) return;
+            try {
+                await authReady;
+                const orderRef = doc(db, 'artifacts', appId, 'public', 'data', 'pending_orders', orderId);
+                const itemKeys = cartItems.map(i => `${i.series} - ${i.color} - ${i.type}`);
+                await setDoc(orderRef, {
+                    items: itemKeys,
+                    deducted: false,
+                    createdAt: Date.now()
+                });
+            } catch (err) {
+                console.error("Save pending order error:", err);
+            }
+        };
+
    </script>
 
 
@@ -1814,19 +1831,6 @@
         function checkPaymentStatus() {
             const urlParams = new URLSearchParams(window.location.search);
             if (urlParams.get('status') === 'success' || urlParams.get('status') === 'completed' || urlParams.has('reference')) {
-                // Deduct purchased items from live Firebase inventory
-                try {
-                    const pendingRaw = localStorage.getItem('heath_pending_order_v1');
-                    if (pendingRaw) {
-                        const pendingItems = JSON.parse(pendingRaw);
-                        localStorage.removeItem('heath_pending_order_v1');
-                        if (typeof window.deductStockInFirebase === 'function') {
-                            window.deductStockInFirebase(pendingItems);
-                        }
-                    }
-                } catch (e) {
-                    console.error('Pending order read error:', e);
-                }
                 const successModal = document.getElementById('successModal');
                 const backdrop = document.getElementById('successModalBackdrop');
                 const content = document.getElementById('successModalContent');
@@ -3400,8 +3404,11 @@
                 payload.append("purpose", `Order: ${cartDetails}. ${isPickup ? fullAddress : 'Ship to: ' + fullAddress}`);
                 payload.append("send_email", "true"); 
                 payload.append("redirect_url", window.location.origin + window.location.pathname + "?status=success"); 
-
+                payload.append("webhook", window.location.origin + "/webhook");
                 try {
+                    if (typeof window.savePendingOrderToFirebase === 'function') {
+                    await window.savePendingOrderToFirebase(orderID, cart);
+                }
                     const response = await fetch("/checkout", {
                         method: "POST",
                         headers: { "Content-Type": "application/x-www-form-urlencoded" },
