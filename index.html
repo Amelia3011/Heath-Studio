@@ -1131,7 +1131,7 @@
                 console.error("Firebase Auth Error:", error);
             }
         }
-        authenticate();
+        const authReady = authenticate();
 
         window.generateUniversalOrderID = async function() {
             if (!db || !auth) return generateLocalFallbackID();
