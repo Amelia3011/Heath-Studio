@@ -1105,78 +1105,71 @@
         </div>
     </div>
 
-    <script type="module">
+   <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
         import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
         import { getFirestore, doc, getDoc, setDoc, collection, addDoc, getDocs, query, orderBy, limit } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
-        const appId = typeof __app_id !== 'undefined' ? __app_id : 'heath-studio-dev';
-        const firebaseConfigStr = typeof __firebase_config !== 'undefined' ? __firebase_config : '{}';
-        
-        let db, auth;
-
         const appId = 'heath-studio-dev';
         const firebaseConfig = {
-            // PASTE YOUR REAL KEYS FROM STEP 2 RIGHT HERE
             apiKey: "AIzaSyCdBsXYRV6RiACh7X2eiPWvPxszBEZMX6A",
-            authDomain: "heath-studio.firebaseapp.com,
+            authDomain: "heath-studio.firebaseapp.com",
             projectId: "heath-studio",
             storageBucket: "heath-studio.firebasestorage.app",
             messagingSenderId: "1067588243315",
             appId: "1:1067588243315:web:db2aecb97ba5860f2e3f06"
         };
-        
-        let db, auth;
 
         const app = initializeApp(firebaseConfig);
-        db = getFirestore(app);
-        auth = getAuth(app);
+        const db = getFirestore(app);
+        const auth = getAuth(app);
 
         async function authenticate() {
             try {
                 await signInAnonymously(auth);
-            } catch (error) { console.error("Firebase Error", error); }
+            } catch (error) {
+                console.error("Firebase Auth Error:", error);
+            }
         }
         authenticate();
+
         window.generateUniversalOrderID = async function() {
             if (!db || !auth) return generateLocalFallbackID();
-            if (!auth.currentUser) await new Promise(r => setTimeout(r, 800)); 
-            if (!auth.currentUser) return generateLocalFallbackID(); 
-
             try {
+                if (!auth.currentUser) await signInAnonymously(auth);
                 const counterRef = doc(db, 'artifacts', appId, 'public', 'data', 'store_metadata', 'order_counter');
                 const docSnap = await getDoc(counterRef);
                 let currentCount = docSnap.exists() && docSnap.data().count ? docSnap.data().count : 0;
                 await setDoc(counterRef, { count: currentCount + 1 }, { merge: true });
                 return `HTHG-${(currentCount + 1).toString().padStart(4, '0')}`;
             } catch (error) {
+                console.error("Order ID Error:", error);
                 return generateLocalFallbackID();
             }
         };
 
         window.fetchCloudReviews = async function() {
-            if (!db || !auth) return [];
-            if (!auth.currentUser) await new Promise(r => setTimeout(r, 600));
-            if (!auth.currentUser) return [];
+            if (!db) return [];
             try {
                 const reviewsCol = collection(db, 'artifacts', appId, 'public', 'data', 'reviews');
                 const q = query(reviewsCol, orderBy('createdAt', 'desc'), limit(12));
                 const snap = await getDocs(q);
                 return snap.docs.map(d => d.data());
             } catch (error) {
+                console.error("Fetch Reviews Error:", error);
                 return [];
             }
         };
 
         window.saveCloudReview = async function(reviewObj) {
             if (!db || !auth) return false;
-            if (!auth.currentUser) await new Promise(r => setTimeout(r, 600));
-            if (!auth.currentUser) return false;
             try {
+                if (!auth.currentUser) await signInAnonymously(auth);
                 const reviewsCol = collection(db, 'artifacts', appId, 'public', 'data', 'reviews');
                 await addDoc(reviewsCol, reviewObj);
                 return true;
             } catch (error) {
+                console.error("Save Review Error:", error);
                 return false;
             }
         };
@@ -1186,6 +1179,7 @@
             return `HTHG-${randomNum}`;
         }
     </script>
+
 
     <script>
         // ============================================================
